@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>select poll epoll &larr; </title>
+   <meta name="author" content="Xiang Chao" />
+
+   <link rel="start" href="/" />
+
+	
+	
+	
+  	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/feedname" title="RSS feed" />
+	
+	
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/assets/themes/mark-reid/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/mark-reid/css/screen.css" type="text/css" />
+
+</head>
+<body id="">
+<div id="site">
+  
+  <div id="header">
+    <h1>
+    	<a href="/" title="cloudaice wiki">cloudaice wiki</a>
+    	<span class="byline">&larr; <a href="/">Xiang Chao</a></span>
+    </h1>
+    <ul class="nav">
+      <li><a class="home" href="/">Home</a></li>
+      <li><a  href="/archive.html">Archive</a></li>
+      <li><a  href="/pages.html">Pages</a></li>
+      <li><a  href="/categories.html">Categories</a></li>
+      <li><a  href="/tags.html">Tags</a></li>
+      <li><a  href='/picture.html'>Pic</a></li>
+    </ul>
+  </div>
+
+  
+<div id="page">
+	
+  <h1 class="emphnext">select poll epoll</h1>
+  <ul class="tag_box inline">
+  
+  
+
+
+  
+    
+  
+
+
+
+  </ul>
+
+  <h3>名词解析</h3>
+
+<ul>
+<li>mmap：内存映射。具体的意思就是共享同一块内存进行消息传递。我看见到比较多的地方就是内核态和用户态之间
+的消息传递采用mmap技术。很明显，如果是使用一般的复制方法的话，在内核态和用户态之间的消息传递所需要的开销
+就会很大。而使用了共享一块内存的技术之后就可以大大提高消息传递的效率。</li>
+</ul>
+
+
+<h3>总述</h3>
+
+<p>它们的作用都是监听文件描述符，姑且可以这么认为，然当主要作用是它监听文件描述符所发挥的作用了。</p>
+
+<h3>select和poll</h3>
+
+<p>这两个比较相似，其中select要早于poll出现。select默认监听文件描述符为1024个，在sys/select.h中有定义，
+虽然可以修改值的大小,但是改变大小之后对使用的性能会有一定的影响。select和poll都使用了轮询的方法。
+，这就意味着，当单个进程打开的文件描述符比较多的时候，就会出现一个相对比较长的轮询周期，效率会大大降低。
+并且，在内核态向用户太传递消息的时候，使用复制的方式，向用户态进程发送消息，这是一种水平触发的方式，
+即，当某个文件描述符处于就绪状态的时候，内核态就会向用户态进程发送消息。而当用户态进程没有处理的时候。
+下一轮轮询的时候，还会继续向用户太进程发送消息。poll相对select不同的地方，poll中对文件描述符采用链表组织，
+因此访问的大小没有限制。</p>
+
+<h3>epoll</h3>
+
+<p>这个方法是在2.6内核中才加进去的。相对于select和poll，有两点比较好的提升：1，不再是采用轮询方式，而是基于
+时间就绪通知方式，内核采用一种类似回调的机制，对就绪文件描述符发出通知，支持水平触发和边缘触发。2，
+采用了mmap技术，用户态和内核态共享一块内存区域，这样就避免了两个态之间频繁的数据复制。</p>
+
+
+  <address class="signature">
+    <a class="author" href="/">Xiang Chao</a> 
+    <span class="date">25 April 2012</span>
+    <span class="location"></span>
+  </address>
+  
+  <div class="prev-next">
+  
+    <a href="/thread-manage" class="next" title="linux下的进程调度方法小记">Next Post &rarr;</a>
+  
+  
+    <a href="/arch-installation" class="prev" title="arch installation">&larr; Earlier Post</a>
+  
+  </div>
+  
+</div><!-- End Page -->
+
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'cloudaice'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+
+  
+  <div id="footer">
+  	<address>
+  		<span class="copyright">
+  			Content by <a href="/info/site.html">Xiang Chao</a>. Design by 
+  			<a href="http://mark.reid.name/">Mark Reid</a>
+  			<br/>
+  			(<a rel="licence" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Some rights reserved</a>)			
+  		</span>
+  		<span class="engine">
+  			Powered by <a href="http://github.com/mojombo/jekyll/" title="A static, minimalist CMS">Jekyll</a>
+  		</span>
+  	</address>
+  </div>
+  
+</div>
+
+<!--[if IE 6]>
+<script type="text/javascript"> 
+	/*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; } 
+	var IE6UPDATE_OPTIONS = {
+		icons_path: "http://static.ie6update.com/hosted/ie6update/images/"
+	}
+</script>
+<script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
+<![endif]-->
+
+  
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F804602e26e1df25cce6c94d5ac9e555e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>mongodb cooks &larr; </title>
+   <meta name="author" content="Xiang Chao" />
+
+   <link rel="start" href="/" />
+
+	
+	
+	
+  	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/feedname" title="RSS feed" />
+	
+	
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/assets/themes/mark-reid/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/mark-reid/css/screen.css" type="text/css" />
+
+</head>
+<body id="">
+<div id="site">
+  
+  <div id="header">
+    <h1>
+    	<a href="/" title="cloudaice wiki">cloudaice wiki</a>
+    	<span class="byline">&larr; <a href="/">Xiang Chao</a></span>
+    </h1>
+    <ul class="nav">
+      <li><a class="home" href="/">Home</a></li>
+      <li><a  href="/archive.html">Archive</a></li>
+      <li><a  href="/pages.html">Pages</a></li>
+      <li><a  href="/categories.html">Categories</a></li>
+      <li><a  href="/tags.html">Tags</a></li>
+      <li><a  href='/picture.html'>Pic</a></li>
+    </ul>
+  </div>
+
+  
+<div id="page">
+	
+  <h1 class="emphnext">mongodb cooks</h1>
+  <ul class="tag_box inline">
+  
+  
+
+
+  
+    
+  
+
+
+
+  </ul>
+
+  <ul>
+<li><p>导引</p>
+
+<ul>
+<li><a href="#q1">安装</a></li>
+<li><a href="#q2">配置启动和停止</a></li>
+<li><a href="#q3">使用</a></li>
+</ul>
+</li>
+<li><p><h3 id = "q1">安装</h3><!--more-->
+之前写的一片mongodb使用小记过于简单，当时自己觉得没有必要详细写作，因为很多自己看文档就可以轻松搞定了，
+但是到自己要重新使用的时候，发现有些还是很容易忘记的。看文档固然可以理解，但是花费时间比较长，
+还有一点，文档都是面向大众话的，语言讲的覆盖比较广，但是却不细，现在重新记载一下使用过程，
+以便以后快速参考。</p>
+
+<ol>
+<li>去mongodb的<a href="http://www.mongodb.org">官方网站</a>下载和自己的机器相适应的.tar.gz压缩包。</li>
+<li>使用一下命令解压缩：<code>tar zxf mongodb-linux-xxx...</code></li>
+<li>创建一个数据库存储的目录，mongodb默认会使用<strong>/data/db</strong>目录，因此，我们需要创建该目录，
+同时要给目录加上一定的权限，可以使用以下命令：<strong>根据自己的情况，使用root权限操作。</strong>
+
+<pre><code>mkdir -p /data/db
+chown -R $USER:$USER /data/db
+</code></pre></li>
+<li>切换到自己刚才解压出来的mongodb目录，会发现有一个<code>bin</code>目录，进去之后，会发现里面全部是可执行文件，
+在该目录下执行
+
+<pre><code>./mongod
+</code></pre>
+
+<p>mongodb数据库就可以以默认的方式启动了。</p></li>
+</ol>
+</li>
+<li><p><h3 id = "q2">配置启动和停止</h3>
+上面我们已经以默认的方式让mongodb启动了，但是在实际中，对于启动有多种配置方式。
+使用下面命令可以查看都可以配置那些配置方式：</p>
+
+<pre><code>  ./mongod --help
+</code></pre></li>
+</ul>
+
+
+<p>现在简单介绍一下一些常用的配置参数<br/>
+<strong>--dbpath</strong> [数据目录地址]<br/>
+用于指定数据存储目录，默认情况下,使用<code>\data/db</code>.在mongodb中，
+每个mongod进程只能用一个单独的数据目录，注意这里指的是每个mongodb进程示例，并不是指数据库。
+因此每个数据目录下面都有一个mongod.lock文件。当有多个mongod进程使用同一个数据目录的时候，
+就会报错。</p>
+
+<p><strong>--port</strong> [端口号]<br/>
+指定mongod启动的时候监听的端口号，默认情况下是27017。</p>
+
+<p><strong>--fork</strong><br/>
+让mongod以守护进程启动</p>
+
+<p><strong>--config</strong> [配置文件]<br/>
+在这里可以制定,mongod启动的时候的配置文件，配置文件主要就是命令行参数的一些集合，写法为<code>键=值</code>,
+像fork这些参数，使用true或者false。下面是一个配置文件示例</p>
+
+<pre><code>    # my mongod config
+    port = 20000
+    fork = true
+    logpath = mongodb.log
+</code></pre>
+
+<p><strong>--logpath</strong> [log文件]<br/>
+指定输出的log文件</p>
+
+<p>在mongod启动后都会有一个轻量的http端口开放，该端口号为mongod启动端口的值加上1000。
+因此你可以在浏览器中输入<code>localhost:28017</code>(默认端口)来访问web页面。里面会有一些关于mongodb的运行信息。
+但是有的时候为了安全原因，你可以关闭该端口，只要你在启动的时候加入<code>--nohttpinter-face</code>。另外，还可以
+使用参数<code>--bindip localhost</code>,指定本机访问。还有一个在实际中要用的参数，<code>--auth</code>，加上这个参数之后启动
+mongodb。在客户端连接mongodb服务器之后，当执行一些操作的时候，就需要认证。这就要和用户名权限相关联了。
+同时也有一个root账户。</p>
+
+<p>有两种普遍的方法可以停止mongodb数据库运行:<br/>
+<strong>1，</strong>当mongodb是在终端运行的时候，可以直接按下<code>Ctri+C</code>，来终止mongodb进程。</p>
+
+<p><strong>2，</strong>当mongodb以守护进程的方式运行的时候，使用以下命令：
+<code>kill -2 [mongodb进程号]</code>其中mongodb进程号，可以使用<code>ps -ef | grep mongod</code>来查看。</p>
+
+<h3 id = "q3">使用</h3>
+
+
+<p>启动mongodb服务进程之后，mongodb自带有一个客户端程序，也是在bin目录下。运行<code>./mongo</code>就可以启动客户端
+界面。这是一个典型的shell界面，可以在这里面进行对数据库的操作。不过在这个shell有一个比较特别的地方，
+就是可以使用javascrip。它会自动解析javascrip语言。下面记录一下使用python的接口操作mongodb的过程。<br/>
+首先，你会发现你至少可以搜到这样的三个python扩展库：<code>pymongo</code>,<code>mongoengine</code>,<code>django-mongodb</code>。
+这些都是python操作mongodb的接口。它们之间的关系大自是这样字的。<code>pymongo</code>相当于是一个比较low level
+的driver。仅仅是可以用python语言与数据库交互。因此相对来说是比较底层的驱动而已。而其它两种则是
+object relation mapping，也就是ORM。经过对象抽象化的，相对而言要高层一些。比如我们在用django
+这些web框架编写应用的时候，就会选择使用这些ORM。下面记录pymongo这个扩展包操作数据库的方法。</p>
+
+<blockquote><p>安装python很简单，就像安装其他python的扩展库一般，使用<code>easy_install</code>或者<code>pip</code>都一样。安装完之后，
+进入python命令行。</p></blockquote>
+
+<p>建立连接：建立连接的时候，只是和mongodb进程连接</p>
+
+<pre><code>from pymongo import Connection
+connection = Connection()
+#another way to connection
+connection = Connection('localhost',27017)
+</code></pre>
+
+<p>选择连接数据库：如果该数据库不存在，则会自动创建</p>
+
+<pre><code>db = connection.blog
+#如果有安全验证的话,要执行以下语句进行认证
+db.authenticate(user,password)
+</code></pre>
+
+<p>选择一个集合：在mongodb中是以库，集合，文档这样的结构组织的</p>
+
+<pre><code>blogs = db.blogs
+</code></pre>
+
+<p>尝试在mongodb中插入一个文档：</p>
+
+<pre><code>post={"author":"jom","text":"this is my first blog","tag":["mongodb","python"]}
+blogs.insert(post)
+</code></pre>
+
+<p>查询文档：</p>
+
+<pre><code>#find one document
+blogs.find_one()
+#寻找全部符合一定要求的文档
+blogs.find({"author":"jom"})
+#list all documents
+blogs.find()
+</code></pre>
+
+
+  <address class="signature">
+    <a class="author" href="/">Xiang Chao</a> 
+    <span class="date">21 February 2012</span>
+    <span class="location"></span>
+  </address>
+  
+  <div class="prev-next">
+  
+    <a href="/hello" class="next" title="jeky">Next Post &rarr;</a>
+  
+  
+    <a href="/yong-pythonde-htmlparserfen-xi-htmlye-mian" class="prev" title="用python的HTMLParser分析html页面">&larr; Earlier Post</a>
+  
+  </div>
+  
+</div><!-- End Page -->
+
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'cloudaice'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+
+  
+  <div id="footer">
+  	<address>
+  		<span class="copyright">
+  			Content by <a href="/info/site.html">Xiang Chao</a>. Design by 
+  			<a href="http://mark.reid.name/">Mark Reid</a>
+  			<br/>
+  			(<a rel="licence" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Some rights reserved</a>)			
+  		</span>
+  		<span class="engine">
+  			Powered by <a href="http://github.com/mojombo/jekyll/" title="A static, minimalist CMS">Jekyll</a>
+  		</span>
+  	</address>
+  </div>
+  
+</div>
+
+<!--[if IE 6]>
+<script type="text/javascript"> 
+	/*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; } 
+	var IE6UPDATE_OPTIONS = {
+		icons_path: "http://static.ie6update.com/hosted/ie6update/images/"
+	}
+</script>
+<script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
+<![endif]-->
+
+  
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F804602e26e1df25cce6c94d5ac9e555e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+</body>
+</html>
+

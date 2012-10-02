@@ -1,0 +1,3395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>cloudaice wiki</title>
+ <link href="http://cloudaice.github.com/atom.xml" rel="self"/>
+ <link href="http://cloudaice.github.com"/>
+ <updated>2012-09-30T17:39:17+08:00</updated>
+ <id>http://cloudaice.github.com</id>
+ <author>
+   <name>Xiang Chao</name>
+   <email>cloudaice@163.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>learn lisp</title>
+   <link href="http://cloudaice.github.com/learn-lisp"/>
+   <updated>2012-08-21T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/learn-lisp</id>
+   <content type="html">&lt;p&gt;差不多大三的时候便听说lisp这种语言，看一些文章描述，只是觉得这是一种大牛们玩的语言。一直也不敢轻易接触。
+那个时候连python和ruby都有些生畏，只是知道c，java，php之类的。后来看了一篇文章之后，决心要自己学习一下
+python。写了一个java项目之后的我，接触到python，便喜欢上了，从此便不想再写java的代码了。后来又接触ruby
+，觉得脚本语言也相差无几。关于函数式编程，因为在学习python，再加上社区里各种大牛的熏陶，也体会到不少。
+但是像lisp这种纯函数式编程的语言，久久没有接触。&lt;/p&gt;
+
+&lt;p&gt;一个月之前，来到小米实习。入职当天，晚饭后，小组内的一个程序员找我聊天。由于当时刚刚来，也不知道以怎么
+样的方式去和一个程序员交流，而且是一个很有可能面试过不少人的程序员。幸亏我自己也坦荡没有什么可以紧张的。
+顺便就当作问问题的好机会。慢慢的我们先聊python，幸好自己对于python有比较多的研究。虽然一些方面的知识，
+对细节了解的不够，但是多少自己都研究过，看过网上那些参差不齐的文章。于是就按着自己的学习过程和看法，
+半询问，半聊天的方式交流起来。中间我询问使用hadoop的最终优势是什么？其实这个问题我在网上寻找资料也很久，
+但是没有一个我满意的答案。没想到他的短短解释就让我明白了。首先讲到计算机性能，从提高频率到多核的方向
+发展。多核的编程就会涉及到锁的问题。这是多线程编程中会碰到的最麻烦的问题，会让程序编写变得异常复杂。
+而这种锁的问题本质就是因为有共享的对象。我们涉及到关于锁的操作都是和共享对象相联系的。而hadoop这个系统
+就是解决了多个机器节点之间的程序运行锁问题。它可以让进来的东西很好的利用多个机器运行。在hadoop里面，
+我们可以看到我们都要编写map，reduce这样的函数。其实这个就是函数式编程的思想。这么一说，我才明白：
+使用hadoop主要的目的就是最大限度利用多个机器完成庞大的计算。这是计算机研究领域里面一个很普遍的问题啊。
+可是之前在我的脑袋里被想的那么复杂。基于此，其实不一定需要用到hadoop，如果我们编写的每个程序在各自节点
+上运行，对其它节点没有影响，那么就已经达到hadoop的效果了。于是纯函数的概念提出来了。编写的程序，
+让各个函数之间的偶和度尽量的低。那么在运行的时候，就不需要考虑死锁。而lisp就满足这样的要求。甚至是
+它的特点。&lt;/p&gt;
+
+&lt;p&gt;common-lisp和sbcl是lisp的两个方言。
+在ubuntu下安装很简单&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install sbcl
+sudo apt-get install common-lisp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行&lt;code&gt;sbcl&lt;/code&gt;便启动解释器了。&lt;/p&gt;
+
+&lt;p&gt;另外自己还安装了一下haskell&lt;/p&gt;
+
+&lt;p&gt;在&lt;a href=&quot;http://www.gnu.org/software/mit-scheme/liarc-build.html&quot;&gt;这里&lt;/a&gt; 下载合适的包，按照提供的方法安装便可。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>让webpy在服务后台运行并且记录log</title>
+   <link href="http://cloudaice.github.com/webpy-run-background"/>
+   <updated>2012-08-15T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/webpy-run-background</id>
+   <content type="html">&lt;h3&gt;让webpy在开发环境下以后台的形式运行在服务器上&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;setsid python index.py 8888 2&amp;gt; webpy.log
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ubuntu12.04下安装lamp</title>
+   <link href="http://cloudaice.github.com/lamp-on-ubuntu"/>
+   <updated>2012-07-06T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/lamp-on-ubuntu</id>
+   <content type="html">&lt;h3&gt;安装mysql&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo apt-get install mysql-server-5.5 mysql-client-5.5 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装过程中会要求书图密码&lt;/p&gt;
+
+&lt;h3&gt;安装apache2&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install apache2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;安装php5&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo apt-get install php5 libapache2-mod-php5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;测试php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo vim /var/www/info.php
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;写入一下内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+phpinfo();
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;浏览&lt;code&gt;localhost/info.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;安装phpmyadmin&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install phpmyadmin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;中间和有要求输入密码&lt;/p&gt;
+
+&lt;h3&gt;配置&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;为phpmyadmin添加链接&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo ln -s /usr/share/phpmyadmin /var/www/phpmyadmin
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改php.ini配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo vim /etc/php5/apache2/php.ini 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在最后一行加上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; extension=mysqli.so
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; 否则会出现&lt;code&gt;缺少 mysqli 扩展。请检查 PHP 配置&lt;/code&gt; 错误&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重新启动apache2和mysql&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo /etc/init.d/apache2 restart
+ sudo /etc/init.d/mysql restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h4&gt;一切OK&lt;/h4&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>markdown解释中文列表的问题</title>
+   <link href="http://cloudaice.github.com/markdown-list-chinese-problem"/>
+   <updated>2012-07-05T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/markdown-list-chinese-problem</id>
+   <content type="html">&lt;p&gt;使用jekyll写博客不经意之间就会遇到列表解释不正确的问题，有的时候可以正常解释，有时候却不行。
+我还一直以为是自己哪地方写错了。今天实在是不甘心，明明上下两句话是一样的，下一句话就是不对。
+最后，调试了很多遍终于发现当列表中有英文字符的时候，列表就可以正常解释出来。否则不可以，
+在网上查找到资料原来是jekyll的默认解释器的缘故。jekyll的默认markdown引擎是maruku。现在要改为
+rdiscount。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;编辑&lt;code&gt;_config.yml&lt;/code&gt;文件，在&lt;code&gt;pygments:true&lt;/code&gt;上面添加一行&lt;code&gt;markdown: rdiscount&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>重新安装系统之后要做的事情</title>
+   <link href="http://cloudaice.github.com/install-new-system-to-do-list"/>
+   <updated>2012-07-05T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/install-new-system-to-do-list</id>
+   <content type="html">&lt;h4&gt;设置分区&lt;/h4&gt;
+
+&lt;p&gt;主要挂载四个分区：
++ /boot  100 M
++ /      20 G
++ /home  留下的比较大的磁盘空间
++ swap   1G 到2G之间&lt;/p&gt;
+
+&lt;h4&gt;安装git&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;复制原来的.ssh文件到新的系统的用户目录下面（保证ssh的公钥和私钥和原来一样&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装一些依赖的库&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo apt-get install zlib1g-dev libssl-dev libcurl4-openssl-dev libexpat1-dev
+ sudo apt-get install git-core git-doc git-gui
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;配置git&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; git config --global user.name &quot;cloudaice&quot; 
+ git config --global user.email &quot;cloudaice@163.com&quot;
+
+ git config --global color.status auto  
+ git config --global color.diff auto  
+ git config --global color.branch auto  
+ git config --global color.interactive auto  
+
+ git config --global alias.st status  
+ git config --global alias.ci commit  
+ git config --global alias.co checkout  
+ git config --global alias.br branch 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设置git默认编辑器为vim&lt;/p&gt;
+
+&lt;p&gt; 编辑&lt;code&gt;.gitconfig&lt;/code&gt;文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; vim ~/.gitconfig
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; 添加如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; [core]
+     editor = vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装gitstats&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;gitstats是一个统计git项目的工作量的工具，统计之后会在一个目录下生成html的统计信息。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install gitstats 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gitstats /your/project/path  reportname
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样就会在reportname目录下面产生很多html文件。用浏览器打开里面的&lt;code&gt;html.index&lt;/code&gt;文件就可以查看了。&lt;/p&gt;
+
+&lt;h4&gt;安装vim&lt;/h4&gt;
+
+&lt;p&gt;这里我最终还是决定使用apt-get来安装vim&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install vim
+cd 
+git clone git@github.com:cloudaice/my-vim.git ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+sudo apt-get install exuberant-ctags
+sudo apt-get install ack-grep
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;配置python环境&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;下载ez_setup.py，安装它
+下载pip源码包，安装
+sudo apt-get install python-dev
+sudo pip install cython
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;修改用户目录下的文件为英文&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;export LANG=en_US 
+xdg-user-dirs-gtk-update 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在提示框中选择转换目录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export LANG=zh_CN 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重启之后，选择保存不再提示，保存旧名字&lt;/p&gt;
+
+&lt;h4&gt;设置goagent开机自动启动&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;将&lt;code&gt;.proxy.py&lt;/code&gt;设置成可执行文件：&lt;code&gt;chmod +x proxy.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在应用程序中找到&lt;strong&gt;启动应用程序&lt;/strong&gt;。点击&lt;strong&gt;添加&lt;/strong&gt;，写上应用程序名字，浏览到&lt;code&gt;proxy.py&lt;/code&gt;的文件。再添加
+&lt;strong&gt;注释&lt;/strong&gt;。这样在下次启动电脑的时候就自动运行了。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;安装软件&lt;/h4&gt;
+
+&lt;p&gt;安装茄子摄像头拍照软件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install cheese
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装rednotebook,用于记录日记&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install rednotebook 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装思维导图软件xmind&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;去官方网站下载xmind相应的安装包并且安装
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;配置终端提示符&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;简洁模式 (只是显示路径信息)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  PS1=&quot;[\[\033[32m\]\w]\[\033[0m\]-&amp;gt; \[\033[0m\]&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;其他模式见&lt;a href=&quot;http://coolshell.cn/articles/1399.html&quot;&gt;8个实用而有趣Bash命令提示行&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;配置conky&lt;/h4&gt;
+
+&lt;p&gt;conky是一个看上去很酷的监控工具，可以让桌面看上去更加hack&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装conky以及相关的软件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo add-apt-repository ppa:norsetto/ppa
+ sudo apt-get update
+ sudo apt-get install conky-all
+ sudo apt-get install python-statgrab ttf-droid curl
+ sudo apt-get install lm-sensors hddtemp
+ sudo sensors-detect         （一路回车，软件会自动检测）
+ sudo /etc/init.d/module-init-tools start
+ sudo chmod u+s /usr/sbin/hddtemp
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;去下载&lt;a href=&quot;https://github.com/cloudaice/conky-colors&quot;&gt;conky-color&lt;/a&gt;，然后&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; cd conky_colors
+ make
+ make install （安装完成conky-color）
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;生成配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; .conkycolors$ conky-colors –lang=en –theme=human –clock=modern –calendar –hdtemp1=sda –cpu=2 –cputemp –swap –updates –proc=6 –mpd –network –eth=0 –battery –ubuntu –weather=CHXX0037 –unit=C –ring
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; 这一步有很多方法，具体参考&lt;a href=&quot;http://forum.ubuntu.org.cn/viewtopic.php?t=313031&quot;&gt;个性化配置conky&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;启动观察效果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; conky -c /home/shua/.conkycolors/conkyrc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>importance of reading careful</title>
+   <link href="http://cloudaice.github.com/importance-of-reading-careful"/>
+   <updated>2012-06-30T22:33:00+08:00</updated>
+   <id>http://cloudaice.github.com/importance-of-reading-careful</id>
+   <content type="html">&lt;p&gt;又有好一段时间没有写博客了，总觉得自己在忙，但是细数起来，自己并没有做多少实在的事情。&lt;!--more--&gt;这样想着，不免就有些沮丧了。
+早几天发生一件事情，让我的情绪好几天没有缓过来，不过一直以来，自认为是一个非常乐观的人。所以生活还是要继续的。
+有些东西就自己知道，埋在心底吧。下面还是说说实在的。&lt;/p&gt;
+
+&lt;p&gt;早些时候用到python的geventhttpclient库的时候，总是有一个警告，告诉我某个包已经被丢弃了，用另外某某包替换了。
+当时也是刚刚用这个扩展库做东西，还没有上手，就告诉我各种错误，连样例都过不了。心中甚是不爽，又因为学校的各种事情，
+也就放着，没有怎么管了。现在回头想想，还是仔细看看吧，于是晚上从新根据提示，查看相应依赖的gevent包，因为本机上的是egg包，
+所以就直接去github上看源代码。发现版本不对，相差了好多，代码对不上。于是就上了gevent的网站上，看到有提示最新的1.0版本可以在
+google code上面下载。于是跑到google上面去下载源代码，因为依赖关系，又安装了cython。最后安装好了最新的gevent扩展包。
+但是当我执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import geventhttpclient
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;又告诉另外一个警告，gevent.core已经被替换成gevent.lock了。这个时候我知道肯定是这个gevent安装的太新了。geventhttpclient
+还没有来得及更新过来。但是哪个是比较好的呢？于是我就在gevent的github的readme上看，发现原来写了这么几个字&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Python 2.6 and 2.7 are supported as well as gevent 0.13 and gevent 1.0a3.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;自己当时就没有仔细好好看看。装的gevent是1.0b2的，所以就有出错了。于是重新卸载gevent1.0b2，再次安装gevent1.0a3。
+再次打开python运行就完全ok了。以后真的应该仔细看看文档。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>要让自己学会专注</title>
+   <link href="http://cloudaice.github.com/xue-hui-zhuan-zhu"/>
+   <updated>2012-05-16T18:03:00+08:00</updated>
+   <id>http://cloudaice.github.com/xue-hui-zhuan-zhu</id>
+   <content type="html">&lt;p&gt;昨天最终下定决心离开了实验室，感觉一下子就轻松了许多。经过一段时间的思考，我发现我自己缺少&lt;strong&gt;专注&lt;/strong&gt;，自己学python，还使用django开发网站，又要学ROR的开发，
+还学习前端设计css，js...，又想要参加nodejs的开源项目，还要研究Nosql数据库，高并发访问，nginx服务器配置，linux文件系统，fuse文件系统，socket编程，levelDB，&lt;!--more--&gt;
+oAuth服务端设计....还有实验室的Vxworks开发。
+很多时候真的感觉自己的脑袋有些转不过来，但又什么都不想放弃。再加上各种面试准备和课程考试，痛苦不已。各种面试的碰壁让我静下心来冷静地思考失败的原因，
+最终我觉得自己缺少&lt;strong&gt;专注&lt;/strong&gt;。
+于是我给自己一个选择的机会，离开了原来的实验室，因为我自己对硬件级别上的开发并不是很感兴趣，只是觉得底层的实现原理应该要了解，才能够写出优秀而高效的上层应用来。
+之前我一直认为只要给自己安排更多的学习任务就可以让自己不断提高，但是现在证明这样子会失败。往往最终什么也得不到，更多的是丧失了对自己的肯定感和成就感，
+而在最近全球移动互联网大会上，雷军讲到的“专注”让我感到自己也许就是被各种各样的“学习任务”给拖住了。每天自己感觉压力很大，但是回头看看自己实实在在做出来的东西
+却是少的可怜。而现在觉得自己只要学习好课程内的知识，然后好好复习就可以了，可以在校园悠闲的逛逛了。而在这样轻松的心情下也可以让自己静下心来专注的做一些事情。下面记录一下这些时间苦逼的面试经历吧。&lt;/p&gt;
+
+&lt;h3&gt;腾讯&lt;/h3&gt;
+
+&lt;p&gt;因为腾讯是最早来我们学校招实习生的，所以处女笔和处女面都给了腾讯，那天上午腾讯笔试，下午微软笔试，微软笔试是全英文的选择题，自己英文本来就不好，笔试也就没有过。
+腾讯面试比较戏剧性，我是第二天早上去面试，有当天去面试的同学，然后那天晚上回来给我们讲面试的题目和面试的经验，当时也就是熟悉熟悉，没有怎么在意，结果第二天过去之后，
+竟然和我同学是同一个面试官，面试时候的问题都是差不多的。我当时就有些hold不住了。但是和我同学不同的是我对web开发学的不深，也不怎么用php。而面试管貌似就是phper，
+一上来就问我用什么语言写的那个小网站，我说用python的Django框架。然后就问我觉得用php开发怎么样，我说当时学的第一门web开发语言就是php，当时初学的时候，
+给我一种感觉，就是比较乱，可以任意嵌套在html代码里，而且当时还要配置apache服务器，就是感觉有些乱。然后他就说其实php才是最能够让人了解web开发的语言，然后跟我讲php语言的各种优势。
+其实我自己对偏向底层一些的东西比较感兴趣。所以后来问我一些Xpath之类问题的时候，我就回答不知道。而我偶尔问他WSGI具体表示什么，他说他不知道。
+中间给我出了两道算法题，一道是给你一个字符串和一个包含一堆字符窜的数组，让你判断该字符窜是否在这个数组里面。我第一反应就是用hash，将数组里面的字符窜映射成一个有连续
+整数的区间，然后求待判断的字符窜的hash函数值，然后再问我还有没有其他方法，我说用分类查找，其实也就相当于hash分类。后来回来自己想想，基本方法应该就是hash，但是我说的
+有些偏离。另外一道是说有一个2G的文件，里面放着一列QQ号，然后找出这里面重复次数最多的QQ号。限制是内存只有1G。我当时就想是不是有什么特别巧妙的方法，但是一直没有想出来，
+后来他提示说“bitmap”，但是我还不知道什么是bitmap。但是本能的感觉就是用位来表示，这样字明显可以节省内存空间。但是还是没有想到什么特别有效的方法，最后经他提示，说将
+QQ号映射成位表示，这样的子就都可以存在内存里面了。可是当时我根本就没有往这个方面想。后来想了一下他的这种优化方法也就刚刚好适合这道题目。最后面试结束之后，给我的一个
+感觉就是我和他做的不是一个方向的。我关心的问题他不怎么研究，而他研究的东西我不知道。最终也就这样了。&lt;/p&gt;
+
+&lt;h3&gt;小米&lt;/h3&gt;
+
+&lt;p&gt;其实这个面试真的是一个巧合，当时很匆忙，听到有小米实习的消息过去听了宣讲会，当时连简历都没有带，等到现场之后才知道宣讲会之后就要进行笔试。于是也就是抱着试试的心态去
+了，但是很意外，当天晚上竟然就给我打电话了，然我去第二天去面试。于是第二天就是这么去了，小米的面试效率真的是很高，进去之后，房间里坐着两个人，然后让我坐在一个小的
+柜子上，于是面试就开始了。开始的时候我就傻逼了，原理是两个人一起面试我。一个纯技术，一个偏生活。不过我当时也没有什么紧张，就全都豁出去了。那场面试真的是什么都说，
+基本自己会的那点东西全都说了一边，而那个技术大牛貌似也是一个全才，从算法到数据库，从C语言到nodejs。最后简直不是面试官和被面试的关系，而是两个人交谈了。当然绝大多的
+情况下都是我被问得倒了底。一个小时的“舌战”之后。让我在外面等一下，然后就告诉我暑假可以去那里了。我当时也没怎么记清楚他说的话，然后就回来了。说实话，在这样两个人面试
+我一个的情况下，我竟然可以“活着”出来了，有点小庆幸。同时现在想想也挺幸运的，刚好这次面试没有让我现场写代码。而都是谈一些原理性质的本质的东西。也仅仅是这一次。&lt;/p&gt;
+
+&lt;h3&gt;百度&lt;/h3&gt;
+
+&lt;p&gt;百度就是比较纠结了，中间有各种各样的原因，在这里也没有办法细说了。首先我投递的是系统研发的岗位，但是哈尔滨这个职位不过来找人，也不用笔试，筛选完简历之后就电话面试，
+结果到了其它职位要笔试的时候，还没有收到通知，无奈之后，只能是去霸王笔，那个考场环境真是混乱，10点开始的考试，被各种干扰，发试卷，最后到一点才考完试。当时感觉时间
+有点不够用，不过大自的都已经答上了。于是回来等消息，悲惨的是和我一起的同学收到了消息，而我悲剧了，当时就郁闷了，觉得自己怎么也不会在笔试上面就被刷了吧，而且和我同学
+也讨论了题目，基本上都是差不多，就是其中一道题目想法完全不一样。回头想想唯一可以解释的就是自己当时写的字实在是太难看了。但是自己总是觉得不甘心，郁闷了一晚上，第二天
+决定跟着同学一起去，不算是霸面，但是就想看看自己的试卷得了几分。然后在门口，听同学和面试官交流。其中讲到笔试的题目，刚好说道我同学想法不一样的那道题目，结果我当时的
+答案是正确的。于是更加增加了我郁闷的心情。等同学面试结束之后，我硬着头皮和面试官说，说实话，面试官真的是很nice。非常友好，把我的简历拿着去找HR，还向我解释批卷的时候
+难免会有差错。当时我真的很感激。也算是幸运吧，当时刚好另外一个房间面试的同学没有来，于是我就在一半的时候插进去了。进去之后就是两道提，写代码，一个数的集合，其它数都
+出现两次，只有两个数出现一次，这两个数不相同。我知道要是一个数出现一次的话直接抑或，但是两个数就不知道有什么O(1)的空间复杂度。没有很好回答上来，第二道写单链表反转，在这里我真想打死自己算了，当时不知道什么地方抽筋，就是在保存节点的时候没有用next。又紧张的原因，写了半天了，最后他一说next。我恍然大唔。然后就说好了。我想估计悲剧了。
+不过很意外后来接到了二面的电话。于是面试那天早上过去了，开始的时候也是要我讲自己写的那个小网站，然后就延伸到高并发，火车票订购网之类的，我就根据自己之前看过的博客，
+文章讲述思想，还提到mapreduce。然后他要我详细讲讲mapreduce的工作原理。其实这个我在几个月之前接触到google的Bigtable的时候，就花了不少时间去研究，还去图书馆借书查看，
+延伸到hadoop的一整套开源云计算框架。当时因为觉得这些没有条件在自己笔记本上面实现。所以就没有彻底明白里面的内容。而现在提及也是仅仅有一点点的印象而已，也不敢自己说，
+于是就说具体不太清楚。后面还有类似的相似的问题。由于只是自己看的，而没有实际使用过，也不敢说。而更有一些，我研究和使用过的，面试官却没有。
+另外自己在纸上面写代码的能力真的是太弱了，我自己都觉得自己写在纸上的代码惨不忍睹。在这中间问了我一道很简单的额问题，我当时就想是不是可以用什么特别巧妙的方法来解决，
+于是就想了很久，但是也没有什么特别的方法，于是就有普通的方法写了一下，但是那个代码写的真的是很难看，然后怕他看不明白，于是就讲一边。虽然也行，但是效果就不一样了，
+再后面就各种讲我自己研究过接触过的东西，其实我很想在我讲的时候，面试官能够提出一些我不太完整的认识的，但是悲剧的是，有些我讲的东西，他说没有研究过。尤其是最后让我
+问几个问题的时候，我问了一个文件系统和oAuth服务器端认证的问题，可怜的是这两个问题他都不研究，但是也是一般性的和我讲一下，其中我还发现他对linux文件系统实现也不太了解。
+反正最后就这样没有消息了。后来回过来想想，自己都不知道面试官是哪个部门的。不过从交谈中猜测应该是数据挖掘，数据处理方向的，因为他对map/reduce这些比较熟悉。最后还是有些
+郁闷，因为总是觉得这样的面试是有太多的影响因素了，其中在面试的时候，我要应聘的职位都是未知的。交谈中就各种“不兼容”……&lt;/p&gt;
+
+&lt;h3&gt;写在最后&lt;/h3&gt;
+
+&lt;p&gt;尽管有很多的郁闷，但是自己还是冷静下来思考原因，其中一个就是不够专注，给自己太多的方面，于是就就没有一个细的切入点。尤其在面试的时候，如果不是真正弄明白的，就很容易
+显得夸夸其谈，还有一个比较弱智的地方就是在面试的时候，碰到很简单的问题的时候，总会想会不会有什么玄机，然后想半天可优化的办法，
+更加的要命的是在那样的状态下面根本不会跳出什么灵感来。于是在写代码的环节上自己都觉得很垃圾。其实这个最终原因还是自己平时书写的代码量不够，没有一个好的写代码的习惯。
+现在自己选择推出了实验室，感觉轻松了许多，接下来好好做一两个事情，首先是基于fuse的文件系统，先完成了，也算是课程的一个交代。然后再实现一oAuth的服务器端的认证，其它的
+还有时间的话就把自己的小网站改进一下，优化一下客户端，在离开学校之前也算是留下一些东西吧。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>OAuth 学习小记</title>
+   <link href="http://cloudaice.github.com/oauth"/>
+   <updated>2012-05-06T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/oauth</id>
+   <content type="html">&lt;p&gt;这两天一直在研究怎么在ruby on rails项目上建立自己的开发API。现在知道了一些原理性的东西，
+记录下来，以备以后学习使用。首先展示一张网上摘录的图片&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/OAuth.jpg&quot; alt=&quot;OAuth原理图&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>linux的内存地址小解</title>
+   <link href="http://cloudaice.github.com/mem-address"/>
+   <updated>2012-05-03T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/mem-address</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;三个比较常见的概念&lt;/em&gt;:逻辑地址，线性地址，物理地址。&lt;/p&gt;
+
+&lt;p&gt;逻辑地址由段选择符和偏移量组成，段选择符是16位，偏移量是32位。
+下面主要讲从逻辑地址到线性地址再到物理地址的转换。&lt;/p&gt;
+
+&lt;p&gt;X86中有这么几个段寄存器：cs,ds,ss,es,fs,gs。前三个为专用寄存器，后三个不时专用寄存器。
+代码段，数据段，堆栈段。其中段描述符就存放在段寄存器中。&lt;/p&gt;
+
+&lt;p&gt;段描述符中前13位index保存段选择符的想对偏移位子。1第14位为0表示使用GDT，为1表示使用LDT。最后两位
+描述优先级，一共有四种状态，linux使用了两种，00和11分别表示内核态和用户态。&lt;/p&gt;
+
+&lt;p&gt;GDT：全局描述符表，存放段描述符,全局拥有&lt;/p&gt;
+
+&lt;p&gt;LDT：局部描述符表，存放段描述符,进程拥有&lt;/p&gt;
+
+&lt;p&gt;gdtr寄存器：存放全局描述符表的物理地址。&lt;/p&gt;
+
+&lt;p&gt;ldtr寄存器：存放局部描述符表的物理地址。&lt;/p&gt;
+
+&lt;p&gt;段描述符由八个字节构成，其中有32为名为base的字段。&lt;/p&gt;
+
+&lt;p&gt;段描述符物理地址计算：gdtr or ldtr + index*8&lt;/p&gt;
+
+&lt;p&gt;将段描述符中的base字段与逻辑地址的偏移量相加得到的就是线性地址&lt;/p&gt;
+
+&lt;p&gt;在上面的过程中我们可以发现，每次要通过逻辑地址获得线性地址都要寻找段描述符的位置，其实在这里，第一次找到段描述符的时候，
+会把段描述符加载到一个不可编程的寄存器当中，以后就直接在这个寄存器中取得段描述符就可以了。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;从线性地址到物理地址&lt;/em&gt;：
+在32位系统中，使用了二级页表进行转换,分别为页目录，页表。线性地址被分成10，10，12。&lt;/p&gt;
+
+&lt;p&gt;页目录的物理基地址存放在cr3寄存器里面。结合开始的10位，可以找到页目录项。共有1024个页目录项。也目录项中可以找到页表的物理基地址。结合第二个10位，
+可以找到页表项。页表项中可以得到页框地址，结合最后12位可以得到具体的物理地址。从这里也可以知道，一个页的大小为4096B.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>linux下的进程调度方法小记</title>
+   <link href="http://cloudaice.github.com/thread-manage"/>
+   <updated>2012-04-29T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/thread-manage</id>
+   <content type="html">&lt;h4&gt;linux进程调度策略小看&lt;/h4&gt;
+
+&lt;p&gt;之前在操作系统课程中学过关于进程调度的算法，linux基本上是基于优先级的时间片轮转法。
+目的就是既能够实现进程之间的抢占，又不至于让低优先级的进程被饿死。具体策略很多，记得
+0.11内核就是根据时间片来动态修改进程优先级实现的。在0.11中就绪进程队列是用链表实现的。
+因此理论上要找到最高优先级的进程，时间开销应该是0（N）。后来我以为现在linux内核对就绪队列
+的管理是采用优先队列的，傻傻的想，时间开销应该是O（logN）。之前一次面试的时候，面试官问我
+2.6内核中的进程调度算法是怎样实现的。我当时用0.11的思想讲了一下，然后提了优先队列的思想。
+面试官很得意的说2.6内核的进程调度是O（1）的。并且还说让我回去好好看看。于是在网上搜寻了一
+些资料。大自思想了解了一些。其中O（1）指的就是linux中的进程优先级个数是一个常熟。具体实现方法如下：
+从《深入理解linux内核》可以了解到，linux基本上将优先级分成100-139。可见这里一共也就是40个大小的优先级。
+linux在进程队列中使用bitmap设计了一个队列。分别用1和0表示该优先级的进程队列是否为空，如果不为空，则为1，否则为0
+，因此每次只要从最高优先级处开始扫描，知道找到标记为1的地方。然后就可以找到该优先级的进程列表，进行调度。也就是实现了
+调度开销为O（1）的算法。的确很巧妙。另外在看资料的时候还看到一种Cgroup的方法，基本上是一种分类的方法。“容器嵌套容器”。
+在很多地方，算法优化都会采用到“分类”的思想方法。包括hash，B树，二分等等（个人观点）。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>select poll epoll</title>
+   <link href="http://cloudaice.github.com/selectpollepoll"/>
+   <updated>2012-04-25T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/selectpollepoll</id>
+   <content type="html">&lt;h3&gt;名词解析&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mmap：内存映射。具体的意思就是共享同一块内存进行消息传递。我看见到比较多的地方就是内核态和用户态之间
+的消息传递采用mmap技术。很明显，如果是使用一般的复制方法的话，在内核态和用户态之间的消息传递所需要的开销
+就会很大。而使用了共享一块内存的技术之后就可以大大提高消息传递的效率。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;总述&lt;/h3&gt;
+
+&lt;p&gt;它们的作用都是监听文件描述符，姑且可以这么认为，然当主要作用是它监听文件描述符所发挥的作用了。&lt;/p&gt;
+
+&lt;h3&gt;select和poll&lt;/h3&gt;
+
+&lt;p&gt;这两个比较相似，其中select要早于poll出现。select默认监听文件描述符为1024个，在sys/select.h中有定义，
+虽然可以修改值的大小,但是改变大小之后对使用的性能会有一定的影响。select和poll都使用了轮询的方法。
+，这就意味着，当单个进程打开的文件描述符比较多的时候，就会出现一个相对比较长的轮询周期，效率会大大降低。
+并且，在内核态向用户太传递消息的时候，使用复制的方式，向用户态进程发送消息，这是一种水平触发的方式，
+即，当某个文件描述符处于就绪状态的时候，内核态就会向用户态进程发送消息。而当用户态进程没有处理的时候。
+下一轮轮询的时候，还会继续向用户太进程发送消息。poll相对select不同的地方，poll中对文件描述符采用链表组织，
+因此访问的大小没有限制。&lt;/p&gt;
+
+&lt;h3&gt;epoll&lt;/h3&gt;
+
+&lt;p&gt;这个方法是在2.6内核中才加进去的。相对于select和poll，有两点比较好的提升：1，不再是采用轮询方式，而是基于
+时间就绪通知方式，内核采用一种类似回调的机制，对就绪文件描述符发出通知，支持水平触发和边缘触发。2，
+采用了mmap技术，用户态和内核态共享一块内存区域，这样就避免了两个态之间频繁的数据复制。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>arch installation</title>
+   <link href="http://cloudaice.github.com/arch-installation"/>
+   <updated>2012-04-25T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/arch-installation</id>
+   <content type="html">&lt;h3&gt;安装环境&lt;/h3&gt;
+
+&lt;p&gt;ubuntu 下的vmware8.0.1&lt;/p&gt;
+
+&lt;h3&gt;获得安装资源&lt;/h3&gt;
+
+&lt;p&gt;在&lt;a href=&quot;www.archlinux.org/download&quot;&gt;www.archlinux.org/download&lt;/a&gt;下载core的镜像，我选择的是i686&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：一共有两种镜像，core是用来本地安装的，而另外一个Netinstall是用来网络安装的，一般网络不好的都
+是下载core镜像进行安装。&lt;/p&gt;
+
+&lt;h3&gt;配置虚拟机参数&lt;/h3&gt;
+
+&lt;p&gt;这里主要是设置Vmware中的一些硬件配置，基本和安装其它linnux发行版相似。我最后将打印机和软盘直接删除了，
+另外网络选择nNAT连接。&lt;/p&gt;
+
+&lt;h3&gt;安装archlinux&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;打开Vmware运行开关&lt;/li&gt;
+&lt;li&gt;会进入一个命令行的界面&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;配置archlinux&lt;/h3&gt;
+
+&lt;p&gt;安装完成后，执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ping www.baidu.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;测试网络是否已经连接&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vi /etc/pacman.d/mirrorlist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;观察里面的内容，将china下的源的注释去掉。设置软件下载源，选择设置中国的源，下载更新的时候速度会比较快。&lt;/p&gt;
+
+&lt;p&gt;执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -Syy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;刷新所有软件包&lt;/p&gt;
+
+&lt;p&gt;执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -Syu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;更新系统，在这里会遇到一些很难缠的问题，我在安装的时候出现了类似下面的错误信息：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;glibc: /usr/sbin/zic exists in filesystem
+glibc: /usr/sbin/zdump exists in filesystem
+glibc: /usr/bin/tzselect exists in filesystem
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个问题纠结了我很长的时间，一度让我几乎是中断了安装archlinux。解决方法如下：&lt;br/&gt;
+显然，这里提示安装出现了冲突,可以强制更新pacman,输入下面的命令:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -Sf pacman
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这条命令真的是异常好用,执行时候，屏幕上面会有一大堆的字，到最后会有这么一句警告：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;warning: /etc/pacman.conf installed as /etc/pacman.conf.pacnew
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;于是可以执行下面的命令对它进行修改&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mv /etc/pacman.conf.pacnew /etc/pacman.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;编辑 /etc/pacman.conf文件
+在[option]后面加上一行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SigLevel = Never 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后继续执行上面指令，更新系统:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -Syu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个时候，就不会出现可恶的glibc了，因此，在我的机器上还是出现了冲突，其中一个是filesystem。但是，
+这些问题很容易解决，只要执行下面命令就可以了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S filesystem --force
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果是碰到另外的包的名字，则可以把filesystem替换成另外的名字。
+把这些冲突解决之后再运行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -Syu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;直到更新完成后没有任何错误为止。
+&lt;em&gt;走完这一步之后，下面的路基本上是平步青云了&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3&gt;配置系统&lt;/h3&gt;
+
+&lt;h5&gt;安装Xorg&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;安装mesa获得3D支持&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S mesa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;查看显卡驱动&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman –Ss xf86-video|more
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;安装显卡驱动&lt;/h5&gt;
+
+&lt;p&gt;因为这里是在Vmware中安装arch，所以安装以下驱动&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman –S xf86-video-vmware
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;查看输入设备驱动&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -Ss xf86-input
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;安装鼠标，键盘，热插拔，触摸板驱动&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S xf86-input-vmmouse xf86-input-keyboard xf86-input-evdev xf86-input-synaptics
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;安装gnome守护程序dbus&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S dbus
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;启动dbus进程&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rc.d start dbus
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将dbus假如到守护进程中去,编辑/etc/rc.conf,在DAEMONS中添加dbus&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DAEMONS = (..dbus..)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;测试xorg的图形界面&lt;/h5&gt;
+
+&lt;p&gt;执行下面命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Xorg -configure
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;系统会在/root/下面生成一个xorg.conf.new的文件，我们需要将xorg.conf.new拷贝到/etc/X11/目录下，并且重命名为xorg.conf。命令如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp /root/xorg.conf.new /etc/X11/xorg.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;安装测试图形界面的环境&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S xorg-twm xorg-xclock xterm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;测试xorg图形界面：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;startx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出现图形界面的命令行，你可以输入exit退出&lt;/p&gt;
+
+&lt;h5&gt;安装字体&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman –S ttf-dejavu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;安装gnome&lt;/h5&gt;
+
+&lt;p&gt;在安装gnome之前先检查系统当前是不是最新,运行下面两条命令:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -Syu
+pacman =Syy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装gnome桌面&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S gnome
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里会问你要安装那些包，由于我是第一次安装，就选择默认，全部安装，因此直接敲击回车就可以。另外安装gnome需要下载较多的软件包。网络环境要好，
+不然会花费较多的时间，这里我提供一个能够加快下载速度的方法：使用axel。一个linux下面的多线程下载工具。我们可以把它和pacman连在一起使用。方法如下
+&lt;strong&gt;安装axel&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S axel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vi /etc/pacman.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在option这一项里加上下面一句话&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;XferCommand = /usr/bin/axel -n 5 -a -o %o %u
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样子，以后使用pacman下载的时候，就可以利用多线程的优势了。&lt;/p&gt;
+
+&lt;p&gt;安装gnome扩展&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S gnome-extra
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;:在这个过程中，如果安装结束出现类似下面的错误：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;error failed to commit transaction (invalid or corrupted package)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可能是因为安装包不完整导致的原因，进入/var/cache/pacman/pkg/目录下，执行下面命令寻找不完整的包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ls *.part*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看到列出的不完整的包，则手动删除。然后再重新安装相关软件。&lt;/p&gt;
+
+&lt;p&gt;安装vmware虚拟机扩展：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S open-vm-tools
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5&gt;启用gnome&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;startx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面是一张图片
+&lt;img src=&quot;/images/arch-gnome.png&quot; alt=&quot;arch-gnome&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>deploy with gitosis</title>
+   <link href="http://cloudaice.github.com/deploy-with-gitosis"/>
+   <updated>2012-04-19T15:14:00+08:00</updated>
+   <id>http://cloudaice.github.com/deploy-with-gitosis</id>
+   <content type="html">&lt;blockquote&gt;&lt;p&gt;没想到一开学之后就那么久没有写新的博客了&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;由于项目开发的需要，我们小团队需要搭建一台git仓库服务器，虽然用git那么长时间，但是搭建git服务器还是
+第一次，毕竟平时使用只要在github上面托管就OK了。下面介绍一下自己使用gitosis搭建git服务器的过程。&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h3&gt;gitosis介绍&lt;/h3&gt;
+
+&lt;p&gt;应该也会有像我一样对gitosis只是知道名字，然后潜意识的认为它是一个软件。其实这么想也没有什么大的错误，
+但是当我使用它的时候，我还是有点惊喜。仿佛形成了这样的一条规律，但是和git相关的都要使用“版本库”
+这个东西，就像博客一样，对于gitosis，我们所要维护的就是一个特殊的版本库。&lt;/p&gt;
+
+&lt;h3&gt;gitosis配置过程&lt;/h3&gt;
+
+&lt;p&gt;一台服务器，当然我使用的是ubuntu服务器。其他linux系统的服务器的方法应该也是打通小异。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装openssh-server，因为我本身就是使用ssh登录远程服务器进行配置的，所以就不用安装。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装git，使用&lt;code&gt;sudo apt-get install git-core&lt;/code&gt;命令,在ubuntu下使用这个命令安装git会发现在使用git命令
+的时候不能自动补全，但是这在服务器端操作已经足够了。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装python-setuptools,因为gitosis是用python语言编写的，因此需要安装它。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接下来是要克隆gitosis到本地。&lt;a href=&quot;http://progit.org/book/zh/ch4-7.html&quot;&gt;progit&lt;/a&gt;和github上的&lt;br/&gt;
+&lt;a href=&quot;https://github.com/res0nat0r/gitosis&quot;&gt;gitosis&lt;/a&gt;介绍使用&lt;code&gt;git clone git://eagain.net/gitosis&lt;/code&gt;命令克隆，
+但是我在使用的时候返回：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;eagain.net[0: 208.78.102.120]: errno=Connection refused   
+ fatal: unable to connect a socket (Connection refused)&lt;/code&gt;错误。google后未果。我就直接克隆github上的gitosis仓库。
+至少在我的理解上，这里的的仓库是不会缺少某些东西的。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装gitosis, &lt;br/&gt;
+&lt;code&gt;cd gitosis&lt;/code&gt;&lt;br/&gt;
+&lt;code&gt;sudo python setup.py install&lt;/code&gt; &lt;br/&gt;
+如果没有出现错误的话，gitosis就已经安装在你的服务器上面了。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;blockquote&gt;&lt;p&gt;下面讲述它神奇的使用方式了&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h3&gt;ssh访问&lt;/h3&gt;
+
+&lt;p&gt;其实我自己对ssh也不时研究很多，讲一讲我自己的了解吧，举个例子：你有一台linux服务器，上面运行
+openssh程序，那么你使用 &lt;code&gt;youname@servername&lt;/code&gt;命令就可以登录远程主机，当然这里面有验证的方式，主要有两种，
+一种是基于password的，也就是在你输入上面这条命令之后，再输入密码。另外一种是应用最广泛也最安全的，
+使用公钥和私钥方法，使用&lt;code&gt;ssh-keygen&lt;/code&gt;命令可以在&lt;code&gt;~/.ssh/&lt;/code&gt;目录下产生一对公钥和私钥，正常情况下名字分别为
+&lt;code&gt;id_rsa&lt;/code&gt;和&lt;code&gt;id_rsa.pub&lt;/code&gt;,你可以使用文本查看器来观看里面的内容。这两个文件一个是公钥，一个是私钥。
+这两个文件不能被别人知道。尤其是私钥。下面使用网上的一张图片说明一下它们的认证原理。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ssh.jpg&quot; alt=&quot;ssh&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们使用ssh公钥私钥机制进行认证的时候，需要将公钥文件上传到服务器，在服务器的&lt;code&gt;~/.ssh/&lt;/code&gt;目录下面会有一个
+&lt;code&gt;authorized_keys&lt;/code&gt;文件，我们需要把上传到服务器的公钥放到这个里面就可以了。多个用户可以顺序将各自的公钥
+放在这个文本文件里面。&lt;/p&gt;
+
+&lt;h3&gt;添加一个git用户&lt;/h3&gt;
+
+&lt;p&gt;我们需要在服务器上面添加一个git用户，以后凡是访问这个服务托管代码的都需要使用这个
+用户名，我们想一下github是不是也是如此呢？添加用户的命令&lt;code&gt;sudo useradd git&lt;/code&gt;.gitosis wiki上的方法应该
+是&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    sudo adduser \
+    --system \
+    --shell /bin/sh \
+    --gecos 'git version control' \
+    --group \
+    --disabled-password \
+    --home /srv/example.com/git \
+    git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用这两种方法添加用户都可以，其中注意一点：git用户是否可以使用sudo。如果不能，在后面初始化gitosis-admin
+仓库的时候会出错，解决办法是&lt;code&gt;visudo&lt;/code&gt;，在打开的文件的最后一行加入&lt;code&gt;git ALL = (ALL) ALL&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3&gt;执行gitosis-init命令&lt;/h3&gt;
+
+&lt;p&gt;执行该命令就相当于是初始化一个管理仓库，执行这条命令前，我们需要准备一个公钥，
+以后，你也将使用这个公钥和私钥对管理这个gitosis服务器。现在我们执行下面这条命令:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo -H -u git gitosis-init &amp;lt; /tmp/id_dsa.pub&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;其中&lt;code&gt;id_dsa.pub&lt;/code&gt;是你的公钥的名字。这条命令会在你的git
+用户的目录下面新建一个&lt;code&gt;repositories&lt;/code&gt;的目录，并且初始化出一个gitosis-admin.git的仓库。在这里说一下，
+gitosis的管理主要就是维护这个仓库。另外一点:以后新建的一些仓库都会在&lt;code&gt;repositories&lt;/code&gt;的目录下面。显然，
+这个gitosis-admin是一个特殊的仓库，或者可以说是一个管理员维护的仓库。最后，还要执行下面命令，
+给&lt;code&gt;post-update&lt;/code&gt;加上权限。&lt;code&gt;sudo chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;维护gitosis-admin仓库&lt;/h3&gt;
+
+&lt;p&gt;在上面的操作基础上，执行&lt;code&gt;ssh git@gitserver&lt;/code&gt;,如果出现类似
+&lt;code&gt;PTY allocation request failed on channel 0&lt;/code&gt;的信息，则表示用户身份已经识别，因为没有运行git命令，所以
+链接断开。现在把远程的gitosis-admin仓库克隆到本地：&lt;code&gt;git clone git@gitserver:gitosis-admin.git&lt;/code&gt;。
+就像使用github一样，你会得到一个gitosis-admin的目录。里面的内容也是非常简单，基本上显示的目录如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    |-- gitosis.conf
+    `-- keydir
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中gitosis.conf是一个配置文件，keydir是一个目录。查看gitosis.conf文件，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    [gitosis]
+
+    [group gitosis-admin]
+    writable = gitosis-admin
+    members = cloudaice@gmail.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配置文件可读性也非常强，它显示了gitosis-admin仓库的管理者cloudaice@gmail.com。并且具有写权限
+&lt;code&gt;writable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;现在我们新建立一个仓库,仓库的名字叫web-project,并且添加开发者:cloudaice@gmail.com&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    [group web-developer]
+    writable = web-project
+    members = cloudaice@gmail.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改配置之后就可以像提交普通仓库一样&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    git add .
+    git commit -m &quot;message&quot;
+    git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在这里，我们不需要到服务器上面建立仓库。只要将gitosis-admin推送到远程服务器上面就可以。然后在你真正
+推送项目的时候，会自己自动建立仓库，想一想，github是不是也是这么使用的？
+现在我们切换到web-project项目的目录下面。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    cd web-project
+    git remote add origin git@gitserver:web-project
+    git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里填写版本库的名字的时候，直接在服务器名字的后面用冒号引出来就可以了。到这里都没有出现错误的话，
+基本就已经OK了。
+现在，我们要进行团队之间的协作了，我们为john,josie和jessica添加公钥，把john.pub,josie.pub,
+jessica.pub添加到&lt;code&gt;keydir&lt;/code&gt;目录下面.接下来把这里人加入到&lt;code&gt;web-developer&lt;/code&gt;团队当中。编辑gitosis.conf文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    [group web-developer]
+    writable = web-project
+    members = john josie jessica
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最后提交这个修改。这些新成员也可以对版本库拥有推送的权限了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：这里添加的用户的名字，应该要和公钥文件的名字对应，另外，gitosis仓库比较特殊，因为是使用gitosis-init命令初始化建立的，因此就使用了公钥里面最后的邮箱地址。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h3&gt;简单的权限控制&lt;/h3&gt;
+
+&lt;p&gt;如果想让john只有读取的权限,可以建立另外一个组&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    [group web-developer]
+    writable = web-project
+    members = josie jessica
+
+    [group web-developer-ro]
+    readonly = web-project
+    members = john
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;另外还有可以让一个组作为另外一个组的成员,在组名的前面加上@&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    [group python-developer]
+    members = lucy lily
+
+    [group web-developer]
+    writable = web-project
+    members =@python-developer josie jessica
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;gitosis的简单应用就这些，另外还有更加深入的用法有待以后探究&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>subline-text2 的快捷键</title>
+   <link href="http://cloudaice.github.com/subline-text2-shortcuts"/>
+   <updated>2012-04-09T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/subline-text2-shortcuts</id>
+   <content type="html">&lt;h3&gt;下面这些subline text 2的快捷键摘录网上&lt;/h3&gt;
+
+&lt;p&gt;Ctrl+L 选择整行（按住-继续选择下行）&lt;br/&gt;
+Ctrl+KK 从光标处删除至行尾 &lt;br/&gt;
+Ctrl+Shift+K 删除整行 &lt;br/&gt;
+Ctrl+Shift+D 复制光标所在整行，插入在该行之前 &lt;br/&gt;
+Ctrl+J 合并行（已选择需要合并的多行时） &lt;br/&gt;
+Ctrl+KU 改为大写 &lt;br/&gt;
+Ctrl+KL 改为小写 &lt;br/&gt;
+Ctrl+D 选词 （按住-继续选择下个相同的字符串） &lt;br/&gt;
+Ctrl+M 光标移动至括号内开始或结束的位置 &lt;br/&gt;
+Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号） &lt;br/&gt;
+Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果） &lt;br/&gt;
+Ctrl+Shift+/ 注释已选择内容 &lt;br/&gt;
+Ctrl+Space 自动完成（win与系统快捷键冲突，需修改） &lt;br/&gt;
+Ctrl+Z 撤销 &lt;br/&gt;
+Ctrl+Y 恢复撤销 &lt;br/&gt;
+Ctrl+Shift+V 粘贴并自动缩进（其它兄弟写的，实测win系统自动缩进无效）&lt;br/&gt;
+Ctrl+M 光标跳至对应的括号 &lt;br/&gt;
+Alt+. 闭合当前标签 &lt;br/&gt;
+Ctrl+Shift+A 选择光标位置父标签对儿 &lt;br/&gt;
+Ctrl+Shift+[ 折叠代码 &lt;br/&gt;
+Ctrl+Shift+] 展开代码 &lt;br/&gt;
+Ctrl+KT 折叠属性 &lt;br/&gt;
+Ctrl+K0 展开所有 &lt;br/&gt;
+Ctrl+U 软撤销 &lt;br/&gt;
+Ctrl+T 词互换 &lt;br/&gt;
+Tab 缩进 &lt;br/&gt;
+Shift+Tab 去除缩进 &lt;br/&gt;
+Ctrl+Shift+UP 与上行互换 &lt;br/&gt;
+Ctrl+Shift+DOWN 与下行互换 &lt;br/&gt;
+Ctrl+K Backspace 从光标处删除至行首 &lt;br/&gt;
+Ctrl+Enter 插入行后 &lt;br/&gt;
+Ctrl+Shift Enter 插入行前 &lt;br/&gt;
+F9 行排序（按a-z）&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>对文件系统设计的反思</title>
+   <link href="http://cloudaice.github.com/file-system"/>
+   <updated>2012-04-06T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/file-system</id>
+   <content type="html">&lt;p&gt;在软件设计与实践的课程，我选择了设计并且实现一个快速的文件系统。当时的想法非常简单，
+就是觉得一个文件在磁盘上都顺序存取。这样字读取和写入文件的时候都会非常快。然后再设计一个根据文件名
+快速定位到磁盘系统的方案。使用hash结构什么的。接下来就是自己组织在磁盘上的存储方式了。
+这些也就是复杂一点的数据结构而已。但是到现在为止，我发现自己真的是错了。目前一行代码还没有输入，
+这真的是让我感到非常沮丧。开始一段时间，我开始搜索文件系统和操作系统结合的问题。很快我就知道可以有
+两种方法。一种就是比较原始的方法，编译内核源代码。第二种方法以模块的形式插入。这些也都是对的，
+没有任何问题，但是都太上层了，属于“说的很容易”的阶段。要开始做的时候，隐隐的感到有些压力，自己想要实现
+一个这样的文件系统的目的是为了加快数据库对数据的存取速度。最好是不用经过文件系统这个层面直接访问磁盘。
+而我想要做的就是为这个磁盘定义一个简单的格式，使得能够读取。来加快数据访问速度。而此时我怀疑自己是否
+可以实现了。害怕自己的想法过于天真，缺少真正的可行性。想要求职于人，其实我的求助是真正的求助，
+而不是寻求建议。就像小孩子想大人询问一般。但是我不知道为什么，从老师哪里得到的回答都是模糊的。
+后来有老师建议使用fuse用户态文件系统来实现。于是又花费了很多的时间来搜索相关资料。但是发现大部分
+都是基于现有的文件系统之上再实现一下的。而不是基于设备的。更有甚者，有一篇文章中直接说fuse不能实现
+在磁盘上的额文件系统。我彻底迷糊了……关于fuse的中文资料介绍真的是很少。仅有几篇文章到处貼。我感到自己
+仿佛是在站在一个路口前面有很多胡同，而我不知到哪一条是有出口的，我只能一条走到底，看到没有路了，
+才回过头来，自己继续……最近十多天又再看不使用fuse来实现。发现了一些网上的例子，找到一个，使用重新编译
+内核源代码的方式来实现的。可能是对于C语言也有些陌生了，看着EXT2的源代码，难受的不行，而且还有ext3,ext4
+，VFS的代码就够我看了，还有那么多……&lt;/p&gt;
+
+&lt;p&gt;我发现自己有些不自量力了，学了操作系统的基本知识和原理，就觉得是掌握了实现它的技能，而现在的境遇很沮丧，
+我忘记了自己其实还只是一个大三学生，还有那么多的专业课程需要花费时间和精力。而这个项目的时间仅仅只有
+一个学期而已。现在完全背离了当初我自己想要实现的目标。而我更加怀疑我的想要集合数据库和文件系统来提高
+数据I/O效率的想法是不是正确的和可行的。目前可以做的可能就是实现一个简单的文件系统，而没有能力去考虑
+是否真的具有实用性。就当作是自己理解文件系统的一个过程，而不是在创造一个应用。这是一个教训。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ssh command</title>
+   <link href="http://cloudaice.github.com/ssh-command"/>
+   <updated>2012-04-03T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/ssh-command</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;远程登录服务器&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;ssh username@ip地址&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;从远程主机拷贝文件或者文件夹到本地&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;scp -r username@ip地址:/path/file  /localpath&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将本地文件拷贝到远程服务器&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;scp -r /localpath  username@ip地址:/path&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>线程池技术理解</title>
+   <link href="http://cloudaice.github.com/thread-pool"/>
+   <updated>2012-04-02T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/thread-pool</id>
+   <content type="html">&lt;p&gt;学过操作系统之后，在我的理解，要想多个任务并发。则只有使用多进程，或者是多线程的技术。
+而这些是否并行则完全由CPU的核心数决定，但是有一点，它们之间的执行不会相互阻塞。
+这为处理多任务问题提供了一个解决办法。但是同时我也了解到，使用多线程和多进程都是有代价的。
+这些额外的代价有下面三个：&lt;br/&gt;
++ 创建线程
++ 销毁进程
++ 上下文切换&lt;br/&gt;
+在这三个额外的开销当中，上下文切换是不可避免的。要想达到多个进程并发，必须接受这点。
+不过相对于进程，线程在上面这些开销当中，相对比较小。在现在的应用需求中，这些额外的开销成为了瓶颈。
+典型的有数据库连接，web服务器。
+线程池的概念，简单的叙述很简单。就是循环执行一些线程。当有任务的时候，就用这些线程中的空闲线程来执行。
+原来是来一个任务，就创建一个线程，执行结束之后就销毁线程。当这些线程的执行时间很小的时候，
+上面列出来的3点额外开销就影响很大了。使用线程池技术可以很好解决这个问题。在一个“池”当中，
+固定执行着预先设定的线程。再设计一个任务队列，当线程池中的任务执行完成之后，就向任务队列中调入任务。
+当有新的任务来临的时候，就往任务队列中添加任务。相比多线程的技术，它减少了创建线程和销毁线程的时间。
+不过我觉得载入任务应该也是需要一些时间的吧，因此和多线程的上下文切换时间抵消。&lt;/p&gt;
+
+&lt;h3&gt;自己总结&lt;/h3&gt;
+
+&lt;p&gt;线程池技术适合大量小任务的执行。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ruby里的几个小常识</title>
+   <link href="http://cloudaice.github.com/ruby"/>
+   <updated>2012-04-02T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/ruby</id>
+   <content type="html">&lt;h3&gt;rvm&lt;/h3&gt;
+
+&lt;p&gt;这个比较好理解，它是一个ruby的版本管理工具。因为ruby一直在发展，因此新的版本在一段时间之后都会出来。
+很有可能我们在自己的电脑上安装了不同的版本，为了方便的管理我们使用哪个版本，就有了rvm这个工具。
+它可以方便的帮助我们管理ruby的各个版本，以及使用哪个版本作为当前版本。&lt;/p&gt;
+
+&lt;h3&gt;gem&lt;/h3&gt;
+
+&lt;p&gt;和python语言一样，ruby也有很多的第三方扩展库，这些扩展库在很多方面大大的方便了我们构造应用程序。
+使得我们不必再去造更多的轮子。使用gem这个工具就可以很方便安装你想要的gem包。
+&lt;a href=&quot;http://qa.taobao.com/?p=709&quot;&gt;链接介绍1&lt;/a&gt; &lt;a href=&quot;http://guides.rubygems.org/&quot;&gt;链接介绍2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;rake&lt;/h3&gt;
+
+&lt;p&gt;讲解它最好和linux工具make联系起来，make是用来管理编译C语言的工具。同样可以说rake是管理运行ruby语言的工具
+，就想makefile一样，我们会在工程目录下面有一个Rakefile的文件。里面写了运行rake的时候做什么，以及参数等。
+  &lt;a href=&quot;http://hi.baidu.com/%D0%C7203/blog/item/ebda2dd09f1d698ea1ec9c7a.html&quot;&gt;链接介绍&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;bundler&lt;/h3&gt;
+
+&lt;p&gt;  bundler本身是一个ruby的gem包，可以使用gem工具安装它。它最直接的功能就是可以批量安装需要的gem包。
+  一般在目录下会有一个Gemfile，这个文件就是用来描述依赖的gem包的。当执行&lt;code&gt;bundle install&lt;/code&gt;的时候，
+  就会根据Gemfile中的需要，安装相应的gem包。  &lt;a href=&quot;http://gembundler.com/&quot;&gt;链接介绍&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GridFS</title>
+   <link href="http://cloudaice.github.com/gridfs"/>
+   <updated>2012-04-02T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/gridfs</id>
+   <content type="html">&lt;h3&gt;GridFS的基本原理&lt;/h3&gt;
+
+&lt;p&gt;GridFS的基本作用是：使用MongoDB来存储大的文件。MongoDB使用BSON的格式存储，对于存储单个大文件有限制。
+每个文档的存储大小不能超过4M,或者16M。因此MongoDB相当于实现了一种分块的机制，可以将大的如视频文件
+分割成小的块存储在MongoDB中。&lt;/p&gt;
+
+&lt;h3&gt;疑惑的地方&lt;/h3&gt;
+
+&lt;p&gt;这种实现方式可以提高文件的读取效率？&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;我自己认为对于文件的IO，应该是直接从文件系统中读取是最快的。图过外面再加了一层数据库的话，效率应该是
+下降的。问过一个老师，解释是这样子可能可以较少句柄个数或者一定程度上将直接IO专成了高校的内存访问。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h3&gt;感想&lt;/h3&gt;
+
+&lt;p&gt;好像很多地方都开始使用这种数据库引擎之上建立“文件系统式”存储的方法。例如可以使用levelDB来二次开发
+做一个文件系统。最近我也在看leveldb的内容，&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>fqd</title>
+   <link href="http://cloudaice.github.com/fqd"/>
+   <updated>2012-04-02T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/fqd</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;2012-04-02
+
+&lt;ul&gt;
+&lt;li&gt;对于直接写磁盘设备，可以使用linux的系统调用。open(),write()等，之前在这个地方纠结的时间比较久。&lt;/li&gt;
+&lt;li&gt;关于使用fuse写用户太文件系统，有说法解释使用fuse构建的额文件系统不能挂在设别上。有待进一步确认。&lt;/li&gt;
+&lt;li&gt;现在的目标比较清晰了，基本上分为两个部分，一个是实现格式化块设备的模块。另一个则是挂载文件系统的
+模块。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Jekyll 简介(译)</title>
+   <link href="http://cloudaice.github.com/jekyll-translation"/>
+   <updated>2012-04-01T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/jekyll-translation</id>
+   <content type="html">&lt;h1&gt;jekyll 介绍&lt;/h1&gt;
+
+&lt;p&gt;这篇文章将会详细介绍Jekyll是什么，为什么会有那么多的人喜欢用它。在下面的篇章里，
+我们将一步一步学习使用Jekyll可以做些什么。&lt;/p&gt;
+
+&lt;h2&gt;概述&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;什么是Jekyll?&lt;/h3&gt;
+
+&lt;p&gt;Jekyll是一个ruby的gem包，同时它是一个解析引擎，可以将templates,partials,liquid代码，markdown等
+解析成静态网站页面。被成为“博客和静态网站的发电机”。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;例子&lt;/h3&gt;
+
+&lt;p&gt;该网站就是使用Jekyll引擎搭建的。&lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Sites&quot;&gt;Other Jekyll websites&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;用Jekyll可以做什么&lt;/h3&gt;
+
+&lt;p&gt;Jekyll作为一个ruby的gem，你可以将它安装在你的本地系统中。你可以在你的工程目录下使用&lt;code&gt;jekyll --server&lt;/code&gt;
+命令。当然jekyll的环境变量中要包含该路径。你会神奇地发现你的那些用markdown语法写的东西都被解析成静态
+网站的页面。&lt;/p&gt;
+
+&lt;p&gt;一旦解析完成之后，这些解析后的静态文件都会放在一个&lt;code&gt;_site&lt;/code&gt;的目录中。这样子，
+该目录下的静态网页都可以被一个静态的web-server解析。&lt;/p&gt;
+
+&lt;p&gt;你可以认为jekyll通过将静态页面全部解析出来存放在一个目录下，从而形成一个动态博客的效果。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;Jekyll不是一个搭建博客的软件&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;jekyll仅仅是一个解析引擎&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;jekyll不会产生任何内容或者做一些模板和设计的元素，这对于初次接触的同学往往会产生混乱，事实上jekyll没有做出任何你在网站上看到的东西，一切东西都是你自己做出来的。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;为什么要关心jekyll?&lt;/h3&gt;
+
+&lt;p&gt;jekyll非常的小巧精致，并且高效。最重要的是你要明白jekyll帮你创建了一个静态的仓库，从而你只是需要一个静态的web服务器就可以了。传统的动态博客，
+比如Wordpress需要一个数据库并且需要编写服务端的代码。那些笨重的动态博客还需要一些缓冲层，而最终也就是完成了和jekyll的相同功能。而jekyll不需要这些，
+它仅仅帮你提供那些内容。&lt;/p&gt;
+
+&lt;p&gt;因此，如果你喜欢让事情变得简单，你喜欢使用命令行来管理面板UI，那么你旧尝试一下jekyll带来的快乐吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;开发者们喜欢使用jekyll，因为我们使用jekyll写博客可以像在编程一样&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;你可以用你喜欢的文本编辑器使用markdown语法或者textfile语法写你的博客&lt;/li&gt;
+&lt;li&gt;你可以在你的本地编写并且预览你的博客&lt;/li&gt;
+&lt;li&gt;你可以在没有网络情况下照样工作&lt;/li&gt;
+&lt;li&gt;你可以使用git版本控制工具来管理你写的东西&lt;/li&gt;
+&lt;li&gt;你可以将你写的博客搭建到一个静态web服务器&lt;/li&gt;
+&lt;li&gt;你可以将你的博客免费的搭建在github主页上&lt;/li&gt;
+&lt;li&gt;你不需要使用数据库&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt;jekyll是如何工作的？&lt;/h1&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>why alive</title>
+   <link href="http://cloudaice.github.com/why-alive"/>
+   <updated>2012-02-27T18:43:00+08:00</updated>
+   <id>http://cloudaice.github.com/why-alive</id>
+   <content type="html">&lt;p&gt;我或者要花这样的一段时间来写看起来这么深刻的话题。或许我是可以利用这段时间来看完几百行代码。
+也可以用这段时间来多学会几条语句的用法。但是同时我也知道我或许也在忘记那些。&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;我曾经不止一次去想过这个问题，在我幼小的时候，以我自己那自傲为比较聪明的脑袋去想这些问题。
+我想在那个时候，或许我是把它当作一个数学题去解决的。不断地寻找答案，同时又不断找出反例来否定自己，
+我似乎习惯了这样的思维方式。直到我找到一个答案，我自己找不到反例来否定它。我最后找到的答案是
+“为这个世界留下一些东西，其次，人间有情”。这个答案让我感觉无懈可击。我没有找到任何反例来反驳它。
+那个时候，我对精神品质和永恒的追求掩盖了一切。想起当年那些叱咋风云一时的人，最终也不过是夕阳下的
+一块墓碑，地层中一块枯骨而已。因为我觉得那些因为政治，战争而失去生命的人很没有意义。
+当然会有很多人和我争辩那些人在历史上起到了怎么样怎么样的作用。我也没有什么可以辨驳，
+因为思考的方式不一样。而那些为世界留下一些东西的人却是真正的可以名垂千古，证明自己曾经来过。
+否则，和那些没有来过世界的又有什么区别呢？就仿佛是刚出生就死去的婴儿，或者这又是哲学伦理上的问题了。
+但是我说不清这种东西具体应该是怎么样的，如果是从物质的角度去思考的话，我会觉得应该这样描述它。
+“那些让某个局部熵变小的或者能够引起熵变小的为文明所能认识的东西”。像阿基米德的浮力定律，开普勒的三定律
+，哈维的心血运行论，牛顿的万有引力定理，欧拉的美丽的等式，爱因斯坦的质能守恒定律……或许这么说下去，
+往往会误认为自己是一个发现和谐和美丽的神灵。我甚至还觉得来过这个世界，要是不知道这个世界最美妙的文明，
+那是一件多么可悲的事情。就好比是爱因斯坦的相对论。我曾研究了那本红皮书到第七章，上了大学钻进了另
+一个世界。我不知道自己是不是有些偏激的。但是至少到现在我还是有这么想的，尽管在实际中，
+我并没有这么坚持去做了，往往会悲伤。但是当我想起时，认真思考的时候，我还是会这么觉得的。
+如果对于计算机，我还是坚信“你写的每一行代码，都要知道计算机为你具体做了什么”。
+尽管我现在还做不到这些。但是我是非常倾向于这样子的。
+我知道有很多人的观点都会和我不一样。开始的时候，我还会去争辩
+（其实很蠢，因为自己也不是那么清楚地了解计算机具体为你做了什么，即使自己知道了，争辩也毫无意义）。
+现在我发现面对这些的时候，只要微笑便可以。我也不知道我这种思想是不是程序员中的异类，至少在很多的时候，
+这样“苛刻”的思想，会浪费我很多的时候，有时候会有收获，但是有更多的时候是没有任何收获，空空如也，
+当我有收获的时候也不会有任何的鼓励（在这种考试制度下的教育方式）。而更有时候，会一个问题把那些所谓的
+“教师”问烦了。这个时候，心中往往会有恐惧，恐惧的不是人，而是担心自己的思维是不是出现了问题。
+其实人只有在知道是非的时候才会很难分清是非,分辨对与错。&lt;/p&gt;
+
+&lt;p&gt;你在编辑器中输入&lt;code&gt;int a;&lt;/code&gt;,会怎么想呢？我会去想:你按下键盘到它在屏幕上显示，计算机做了什么？
+经过了那些控制器，通过那些控制线，总线，当你保存的时候，又在内存的什么位置保存了？
+为什么要保存在那个地方？当你在终端输入&lt;code&gt;gcc xxxx&lt;/code&gt;的时候，系统怎么找到gcc？又是怎么样调进去这个&lt;code&gt;xxx&lt;/code&gt;参数，
+它怎么被找到，又放在什么地方，怎么分配的？和cpu，内存这些什么关系？占用了多少的空间？…… &lt;br/&gt;
+我想在中国的大学里很少有人会有耐心给你讲解这些，而现在我更加愿意认为很少有人有能力讲清这个过程。&lt;/p&gt;
+
+&lt;p&gt;我一直坚持这些想法，如果没有什么其它的缘由的话，至少我认为这些是对的。尽管不知道这里面任何一个细节。
+也完全可以完成很不错的软件项目。我不知道自己是不是一个聪明的人，因为这里面的因素太多了，曾经我想：
+只要有时间，没有一个数学题是我解不开的。记得这么想的时候还是小学的时候，未免有太猖狂的嫌疑。
+但是貌似到现在，这个命题还是无懈可击的，因为它的前提根本不会永远成立。&lt;/p&gt;
+
+&lt;p&gt;但是渐渐地，我对生活的感知发生了变化。“人间的情”，
+当我留下这四个字在我的答案里的时候。其实就注定会发生变化,
+纵观人间所有，无不是‘情’在左右我们，包括我们的思想何尝不是呢？&lt;/p&gt;
+
+&lt;p&gt;在对知识和能力的追求上我找到有和我一样想法的人，joel说在大学的计算机课程里面，
+传统上有两个知识点，很少有人能够搞懂，那就是“指针”和“递归”。
+我也觉得“指针”是一个有着魔力的东西。但是我还不能很好的看懂那些稍大的包含递归的“搜索”的代码。
+后来尽管我发现这些是有规律的，但是放在脑子里转一下，还是不能很清楚解释，就仿佛有一个公式，
+给你参数，能够得到结果，但是却没法清楚地解释并且去修改它。看了joel的文章，
+他是毫不保留的推崇要以难度和考察智力为教育方式。我也是这么想的，但是一直不敢表达，因为在现在的大学里，
+你要是有这种想法，会被所有人鄙视和排斥的。看过google有过一段话，“就是要找到最顶级的程序员，然后把最
+顶级的难题抛给他们解决”。我只是在心里默默羡慕那些顶级的程序员，他们是快乐的。&lt;/p&gt;
+
+&lt;p&gt;有句话“所有的愤怒都是对自身的不满造成的”。我想说“所有的恐惧都是因为自己没有别人所认为的那样的优秀”。&lt;/p&gt;
+
+&lt;p&gt;一个人有个信仰很重要，只要那个信仰不至于让你走上万劫不复的道路。还是摘一下罗素对“人为什么而活着”的看法。
+至少相对之前，我学会了“借鉴”，这或许是一种增长，又或许是一种流失。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;追求爱情&lt;/strong&gt; &lt;br/&gt;
+因为爱情会带来“狂喜”，这是其他任何经历都做不到的；爱情能减轻孤独，让你对生活不再那么恐惧；
+爱情能创造最美好的人类生活，仿佛天堂的缩影。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;追求知识&lt;/strong&gt;&lt;br/&gt;
+因为知识能让我们理解人的内心，理解自然界，满足我们与生俱来的好奇心。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;同情心&lt;/strong&gt;&lt;br/&gt;
+当你看到别人受苦，看到饥饿的孩子，看到被压迫的人民，看到被虐待的老人，看到人类的孤独，贫穷，痛苦，
+你的内心都会难以平静，我们活着，就是为了减轻一些这种苦难，不仅为了帮助他人，还因为我们自己也是这种
+苦难的受害者。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>use git</title>
+   <link href="http://cloudaice.github.com/use-git"/>
+   <updated>2012-02-25T18:57:00+08:00</updated>
+   <id>http://cloudaice.github.com/use-git</id>
+   <content type="html">&lt;h3&gt;初学git&lt;/h3&gt;
+
+&lt;p&gt;想想自己接触git也快一年了。记得当时刚刚接触的时候，一无所知，根本就不知道什么是版本控制系统。
+听学长说是很有用的工具，然后也就这样开始接触。记得当时看着官方的help文档，一步一步地操作。
+对于我这个大一英语全不及格的人来说，可真是苦不堪言啊。
+忙了一整个下午，最终还是一头雾水，也不知道当时整好了没有。根本就分不清git和github的关系。&lt;!--more--&gt;
+还看着一堆的英文的东西，哎……往事不堪回首，这样想起来，貌似这一年自己还是收获很多的。
+希望下一年能够让自己收说更多的，嘿嘿……&lt;/p&gt;
+
+&lt;h3&gt;git和github&lt;/h3&gt;
+
+&lt;p&gt;我刚开始的时候，就是搞不懂git和github之间的关系。当时就知道这是个版本控制工具，
+到底版本控制工具有什么作用呢，根本就没有什么切实的体会。再加上一堆的英文的文档，惨不忍睹啊。
+其实本质上讲，git和github一点关系都没有。就像那些笔记本电脑和京东没有一点关系。git本身是一个程序。
+这个程序能够对变动的目录进行跟踪，检出，恢复等等一堆强大的功能。
+而我们写代码不就是在一个目录里到处变更文件吗？这样子管理起来就会很麻烦。所以git就很形象的称为版本控制
+工具了。不过要说git的起源还是在维护linux内核的时候诞生的，这方面的资料网上有很多。所以git就是一个程序，
+在linux下，它就形象的展现成命令行，你就可以在里面输入命令之类的。就这么简单。再来说说github。
+它直观的表示就是一个网站，但是不同的是它这个网站有着特别的功能。最主要的功能就是，你可以在它那里托管
+你的代码。再加上其它一些辅助功能，使得你能够更好的工作。想github这样的托管的网站有很多：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;a href=&quot;http://sourceforge.net&quot;&gt;sourceforge&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;https://bitbucket.org&quot;&gt;bitbucket&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://gitcafe.com&quot;&gt;gitcafe&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;code.google.com&quot;&gt;code.google&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;还有其他一些相似的网站，另外，相对的，版本控制工具也不止git一个，使用比较广泛的还有&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;svn&lt;br/&gt;
+hg&lt;br/&gt;
+cvs&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这些都可以在网上很轻松的搜索到相关资料。&lt;/p&gt;
+
+&lt;h3&gt;使用git和github&lt;/h3&gt;
+
+&lt;p&gt;讲讲具体使用git和github来维护自己的项目时候要用到的命令和过程&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;安装git&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;这个比较简单。在linux下面，你可以选择编译安装或者是直接使用apt-get来安装。
+使用apt-get安装：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install git-core git-doc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装完成之后，输入下面命令检查是否安装成功：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git --version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看是否顺利的输出版本号&lt;/p&gt;
+
+&lt;p&gt;使用编译安装
+运行下面命令安装编译依赖的软件包&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get built-dep git-core git-doc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下载git源码包并且解压，切换到源码包的目录，执行下面命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;make prefix=/usr/local all doc
+sudo make install install-doc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装完成后可以查看自己的git版本。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用git
+如果只是使用git版本控制工具，那么，你知道在你的项目文件目录下面运行命令&lt;/p&gt;
+
+&lt;p&gt;  git init&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;就会在该目录下面创建一个版本库了，你会发现在该目录下面多了一个.git的目录。
+在这里还是结合github一起讲解。
+在github上注册一个帐号。之后主要的一部就是设置公钥和私钥。github采用ssh协议进行代码的传输认证。
+其实ssh协议在这里理解很简单，就是你通过一个命令，产生一对公钥和私钥，这两个是有联系的。你把公钥放在
+github的网站上，然后私钥留在自己的电脑里面，每次你要和github通信的时候，它就会认证一下是否是管理用户。
+使用下面命令可以产生一堆公钥和私钥。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh-keygen
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;~/.ssh/id_rsa是私钥，~/.ssh/id_rsa.pub是公钥,你可以用文本编辑器打开公钥文件，
+你把公钥文件里面的内容复制到github上的你的账户里的相应位置（专门有这么一个地方）。再执行下面命令，
+测试是否成功。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;现在你可以在github上面建立一个仓库了。写好你的仓库的名字。然后就是把你的本地仓库代码送到远程里面。
+假设你在本地有一个仓库了，执行下面两条命令，这两条命令是告诉远程版本库是谁提交的版本库&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global user.name &quot;yourname&quot;
+git config --global user.email &quot;youremail&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;添加远程版本库：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:cloudaice/helloworld.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中origin是给远程版本库起的一个名字，这个名字和我们在github上建立的版本库的名字是不相关的，
+只是对于我们本地给它起的一个名字。后面表示，版本库的路径，在这里是cloudaice路径下的helloworkd.git
+版本库。在这里要重点说一下，github支持三种协议传输，但是只有ssh协议才能够执行push操作，
+因此在添加远程版本库的时候最好使用该添加方法，如果对于远程版本库，我们不执行推送的话，
+比如是和别人协作的时候，对于管理员的版本库，我们就只需要pull。因此，可以使用另外两种方法&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add origin git://github.com:cloudaice/helloworld
+git remote add origin https://github.com:cloudaice/helloworld
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到此就算把本地版本库和远程的联系起来了，下面介绍一些常用命令。&lt;br/&gt;
+&lt;strong&gt;下面提到的origin默认表示远程版本库的名称，origin/master默认表示远程版本库origin中的master分支&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add filename
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;把该目录下的这个文件添加到暂存区；&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;把目录下的所有文件添加到暂存区。在这里你可以通过建立一个&lt;code&gt;.gitignore&lt;/code&gt;文件，在里面写如你不想添加到暂存区的
+文件的名字。这样即使执行这条命令也不会把那些文件添加到暂存区了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit -m &quot;infomation&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;提交暂存区的内容到版本库，引号里面的为你的本次提交的信息，最好写的清晰明白。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将本地的版本库推送到远程版本库中，origin是远程版本库的名字，master是远程版本库的分支名称。
+当有多个分支的时候，可以采用下面命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push origin localbranch:remotebranch  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;localbranch表示本地分支名称,remotebranch表示远程版本库分支名称&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看当前本地分支，其中当前使用的分支会在前面加上*号&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch -a  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看所有分支，包括远程分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch -r  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;显示远程版本库&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote -v  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看所有远程版本库&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch branchname  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;基于当前分支，创建分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout branchname 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;检出分支，即转到该分支目录下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout -b currentbranch newbranch  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;基于currentbranch分支创建newbranch分支，并且检出newbranch分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch -m oldname newname  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;分支重命名,oldname 为原来名字，newname为新的名字。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git merge branchname  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;合并分支，把branchname分支合并到当前的分支上面来，一般branchname分支是基于当前分支创立的。
+这种合并方法是合并全部的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git cherry-pick -n 提交号1
+git cherry-pick -n 提交号2
+.  
+.  
+git cherry-pick -n 提交号m
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样可以任意选择合并哪个提交号，git里面的提交号是由40位的hash码组成一般前七位就足够辨别了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch -d branchname  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;删除分支branchname。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git status  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看当前状态&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git fetch origin master  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将远程版本库拖到本地的一个远程版本库中，其实添加一个远程版本库的时候，都会在本地有一个远程版本库的复制。
+我们可以通过&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout origin/master  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;检出远程版本库，因此fetch命令计时将远程版本库的更新同步到本地的远程版本库&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;git pull origin/master  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;把远程版本库的更新同步到本地的远程版本库，并且合并与之相对应的本地版本库。相当于下面两条命令的组合：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git fetch origin master  
+git merge origin/master  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;另外：HEAD   关键字指向版本库中的末稍，即为最后一次提交的版本库&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;学习git的网站：&lt;br/&gt;
++ &lt;a href=&quot;http://worldhello.net&quot;&gt;worldhello&lt;/a&gt;
++ &lt;a href=&quot;http://rogerdudler.github.com/git-guide/index.zh.html&quot;&gt;白话git&lt;/a&gt;
++ &lt;a href=&quot;http://www.yangzhiping.com/tech/github.html&quot;&gt;高校利用git&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>hello nodejs</title>
+   <link href="http://cloudaice.github.com/hello-nodejs"/>
+   <updated>2012-02-24T11:46:00+08:00</updated>
+   <id>http://cloudaice.github.com/hello-nodejs</id>
+   <content type="html">&lt;h3&gt;first meet nodejs&lt;/h3&gt;
+
+&lt;p&gt;说起来也是挺巧的，一天,在新浪微博中浏览，无意间发现有个开源社区的关注者发了一条&lt;a href=&quot;http://club.cnodejs.org/&quot;&gt;nodeclub&lt;/a&gt;发布的消息。
+于是顺着链接点击进去，看着网页界面就是给人一种很清新的感觉，也感觉特别的熟悉，后来一想，&lt;!--more--&gt;
+和&lt;a href=&quot;http://www.v2ex.com/&quot;&gt;V2EX&lt;/a&gt;的界面风格有些像。其实之前就很喜欢V2EX的界面风格。由于是新建立的社区，
+里面的东西都感觉很舒服。
+虽然我之前也有听过nodejs的相关事情，但是一直都没有怎么关注，只是知道它是在服务器端的javascript脚本语言。
+对于我自己而言，一直对前端的设计感到无力。因为开始学的时候，就觉得自己没有什么艺术设计细胞。
+我可以想象出我自己想要的效果，但是要是让我自己去实现，往往会很沮丧，有好多的时候，为了设计一张自己
+满意的页面，要花费很多的时间，往往会在几个px之间纠结，最终也是失望而归。
+所以我觉得自己不适合设计前端页面，但是，提提建议还行。
+因为如此，也一直没有怎么接触javascript.因此也没有怎么关注nodejs。不过这次在社区的相遇，
+第一要素完全是因为nodeclub这个社区的优雅设计。而且还开放源代码，更加方便的是，源代码就在github上面，
+简直就是送到嘴边的肉啊(*&lt;sup&gt;__&lt;sup&gt;*)&lt;/sup&gt;&lt;/sup&gt; ，让我对它的源代码产生很大的兴趣。于是果断安装node,至于mongodb，哈哈，
+自己最近也正是在研究的东西，于是一切都很顺利。就把网站在虚拟机里面起来了。自己还用压力测试软件无聊的
+对它进行压力测试，在并发不是很高的情况下，效果异常好，不过好像在很高的并发下。我的内存就不够了。
+不管怎么样，与nodejs的相遇就这样开始了。&lt;/p&gt;
+
+&lt;h3&gt;安装node&lt;/h3&gt;
+
+&lt;p&gt;安装node很简单。这里顺便也讲怎样把这个nodeclub论坛搭建起来。主要四个步骤：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装mongodb&lt;/p&gt;
+
+&lt;p&gt;这个步骤在我的&lt;a href=&quot;http://www.cloudaice.com/blog/mongodb-shi-yong-xiao-ji.html&quot;&gt;mongodb小记&lt;/a&gt;里面详细讲解了&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装node&lt;/p&gt;
+
+&lt;p&gt;在ubuntu下面先使用下面命令安装一些可能要依赖到的软件包，在我安装的时候出现缺少openssl的警告。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install g++ curl libssl-dev apache2-utils
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;p&gt;然后去nodejs的&lt;a href=&quot;http://nodejs.org/&quot;&gt;官方网站&lt;/a&gt;下载源码包，&lt;code&gt;tar.gz&lt;/code&gt;为后缀名的压缩包。解压压缩包：&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;tar -xf node-v0.xxxxxxxx.tar.gz
+cd node-xxxxxxx
+./configure
+make 
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;p&gt;和安装一般的软件一样，很简单，不过在这里要提醒一下，在执行&lt;code&gt;./configure&lt;/code&gt;的时候，注意输出的信息，
+看看每一项是否都是OK的。如果提示缺少某个软件包，那么就下载安装软件包，然后再&lt;code&gt;./configure&lt;/code&gt;。
+直到一切OK，另外编译的时候比较慢，要耐心等待一会儿。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装npm&lt;/p&gt;
+
+&lt;p&gt;安装npm就比较简单了，根据&lt;a href=&quot;http://npmjs.org/&quot;&gt;官方网站&lt;/a&gt;的意见，直接运行一条命令，就OK了&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;curl http://npmjs.org/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装的时候，还是直接去官方网站看比较好，时间不同，可能会有一些变化。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;配置nodeclub网站&lt;/p&gt;
+
+&lt;p&gt;先去&lt;a href=&quot;https://github.com/muyuan/nodeclub&quot;&gt;nodeclub&lt;/a&gt;的github版本库下载项目代码，可以用git，也可以自己打包下载。切换到项目的目录
+执行下面命令，安装项目程序依赖的node包&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install ./
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装完成之后，你会发现项目中多了一个&lt;code&gt;node_modules&lt;/code&gt;的目录，这个目录中就是存放着安装的依赖包。
+然后，你要修改配置文件，使得能够符合自己的项目要求，在原项目中有一个config.default.js文件。
+我们把它复制一份。并且重命名成config.js。修改里面的内容。主要是修改邮箱信息，因为注册的时候，
+论坛采用邮箱验证的方法。所以你要申请一个邮箱，专门用作论坛系统邮箱。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;port:设置监听的端口号；&lt;br/&gt;
+mail_user:设置你用来当作系统邮箱的邮箱名称&lt;br/&gt;
+mail_pass:填写邮箱密码 &lt;br/&gt;
+mail_host:看你是什么邮箱，例如是gmail邮箱的话，就填写&lt;code&gt;smtp.gmail.com&lt;/code&gt;&lt;br/&gt;
+mail_sender:填写邮箱名称&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;到这里为止，基本的配置就已经完成了，接下来就是启动应用了。首先，要启动mongodb，
+这个方法可以在&lt;a href=&quot;http://www.cloudaice.com/blog/mongodb-shi-yong-xiao-ji.html&quot;&gt;这里&lt;/a&gt;查看。
+然后切换到nodeclub的目录，你会看到有一个'app.js'文件，这个文件就是项目的入口文件。
+执行一下命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm app.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果权不够，那么就加上&lt;code&gt;sudo&lt;/code&gt;
+这样，你在浏览器中输入&lt;code&gt;localhost&lt;/code&gt;再加上你自己设置的端口号，就可以访问你自己的论坛了。&lt;/p&gt;
+
+&lt;h3&gt;这几天学习的感想&lt;/h3&gt;
+
+&lt;p&gt;这几天都在社区里面逛，学完了那本入门书籍，也照着例子写了一些代码。感觉还行，
+尽管自己之前并没有怎么写过javascript代码。对前端也不怎么熟悉，不过学的时候，
+感觉代码风格很像C语言，但是整体的语言风格机制又很像我学的python。也是刚刚写完一个python小项目，
+因此，感觉还是听容易的。只是因为它是单线程的，因此在编写代码的时候，就要考虑阻塞和非阻塞的问题。
+下面推介一下自己读的感觉比较好的文章吧：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://nodebeginner.org/index-zh-cn.html&quot;&gt;node入门&lt;/a&gt;，不用说，是最好的入门教材。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://fengmk2.github.com/ppt/qcon2011/index.html#slide-0&quot;&gt;nodejs 脱离浏览器的javascript&lt;/a&gt; 一个很炫的网站。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jayli.github.com/whatisnode/index.html&quot;&gt;什么是node&lt;/a&gt;  分析的非常好的文章&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://cnodejs.org/blog/?p=780&quot;&gt;我为什么向后端工程师推介nodejs&lt;/a&gt; 能够让你了解node更深一点。&lt;/li&gt;
+&lt;li&gt;随后也是最好的地方，那就是&lt;a href=&quot;http://club.cnodejs.org/&quot;&gt;nodeclub&lt;/a&gt;啦。&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>jeky</title>
+   <link href="http://cloudaice.github.com/hello"/>
+   <updated>2012-02-23T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/hello</id>
+   <content type="html">&lt;p&gt;测试博客&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>mongodb cooks</title>
+   <link href="http://cloudaice.github.com/use-mongodb-relaxed"/>
+   <updated>2012-02-21T14:45:00+08:00</updated>
+   <id>http://cloudaice.github.com/use-mongodb-relaxed</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;导引&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#q1&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q2&quot;&gt;配置启动和停止&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q3&quot;&gt;使用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;h3 id = &quot;q1&quot;&gt;安装&lt;/h3&gt;&lt;!--more--&gt;
+之前写的一片mongodb使用小记过于简单，当时自己觉得没有必要详细写作，因为很多自己看文档就可以轻松搞定了，
+但是到自己要重新使用的时候，发现有些还是很容易忘记的。看文档固然可以理解，但是花费时间比较长，
+还有一点，文档都是面向大众话的，语言讲的覆盖比较广，但是却不细，现在重新记载一下使用过程，
+以便以后快速参考。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;去mongodb的&lt;a href=&quot;http://www.mongodb.org&quot;&gt;官方网站&lt;/a&gt;下载和自己的机器相适应的.tar.gz压缩包。&lt;/li&gt;
+&lt;li&gt;使用一下命令解压缩：&lt;code&gt;tar zxf mongodb-linux-xxx...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;创建一个数据库存储的目录，mongodb默认会使用&lt;strong&gt;/data/db&lt;/strong&gt;目录，因此，我们需要创建该目录，
+同时要给目录加上一定的权限，可以使用以下命令：&lt;strong&gt;根据自己的情况，使用root权限操作。&lt;/strong&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir -p /data/db
+chown -R $USER:$USER /data/db
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;切换到自己刚才解压出来的mongodb目录，会发现有一个&lt;code&gt;bin&lt;/code&gt;目录，进去之后，会发现里面全部是可执行文件，
+在该目录下执行
+
+&lt;pre&gt;&lt;code&gt;./mongod
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;mongodb数据库就可以以默认的方式启动了。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;h3 id = &quot;q2&quot;&gt;配置启动和停止&lt;/h3&gt;
+上面我们已经以默认的方式让mongodb启动了，但是在实际中，对于启动有多种配置方式。
+使用下面命令可以查看都可以配置那些配置方式：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  ./mongod --help
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;现在简单介绍一下一些常用的配置参数&lt;br/&gt;
+&lt;strong&gt;--dbpath&lt;/strong&gt; [数据目录地址]&lt;br/&gt;
+用于指定数据存储目录，默认情况下,使用&lt;code&gt;\data/db&lt;/code&gt;.在mongodb中，
+每个mongod进程只能用一个单独的数据目录，注意这里指的是每个mongodb进程示例，并不是指数据库。
+因此每个数据目录下面都有一个mongod.lock文件。当有多个mongod进程使用同一个数据目录的时候，
+就会报错。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;--port&lt;/strong&gt; [端口号]&lt;br/&gt;
+指定mongod启动的时候监听的端口号，默认情况下是27017。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;--fork&lt;/strong&gt;&lt;br/&gt;
+让mongod以守护进程启动&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;--config&lt;/strong&gt; [配置文件]&lt;br/&gt;
+在这里可以制定,mongod启动的时候的配置文件，配置文件主要就是命令行参数的一些集合，写法为&lt;code&gt;键=值&lt;/code&gt;,
+像fork这些参数，使用true或者false。下面是一个配置文件示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    # my mongod config
+    port = 20000
+    fork = true
+    logpath = mongodb.log
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;--logpath&lt;/strong&gt; [log文件]&lt;br/&gt;
+指定输出的log文件&lt;/p&gt;
+
+&lt;p&gt;在mongod启动后都会有一个轻量的http端口开放，该端口号为mongod启动端口的值加上1000。
+因此你可以在浏览器中输入&lt;code&gt;localhost:28017&lt;/code&gt;(默认端口)来访问web页面。里面会有一些关于mongodb的运行信息。
+但是有的时候为了安全原因，你可以关闭该端口，只要你在启动的时候加入&lt;code&gt;--nohttpinter-face&lt;/code&gt;。另外，还可以
+使用参数&lt;code&gt;--bindip localhost&lt;/code&gt;,指定本机访问。还有一个在实际中要用的参数，&lt;code&gt;--auth&lt;/code&gt;，加上这个参数之后启动
+mongodb。在客户端连接mongodb服务器之后，当执行一些操作的时候，就需要认证。这就要和用户名权限相关联了。
+同时也有一个root账户。&lt;/p&gt;
+
+&lt;p&gt;有两种普遍的方法可以停止mongodb数据库运行:&lt;br/&gt;
+&lt;strong&gt;1，&lt;/strong&gt;当mongodb是在终端运行的时候，可以直接按下&lt;code&gt;Ctri+C&lt;/code&gt;，来终止mongodb进程。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2，&lt;/strong&gt;当mongodb以守护进程的方式运行的时候，使用以下命令：
+&lt;code&gt;kill -2 [mongodb进程号]&lt;/code&gt;其中mongodb进程号，可以使用&lt;code&gt;ps -ef | grep mongod&lt;/code&gt;来查看。&lt;/p&gt;
+
+&lt;h3 id = &quot;q3&quot;&gt;使用&lt;/h3&gt;
+
+
+&lt;p&gt;启动mongodb服务进程之后，mongodb自带有一个客户端程序，也是在bin目录下。运行&lt;code&gt;./mongo&lt;/code&gt;就可以启动客户端
+界面。这是一个典型的shell界面，可以在这里面进行对数据库的操作。不过在这个shell有一个比较特别的地方，
+就是可以使用javascrip。它会自动解析javascrip语言。下面记录一下使用python的接口操作mongodb的过程。&lt;br/&gt;
+首先，你会发现你至少可以搜到这样的三个python扩展库：&lt;code&gt;pymongo&lt;/code&gt;,&lt;code&gt;mongoengine&lt;/code&gt;,&lt;code&gt;django-mongodb&lt;/code&gt;。
+这些都是python操作mongodb的接口。它们之间的关系大自是这样字的。&lt;code&gt;pymongo&lt;/code&gt;相当于是一个比较low level
+的driver。仅仅是可以用python语言与数据库交互。因此相对来说是比较底层的驱动而已。而其它两种则是
+object relation mapping，也就是ORM。经过对象抽象化的，相对而言要高层一些。比如我们在用django
+这些web框架编写应用的时候，就会选择使用这些ORM。下面记录pymongo这个扩展包操作数据库的方法。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装python很简单，就像安装其他python的扩展库一般，使用&lt;code&gt;easy_install&lt;/code&gt;或者&lt;code&gt;pip&lt;/code&gt;都一样。安装完之后，
+进入python命令行。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;建立连接：建立连接的时候，只是和mongodb进程连接&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from pymongo import Connection
+connection = Connection()
+#another way to connection
+connection = Connection('localhost',27017)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;选择连接数据库：如果该数据库不存在，则会自动创建&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;db = connection.blog
+#如果有安全验证的话,要执行以下语句进行认证
+db.authenticate(user,password)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;选择一个集合：在mongodb中是以库，集合，文档这样的结构组织的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;blogs = db.blogs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;尝试在mongodb中插入一个文档：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;post={&quot;author&quot;:&quot;jom&quot;,&quot;text&quot;:&quot;this is my first blog&quot;,&quot;tag&quot;:[&quot;mongodb&quot;,&quot;python&quot;]}
+blogs.insert(post)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查询文档：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#find one document
+blogs.find_one()
+#寻找全部符合一定要求的文档
+blogs.find({&quot;author&quot;:&quot;jom&quot;})
+#list all documents
+blogs.find()
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>用python的HTMLParser分析html页面</title>
+   <link href="http://cloudaice.github.com/yong-pythonde-htmlparserfen-xi-htmlye-mian"/>
+   <updated>2012-02-19T13:44:00+08:00</updated>
+   <id>http://cloudaice.github.com/yong-pythonde-htmlparserfen-xi-htmlye-mian</id>
+   <content type="html">&lt;p&gt;python里面有很多实用简单的工具，下面记录一下自己学习使用HTMLParser模块分析抓取的网页的例子:&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3&gt;基本使用模式&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  class classname(HTMLParser):
+     def __init__(self):
+         '''
+         设置自己定义的初始化变量
+
+
+         '''
+         #执行基类的初始化函数
+         HTMLParser.__init__(self)
+     def handle_starttag(self,tag,attrs):
+         '''
+         tag表示碰到的标签
+         attrs是一个序列，序列中的内容为元组，
+         一个元组中有两个元素，分别是该标签的属性和该属性的值
+         判断逻辑语句
+         '''
+     def handle_data(self,data):
+         '''
+         这里的data为上面tag标签包含的内容
+         对内容进行一些处理
+         '''
+     def handle_endtag(self,tag):
+         '''
+         这里tag对应的上面那个标签的结束标签
+         例如上的标签为&amp;lt;p&amp;gt;，则这里对应的是&amp;lt;/p&amp;gt;
+         在这里写一些处理的语句
+         '''
+     def getresult(self):
+         '''
+         写一些自己要返回的内容
+         '''
+  if __name__==&quot;__main__&quot;:
+      obname=classname()
+      obname.feed(html_data)
+      obname.getresult()
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h3&gt;分析&lt;/h3&gt;
+
+&lt;p&gt;在使用HTMLParser模块的时候，基本都是先建立这样一个类，类的名字可以根据自己的应用起，
+这个类继承&lt;strong&gt;HTMLParser&lt;/strong&gt;类。里面主要写这三个方法：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;handle_starttag&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;这里写你要处理的html标签。例如&lt;br/&gt;
+&lt;code&gt;if tag=='td':....&lt;/code&gt;&lt;br/&gt;
+你可以在这里写一些判断语句以及设置一些标记量&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;handle_data&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;主要做一些对开始的时候铺货的标签的内容做一些处理&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;handle_endtag&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;这个方法是和 handle_starttag 对应的。因为标准的html页面都是有闭合标签的
+在这里可以做一些完成工作&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;h3&gt;示例&lt;/h3&gt;
+
+&lt;p&gt;下面是一个抓取&lt;code&gt;www.python.org/index.html&lt;/code&gt;页面中所有链接内容的程序&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  from HTMLParser import HTMLParser
+  import urllib
+  import sys
+  class parselinks(HTMLParser):
+      def __init__(self):
+          self.data=[]
+          self.href=0
+          self.linkname=''
+          HTMLParser.__init__(self)
+      def handle_starttag(self,tag,attrs):
+          if tag =='a':
+              for name,value in attrs:
+                  if name == 'href':
+                      self.href=1
+      def handle_data(self,data):
+          if self.href:
+              self.linkname+=data
+      def handle_endtag(self,tag):
+          if tag=='a':
+              self.linkname=''.join(self.linkname.split())
+              self.linkname=self.linkname.strip()
+              if  self.linkname:
+                  self.data.append(self.linkname)
+              self.linkname=''
+              self.href=0
+      def getresult(self):
+          for value in self.data:
+              print value
+  if __name__==&quot;__main__&quot;:
+      IParser = parselinks()
+      IParser.feed(urllib.urlopen(&quot;http://www.python.org/index.html&quot;).read())
+      IParser.getresult()
+      IParser.close()
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;下面是程序运行输出结果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    AdvancedSearch
+    About
+    News
+    Documentation
+    Download
+    下载
+    Community
+    Foundation
+    CoreDevelopment
+    Help
+    PackageIndex
+    QuickLinks(2.7.2)
+    Documentation
+    WindowsInstaller
+    SourceDistribution
+    QuickLinks(3.2.2)
+    Documentation
+    WindowsInstaller
+    SourceDistribution
+    PythonJobs
+    PythonMerchandise
+    PythonWiki
+    PythonInsiderBlog
+    Python2or3?
+    HelpMaintainWebsite
+    HelpFundPython
+    Non-EnglishResources
+    PythonReleaseScheduleiCalCalendar
+    Python3
+    PyPIpackagename
+    Results
+    Rackspace
+    IndustrialLightandMagic
+    AstraZeneca
+    Honeywell
+    andmanyothers
+    eWeek
+    more...
+    WebProgramming
+    CGI
+    Zope
+    Django
+    TurboGears
+    XML
+    Databases
+    ODBC
+    MySQL
+    GUIDevelopment
+    wxPython
+    tkInter
+    PyGtk
+    PyQt
+    ScientificandNumeric
+    Physics
+    Education
+    pyBiblio
+    SoftwareCarpentryCourse
+    Networking
+    Sockets
+    Twisted
+    SoftwareDevelopment
+    Buildbot
+    Trac
+    Roundup
+    IDEs
+    GameDevelopment
+    PyGame
+    PyKyra
+    3DRendering
+    more...
+    opensourcelicense
+    Python2orPython3
+    PythonSoftwareFoundation
+    PyConconference
+    Readmore
+    downloadPythonnow
+    O'ReillyOpenSourceConvention
+    CallforProposals
+    BestProgrammingLanguage
+    PyConinChina
+    IronPython2.7.1
+    PyArkansas
+    PyGotham
+    Python3.2.2
+    RSS
+    WebsitemaintainedbythePythoncommunity
+    hostingbyxs4all
+    designbyTimParkin
+    PythonSoftwareFoundation
+    LegalStatements
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Nginx + Django</title>
+   <link href="http://cloudaice.github.com/nginx-plus-django"/>
+   <updated>2012-02-18T15:35:00+08:00</updated>
+   <id>http://cloudaice.github.com/nginx-plus-django</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;导引&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#q1&quot;&gt;前记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q2&quot;&gt;实践的机会&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q3&quot;&gt;开始安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q4&quot;&gt;观察nginx的安装目录&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q5&quot;&gt;web应用的基本原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q6&quot;&gt;配置nginx服务器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q7&quot;&gt;启动应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q8&quot;&gt;测试自己的网站&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;h3 id = &quot;q1&quot;&gt;前记&lt;/h3&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;很早就听说nginx在高并发处理静态页面方面的能力惊人，于是就在心中想着什么时候，可以用它搭建一个网站，
+然后再自己亲自测试测试。之前一直用apache做web服务器，&lt;!--more--&gt;当然也都是自己练习练习而使用的。想起自己刚
+接触它是在学linux+apache+mysql+php。这是一个流行的不能再流行的组合。可惜一开始接触它们的时候，
+我就一门心思想把它们搞懂，而没有把心思放在学习php和web前端语言本身上。那时才大二，除了会几行C语言
+之外，其它的啥也不知道，就只是觉得好奇，还自以为是的去问给我们培训的学长，估计是学长觉得不好意思拒绝
+回答又怕我听不懂，于是就简单的讲了几句。我感觉自己啥也没有收获到。不过在心里告诉自己弄懂这个原理才是
+真本事，语言本身都是浮云。可想而知，那时候连计算机网络的边都没有碰到，怎么可能弄懂这些啊。最后php,html
+,css这些也都学得半生不熟。不过我只是一直好奇为什么那么神奇，装上这个lamp之后，运行浏览器，就可以显示
+自己编写的网页，还可以和php写的脚本进行交互。直到现在，看了三分之一的《计算机网络》。再加上在网上的
+一些学习，原来这里面有web服务器，数据库服务器，还有以apache模块方式运行的各种东西。我可一画一张图，
+说什么到哪里到哪里，但是要我说清每一个细节，还真说不清，不过至少现在不再对它那么好奇了。寒假的时候
+还去图书管借了一本《apache cook book》,一看里面都是将怎么配置，怎么设置虚拟主机啊，还有各种模块啊。
+虽然看着挺明白的，但是总觉得不是自己想要的。后来在一份邮件列表里面发了一份疑惑，有人推介我看看lighttpd
+的源代码。于是就下载了，有时间真的应该好好看看。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3 id=&quot;q2&quot;&gt;实践的机会&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;寒假也是无意之中，产生一个想法，写一个网站应用，主要是查询课表和教学楼教室的使用状态。因为很多时候
+要去上课，却忘记了在哪一间教室，更多的时候，要去教学楼自习，自习到一半的时候，来人了，说这个教室有课。
+于是，就想写一个简单的网页应用，大家可以直接用手机登录这个网站，然后就可以查询相关信息。虽然在自己的
+电脑上也可以登录学校的官方网站查询。但是学校的网站过于繁杂更加不适合手机页面访问。于是就抱着试试看
+的心理，开始写了。首先去学校的网站抓取必要的网页。（因为不可能轻易要到学校的数据库查询权限）。还好
+这些事情用python很容易就可以搞定。用post或者get得到想要的网页之后。就使用python自带的库对html页面
+进行解析。找出自己想要的内容。因为也是刚刚学习django，于是就使用sqlite3数据库，因为之前使用mysql
+的时候，总是会被各种各样的问题困住，比如中文乱码，修改密码等一些问题。尽管之前也没有使用过sqlite3,
+但是都是关系数据库，基本的方法还是查不多的，更何况，django自身提供了一个ORM。基本上就是用python语言
+在对数据库操作。经过差不多一星期的努力时间，完成了查询课表，查询教室状态，以及使用反馈的功能。也算是
+基本能够使用了吧。到了该部署的时候了，虽然桌上就放着一本《apache cook books》，但是有点不想用apache。
+在lighttpd和nginx之间最后选择了nginx，原因是相对而言，它没有apache的臃肿，比lighttpd性能要优秀。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3 id=&quot;q3&quot;&gt;开始安装&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;我选择的是用源码安装&lt;/p&gt;
+
+&lt;p&gt;首先要安装一些编译的时候需要的工具和依赖的库&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;在ubuntu下使用以下方法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装gcc g++ 具体可以使用tab建查看，选择版本&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install gcc g++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;p&gt;还要安装两个工具&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install autoconf automake
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装依赖的库&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install zlib1g zlib1g-dev openssl libpcre3 libpcre3-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在centos下用以下命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum -y install gcc gcc-g++ autoconf automake
+yum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装完这些依赖的工具和库之后，就可以去&lt;a href=&quot;http://www.nginx.net/&quot;&gt;官方网站&lt;/a&gt;下载tar.gz格式的源码包,根据情况下载最新版本的
+下载得到源码包之后，切换到源码包文件目录，执行以下命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tar zxvf nginx-0.x.xx.tar.gz
+cd nginx-0.x.xx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接下来如果采用默认配置安装可以执行以下命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要自定义安装，可以输入以下命令，查看各个参数表达的意思，再自行配置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure --help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果是初次安装的话，建议先使用默认配置，先熟悉一下，等到熟悉之后，再自行配置参数进行安装&lt;/p&gt;
+
+&lt;p&gt;OK,现在已经把nginx安全地安装到电脑上了，如果这之间出现问题，可以一步一步检查，一般只要依赖的工具
+和库都安装了，不会有什么问题，如果缺少库，则可以根据提示，安装相应的库。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3 id='q4'&gt;观察nginx的安装目录&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;对于安装完一个程序，我最想知道的就是它在我的电脑都做了些什么，这样才会感到踏实。其实安装程序就是
+把可执行文件，还有一些配置文件按照一定的组织方式放在一些地方。因此我们最应该要知道的就是它安装在
+哪里了。当然这里讲的都是默认安装的情况下，如果是自己配置安装，那当然是一清二楚了。在默认安装的情况下
+，nginx被安装在/usr/local/nginx。基本所有的有关nginx的都在这个目录下。其中可执行nginx文件在&lt;code&gt;sbin&lt;/code&gt;目录下
+，其他还有各种配置文件什么的，我们可以在这些目录下用&lt;code&gt;cd&lt;/code&gt;,&lt;code&gt;ls&lt;/code&gt;一个一个看过去。这样也有助于我们
+消除好奇心。其实你可以在该目录下使用&lt;code&gt;ll&lt;/code&gt;命令，你会发现实际上就只有四个目录是一般用户可以进去查看的，
+其他目录都必须要管理员权限。这也近似的说明我们一般的操作只要对这四个目录进行一下操作。这四个目录分别是&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;conf&lt;/strong&gt;  存放一些配置文件，其中我们要重点配置就是这个目录下面的nginx.conf文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;html&lt;/strong&gt;  这个目录默认情况下就存放了两个html文件，其中一个是index.html，很显然这是测试我们nginx
+是否运行起来的测试显示文件，另外一个htnl文件也是类似作用&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;sbin&lt;/strong&gt;  这个目录刚才说过了，默认情况下就是只有一个nginx的可执行文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;logs&lt;/strong&gt;  这个目录下就只有两个文件：access.log，error.log，从名字上我们可以看出来，这是两个日志文件，
+分别记录，访问日志和错误日志。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;经过这些分析，是不是感觉情况变得很明了了o(∩∩)o...&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3 id='q5'&gt;web应用的基本原理&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;首先要有一个web服务器，它的作用就是监听某个端口号，web服务里默认都是监听80端口。就仿佛你在浏览器中输入
+一个网址，然后按回车建。其实默认是在你的网址后面再加上&lt;code&gt;:80&lt;/code&gt;，只是这个大家都是知道的，所以就不用加上
+&lt;code&gt;:80&lt;/code&gt;了。而用户输入的域名呢，经过网络中的各种转换传输，最终就会映射到你的服务器上，换句话说，就是你
+的主机。也就是说，用户在浏览器中发送了一个请求到你的主机的80端口上。而你的主机正好有一个web服务器监听着
+80端口。OK，这个web服务就收到用户发出的请求了。基本的过程就是这样子的。所以web服务器就像是一个看守的
+人，监视着是否有人发消息过来。web服务器收到消息之后，接下就要把消息给另外的程序，处理这个消息或者是请求
+，这里有动态的和静态的两种，其实静态可以由web服务器自己直接抓取静态的东西发送给用户，但是动态的一些
+就要另外的程序处理了。根据用不用的服务器端编程语言，如python,php,jsp,ruby等。针对发过来的动态请求，
+用相应的程序运行处理之后，得到一个结果然后返回给服务器，服务器再发送给用户。而这个处理的过程可能又要
+用到其它的东西，比如最重要的数据库。所以这些程序在处理的时候又会调用数据库。所以基本的过程就是这样子的。
+至于具体的根据不用的情况会作出各种的优化。针对django和nginx，我们要引进一个fastcgi。具体的介绍可以
+用google搜索。在这里简单介绍一下。它就是相当于连接web服务器和那些处理程序的。在这里就是链接nginx和
+django的。负责获得web服务器给的信息。然后交给django里写的程序执行。相对来说它和django这一端关系比较紧密
+至于具体fastcgi的好处，可以自行搜索。下面给个图形象展示一下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/web.png&quot; alt=&quot;web&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然在实际中，web服务器担任了更加大角色。以及前面还会有均衡负载服务器等。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3 id='q6'&gt;配置nginx服务器&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;上面讲到我们要使用fastcgi，因此在这里我们要安装一个python库，名字叫flup。你可以在google搜索，并且下载
+到它，就想安装其它python库一样安装它就行。至此，我们最重要的一个步骤就是配置nginx的配置文件了。
+就像我们刚才说过的，该配置文件在conf目录下，名字叫nginx.conf。在此，我先把自己的nginx.conf贴出来，
+然后再一行一行分析：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#使用的用户和组
+user  xc xc;
+#制定工作衍生进程数
+worker_processes  4;
+#制定log存放位置
+#error_log  /usr/local/nginx/logs/error.log;
+#error_log  /usr/local/nginx/logs/error.log  notice;
+error_log  /usr/local/nginx/logs/error.log  info;
+#error_log  /usr/local/nginx/logs/error.log  error;
+
+#制定pid存放路径
+pid        /usr/local/nginx/conf/nginx.pid;
+#制定文件描述符数量
+worker_rlimit_nofile 51200;
+
+#event模块
+events {
+    #使用网络I/O模型  linux 推介使用epoll模型
+    use epoll;
+    # 允许的连接数
+    worker_connections  51200;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+#默认log的格式，名称为main
+    log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+                      '$status $body_bytes_sent &quot;$http_referer&quot; '
+                      '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+#设置访问日志，格式为main
+    access_log  /usr/local/nginx/logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+#设置压缩输出，作用是能够把信息压缩后再输出，浏览器再解压显示
+    gzip  on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_http_version 1.1;
+    gzip_comp_level 2;
+    gzip_types text/plain application/x-javascript text/css application/xml;
+    gzip_vary on;
+#主机配置
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+        #设置该网站应用中所需要的静态文件的根目录
+        location ~/static/ {
+            root   /home/xc/jwcsite/;
+           # root  html;
+           # index  index.html index.htm;
+            break;
+        }
+        #设置静态页面的根目录，此为admin的静态页面根目录，是我再查看错误日志的时候，看到admin应用是要调用admin/css/下面的内同的，所以我就按照这种路径进行修改了
+        location ~/media/ {
+            root   /home/xc/jwcsite/static/;
+           # root  html;
+           # index  index.html index.htm;
+            break;
+        }
+
+
+        #host and port to fastcgi server 
+        location / {
+        fastcgi_pass 127.0.0.1:8080;
+        fastcgi_param PATH_INFO $fastcgi_script_name;
+        fastcgi_param REQUEST_METHOD $request_method;
+        fastcgi_param QUERY_STRING $query_string;
+        fastcgi_param CONTENT_TYPE $content_type;
+        fastcgi_param CONTENT_LENGTH $content_length;
+        fastcgi_param pass_header Authorization;
+        fastcgi_intercept_errors off; 
+        }
+        #设置浏览器缓存这些图片格式文件浏览器缓存时间是30天，css/js缓存时间1小时
+        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+        {
+            expires 30d;
+        }
+
+        location ~ .*\.(js|css)?$
+        {
+            expires 1h;
+        }
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443;
+    #    server_name  localhost;
+
+    #    ssl                  on;
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_timeout  5m;
+
+    #    ssl_protocols  SSLv2 SSLv3 TLSv1;
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers   on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看起来有点长，不过后面灰色的内同都是注释掉的内容，只是配置文件默认就存在的。这些注释掉的内容分别是
+设置反向代理和虚拟主机用的。这份配置文件在我的django应用中能够很好地使用。
+&lt;strong&gt;强调一下，仅仅是可以使用，因此是初步的设置，具体的分析和优化还没有做&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第二行的user只的是你的linux机器上你的组和你的用户名。如果不知道的话,可以在shell中输入&lt;code&gt;id&lt;/code&gt;，
+就会显示你所在的组和你的用户名。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第四行可以根据你的cpu性能进行设置，一般4个差不多了，在下面的测试，
+我会讲到。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第八行，设置你的error_log的位置，而后面跟着的&lt;code&gt;info&lt;/code&gt;表示要显示的类型，你可以分别试试，我注释掉的
+同的显示，看看到底有什么不一样。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第八行，设置你存放pid的位置，在这里，当nginx启动之后，会有一个master进程，以及若干个worker进程。
+当你在这里设置pid后面的路径之后，比如我这里，就会在该路径的nginx.pid中存入master进程号。
+这个进程号在我们要停止nginx以及重启等有很大用处。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接下来是events模块，基本都用详细的注释，按照设置就行，其中worker_connections后面的数字，
+我这里设置的比较大，其实可以小一点，一两千就够了。这里的数字是我在压力测试的时候设置的。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接下来是http模块，这些选项照抄就行，其中log_format定义了一个log的格式为&lt;code&gt;main&lt;/code&gt;。
+基本上这个格式就挺好，在后面会用到&lt;code&gt;main&lt;/code&gt;这个格式。
+access_log 和之前设置的error_log表示的意思类似。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;看看http模块中的server模块,先是监听80端口，server_name我们这里就设置为localhost，也可以写127.0.0.1
+我们在自己机器上都是使用这个作为测试的。location ~/static/和location ~/madia/这两个比较重要，
+在这里详细讲解一下。刚才我展示了一张图片，其中当要用到静态文件的时候,是由nginx自己去抓取的。
+而我们在网站应用开发的时候都会有一个static或者media文件。里面一般存放着三个文件&lt;code&gt;js&lt;/code&gt;,&lt;code&gt;css&lt;/code&gt;,&lt;code&gt;images&lt;/code&gt;，
+这些都是静态文件，因此我们要告诉nginx去哪里抓取静态文件。在这里location后面跟着的名字不时很重要
+只要不重复就行，但是最好是有一定的代表意义。关键是root这里的设置。举个简单的例子，
+假如在我们的一个htnl文件里有这么一个引用图片的语句&lt;code&gt;src = &quot;/static/images/tree.png&quot;&lt;/code&gt;。
+那么实际上工作的时候就会把这个路径加上root设置的路径，然后去寻图片。对于css，js也是这么寻找的。
+也就是你设置完之后，这样字加起来能够成为这些静态文件的绝对路径，就没有问题了。
+我这里有两个这样的设置，是因为django里面admin这个应用本身要用到静态文件，因此我就把它拷贝出来。
+放到我自己的应用的static下面。但是我运行的时候，发现admin应用还是没有加载静态文件，
+然后，我就打开error.log。发现在admin应用里的静态文件引用是&lt;code&gt;admin/css/base.css&lt;/code&gt;，
+于是我按照&lt;strong&gt;路径组合最终是绝对路径&lt;/strong&gt;的原理。在上面加了一个&lt;code&gt;admin&lt;/code&gt;的目录。因此我的静态文件的目录
+是这样子的&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;/home/xc/jwcsite/-
+                 -static-
+                        -css
+                        -js
+                        -images
+                        -admin-
+                              -css
+                              -js
+                              -img
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;p&gt;另外&lt;code&gt;admin&lt;/code&gt;的静态文件目录如下&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/local/lib/python2.6/dist-packages/django/contrib/admin/media/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;再接下来就是设置fastcgi模块了。这里就先照抄，只要先知道fastcgi_pass。这个是等一下启动
+fastcgi的时候要用的。相当于告诉web服务器到时候怎么和fastcgi通信。很明显这里我们使用的是
+tcp/ip形式。主机名加端口方式，另外还有一中unix的socket方式。大家可以看fastcgi介绍。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;82行这里是设置浏览器缓存，在这里的意思就是，这些后缀名的图片在浏览器端缓存30天。
+而js，css这些缓存一小时，浏览器缓存可以明显较少网络传输的负担。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;h3 id = 'q7'&gt;启动应用&lt;/h3&gt;
+到现在为止我们已经完成了nginx的设置。可以尝试启动nginx服务器了。在这里，
+我又感到一个好处，就是nginx可以由自己启动&lt;code&gt;^_^&lt;/code&gt;。fastcgi也是由自己启动的&lt;/p&gt;
+
+&lt;p&gt;  sudo /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;上面这条命令可以启动nginx服务器，可以看出前面部分是nginx的可执行文件，后面是配置文件，
+&lt;code&gt;-c&lt;/code&gt;表示制定配置文件。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo /usr/local/nginx/sbin/nginx -t -c /usr/local/nginx/conf/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面这条命令用于测试配置文件是否正确，如果不正确会出现提示，告诉你哪一行有错误&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;kill -HUP nginx主进程号
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面命令可以让nginx平滑重启，当修改过配置文件之后，就可以使用这个命令使得载入新的配置文件
+其中，nginx的主进程号，可以有两种方式获得。第一种是我们在配置文件里提到的。
+在我们设置的配置文件里面的那个nginx.pid存放着nginx的主进程号可以使用cat命令查看。
+还有一种方法，执行下面命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ps -ef | grep nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会显示出nginx的主master进程，和worker进程，master进程号就是主进程号。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;kill -QUIT nginx主进程号
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面命令可以从容停止nginx&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python manage.py runfcgi host=127.0.0.1 port=8080 --settings=settings
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面命令用于启动fastcgi，其中host和port就是我们之前在nginx配置文件中对fastcgi的设置。
+启动安装settings.py文件的设置启动，这里我们要注意，在开发的时候，我们使用django都是
+在debug模式下面的。但是，现在真正部署了，我们必须把debug设置为&lt;code&gt;False&lt;/code&gt;。之后，
+我们最好添加一些404.html,500.html这些页面增加界面友好性，我们只要自己写出这些页面，
+然后扔到&lt;code&gt;template&lt;/code&gt;的根目录下面就OK了。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;blockquote&gt;&lt;p&gt;好了，现在你打开浏览器，输入&lt;code&gt;localhost&lt;/code&gt;，尽情享用你自己的网站吧。&lt;/p&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3 id='q8'&gt;对自己网站的测试&lt;/h3&gt;
+我在虚拟机中搭建完成之后，下载了一个webbench压力测试软件，安装很简单，直接解压
+make和sudo make install。输入&lt;code&gt;webbench&lt;/code&gt;就会显示参数帮助，一般&lt;code&gt;-c&lt;/code&gt;表示并发数，
+&lt;code&gt;-t&lt;/code&gt;表示持续时间。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;下面看看测试结果：&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;200个并发数，持续5秒，worker_processes 2  worker_connections 1024&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/webbench1.png&quot; alt=&quot;webbench1&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;1000个并发数，持续5秒，worker_processes 2  worker_connections 1024&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/webbench2.png&quot; alt=&quot;webbench2&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;3000个并发数，持续5秒，worker_processes 2  worker_connections 1024&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/webbench3.png&quot; alt=&quot;webbench3&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;3000个并发数，持续5秒，worker_processes 4  worker_connections 51200&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/webbench4.png&quot; alt=&quot;webbench4&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;5000个并发数，持续5秒，worker_processes 4  worker_connections 51200&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/webbench5.png&quot; alt=&quot;webbench5&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;5000个并发数，持续10秒，worker_processes 4  worker_connections 51200&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/webbench6.png&quot; alt=&quot;webbench6&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>mongodb 使用小记</title>
+   <link href="http://cloudaice.github.com/mongodb-shi-yong-xiao-ji"/>
+   <updated>2012-02-13T20:36:00+08:00</updated>
+   <id>http://cloudaice.github.com/mongodb-shi-yong-xiao-ji</id>
+   <content type="html">&lt;p&gt;昨天安装了nginx，感觉各种配置文件挺复杂的，也没时间去仔细研究。今天下载了mongodb，看着pdf教程使用了一下。&lt;/p&gt;
+
+&lt;p&gt;安装应该算是比较简单的，只是我在用pip安装的时候，不知道为什么就是找不到mongoengien。这中间折腾了不少时间。&lt;!--more--&gt;当时我怀疑是名字上没有匹配对，
+于是就自己写了一个抓取网页的程序，将网页上的所有index全部都抓下来，并且分析出来。还想着是不是可以增加一个根据编辑距离检索的功能。
+最后发现自己之前学的动态规划一时间还真的捡不起来了。还是作罢了，去官方网站下了一个源码包，然后用easy_install安装了，然后就是下载mongodb
+的安装包，官方网站直接提供。令我惊讶的是直接解压后，里面有一个bin目录，bin目录里面都是可执行文件，直接运行里面的mongod可执行文件，
+就算启动mongodb数据库服务程序了。这种安装方式在linux下面还是第一次碰到，感觉特别的简单明了。虽然之前也知道所谓的安装程序，就是把各种配置文件和
+可执行程序按照一定规则放在一定的目录下。但是这么简单明了的运行方法。可以让我花更多的时间在mongodb本身上面。&lt;/p&gt;
+
+&lt;p&gt;装玩数据库后，要建立一个默认的数据库路径，&lt;code&gt;/data/db&lt;/code&gt;，并且加上写权限。mongodb自身带了一个&lt;code&gt;client&lt;/code&gt;。也是在刚才说的bin目录下面。直接启动就可以了。
+这种运行模式和mysql是一样的。&lt;/p&gt;
+
+&lt;p&gt;mongodb是一种非关系型数据库，因此就没有那些sql语句。它主要分成三个层次。数据库，集合，文档。文档里面是key:value这样的键值对。和python中的字典很像
+一个文档可以有多个键值对，一个集合可以有多个文档，同样一个数据库可以有多个集合。另外还可以设置权限等。它比关系型数据库最大的不同就是它可以实现分布式
+存储，并且没有关系数据库那种表结构的限制。但是在数据库事物方面相对比较弱。具体使用方法我也是参照文档看，基本上一边看，一边就可以操作。&lt;/p&gt;
+
+&lt;p&gt;在python中，通过pymongo这个包可以链接到mongodb，通常文件开头使用这样一条语句便可以进行链接操作了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from pymongo import Connection
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;因为安装文件的简单，所以让我感觉使用起来还是很舒服的。另外，像google这样的公司也是使用bigtable这样的分布式数据库。Nosql在互联网应用上还是有很大的优势的。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>pointer and array in C(3)</title>
+   <link href="http://cloudaice.github.com/point-and-array-in-c-3"/>
+   <updated>2012-02-12T19:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/point-and-array-in-c-3</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h3&gt;指针和字符数组&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;和整型类型的数组一样，字符数组名称也是指向数组元素下标为0元素的指针。但是在这里有一点比较特殊。
+因为字符数组和字符串的联系很密切，而往往这样的关系容易把自己弄糊涂。
+下面来观看一段程序；&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;如果这段代码的输出都能够完全明白，那么就可以跳过这篇文章了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&quot;stdio.h&quot;
+#include&quot;string.h&quot;
+int main(int argc, int argv[])
+{
+        int a[10];
+        int i;
+        int *p;
+        for(i=0;i&amp;lt;10;i++)
+        {
+            a[i]=i;
+        }
+        printf(&quot;%d\n&quot;,sizeof(a));
+        printf(&quot;%d\n&quot;,sizeof(p));
+        char s1[10];
+        char *s2=&quot;aaaaaaaaaa&quot;;
+        char s3[]=&quot;aaaaaaaaaa&quot;;
+        char *p1;
+        char *p2;
+        char *p3;
+        p1=s1;
+        p2=s2;
+        p3=s3;
+        for(i=0;i&amp;lt;10;i++)
+        {
+            s1[i]='a';
+        }
+        printf(&quot;s1: %d %d\n&quot;,sizeof(s1),strlen(s1));
+        printf(&quot;p1: %d %d\n&quot;,sizeof(p1),strlen(p1));
+        printf(&quot;s2: %d %d\n&quot;,sizeof(s2),strlen(s2));
+        printf(&quot;p2: %d %d\n&quot;,sizeof(p2),strlen(p2));
+        printf(&quot;s3: %d %d\n&quot;,sizeof(s3),strlen(s3));
+        printf(&quot;p3: %d %d\n&quot;,sizeof(p3),strlen(p3));
+        s1[1]='A'; printf(&quot;s1 is ok\n&quot;);
+        p1[1]='A'; printf(&quot;p1 is ok\n&quot;);
+       // s2[1]='A'; printf(&quot;s2 is ok\n&quot;);
+       // p2[1]='A'; printf(&quot;p2 is ok\n&quot;);
+        printf(&quot;%c\n&quot;,s2[1]);printf(&quot;%c\n&quot;,p2[1]);
+        s3[1]='A'; printf(&quot;s3 is ok\n&quot;);
+        p3[1]='A'; printf(&quot;p3 is ok\n&quot;);
+     return 0;
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行运行完这段代码后，输出结果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/string_point.png&quot; alt=&quot;string_point&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;首先说一下sizeof()的作用。它的官方定义如下:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;The sizeof keyword gives the amount of storage, in bytes, associated with a variable or a type
+(including aggregate types). This keyword returns a value of type size_t.&lt;/p&gt;
+
+&lt;p&gt;The expression is either an identifier or a type-cast expression (a type specifier enclosed in
+parentheses).&lt;/p&gt;
+
+&lt;p&gt;When applied to a structure type or variable, sizeof returns the actual size, which may include
+padding bytes inserted for alignment. When applied to a statically dimensioned array, sizeof
+returns the size of the entire array. The sizeof operator cannot return the size of dynamically
+allocated arrays or external arrays.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;如果参数是一个变量，则返回变量占用的内存的长度。
+如果是一个拥有固定长度的数组，则返回数组所占用内存的大小。
+同时还有内存对齐等功能，详细描述可以参照官方介绍。&lt;/p&gt;
+
+&lt;p&gt;strlen()的功能就相对简单一些，它是一个函数，只接收char*型的参数。简单地说就是寻找字符串中&lt;code&gt;\0&lt;/code&gt;的位置，
+然后返回&lt;code&gt;\0&lt;/code&gt;前的字符长度。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sizeof&lt;/code&gt;和&lt;code&gt;strlen&lt;/code&gt;的最大区别就是：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;sizeof是运算符&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;strlen()是函数&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;现在我们来分析程序输出。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;第一行是两个&lt;code&gt;10&lt;/code&gt;，因为声明了一个常数为&lt;code&gt;10&lt;/code&gt;大小的字符数组，然后往里面填上字符;其中在数组的最后会有一个
+&lt;code&gt;\0&lt;/code&gt;。第二行输出&lt;code&gt;p1&lt;/code&gt;的&lt;code&gt;sizeof&lt;/code&gt;的值是&lt;code&gt;4&lt;/code&gt;，说明&lt;code&gt;p1&lt;/code&gt;仅仅是一个指针变量。占用了&lt;code&gt;4&lt;/code&gt;个字节内存。
+&lt;code&gt;s2&lt;/code&gt;的&lt;code&gt;sizeof&lt;/code&gt;也是&lt;code&gt;4&lt;/code&gt;，说明&lt;code&gt;s2&lt;/code&gt;也仅仅是一个指向字符的指针，指在字符数组的开始元素。
+&lt;code&gt;s3&lt;/code&gt;的&lt;code&gt;sizeof&lt;/code&gt;是&lt;code&gt;11&lt;/code&gt;。它和&lt;code&gt;s1&lt;/code&gt;是不一样的，&lt;code&gt;s1&lt;/code&gt;是一个声明的常熟大小的数组。而&lt;code&gt;s3&lt;/code&gt;不是，
+对于&lt;code&gt;s3&lt;/code&gt;的声明可以这样解释，
+把一个字符串放到一个数组里，使得一一对应。在这里我不知道编译器到底是给这个数组分配多少内存空间。
+在这个例子中，我给&lt;code&gt;s3[20]&lt;/code&gt;进行赋值，都不会报错，但是&lt;code&gt;s3[21]&lt;/code&gt;就报错了。不过按照规则，我们能正常控制的内存
+就是&lt;code&gt;11&lt;/code&gt;。因为字符串末尾都会带一个&lt;code&gt;'\0'&lt;/code&gt;
+代码中注释的那两行，是因为没有注释的话，运行时候会报错。也就是说不能改变这样声明的字符串中的字符。
+但是输出就可以。后来一查，原来&lt;code&gt;ANSI C&lt;/code&gt;禁止这种修改。这个python中的字符串不可修改有些类似&lt;code&gt;(*^__^*)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;最后给两个形象的图&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;code&gt;char str[]=&quot;aaaaaaaaa&quot;;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/str1.png&quot; alt=&quot;str1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;char *str=&quot;aaaaaaaaa&quot;;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/str2.png&quot; alt=&quot;str2&quot; /&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;注：&lt;code&gt;本文所有代码都是在linux下用gcc编译运行的&lt;/code&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>pointer and array in C(2)</title>
+   <link href="http://cloudaice.github.com/point-and-array-in-c"/>
+   <updated>2012-02-12T09:25:00+08:00</updated>
+   <id>http://cloudaice.github.com/point-and-array-in-c</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h3&gt;二维数组与指针&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;在&lt;a href=&quot;http://www.cloudaice.com/blog/2012/02/11/point-and-array-in-c/&quot;&gt;point and array in C(1)&lt;/a&gt;中已经详细讨论了数组和指针的关系。关于二维数组其实在这上面上的一个扩展，
+或者可以说仅仅是类型的扩展。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int calendar[12][31];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面声明语句表达的意思：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;声明了一个数组名称为calendar的数组，该数组有着12个&lt;strong&gt;数组类型&lt;/strong&gt;的数组。它的每个数组类型的元素是一个
+有着31个整型元素的数组。&lt;!--more--&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这句话，读着很不顺口，但是细细理解，还是非常有意义的。其实就是在普通数组的外面又包了一层。普通数组里面
+元素的类型都是简单的数据类型。而这个数组内的元素的类型就是一个数组。学过java等面向对象语言就会知道，在
+java里面，数组就是一个类型。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int value;
+value= calendar[2][7];
+value=*(calendar[2]+7);
+value= *(*(calendar+2)+7);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们来分析一下上面的四行代码：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;第一行：&lt;/strong&gt;   声明了一个整型变量value&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;第二行：&lt;/strong&gt;   将数组中的一个值赋给变量value&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;第三行：&lt;/strong&gt;   calendar[2]表示的是一个数组，因此由数组和指针的关系我们知道，calendar[2]也表示指向元素
+calendar[2][0]的指针。因此*(calendar[2]+7)就表示calendar[2][7]。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;第四行：&lt;/strong&gt;   有了第三行的分析，我们很容易知道calendar[2]和*(calendar+2)表达的内容是一样的。所以&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;  *(*(calendar+2)+7)  =&gt;  *(calendar[2]+7)  =&gt; calendar[2][7]&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;读者可以运行下面代码，看看结果是不是一样的，细细品味一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&quot;stdio.h&quot;
+int main(int argc,char* argv[])
+{
+    int calendar[12][31];
+    int i,j;
+    int value;
+    for (i =0;i&amp;lt;12;i++)
+    {
+        for (j=0;j&amp;lt;31;j++)
+        {
+            calendar[i][j]=i*j+j;
+        }
+    }
+    value=calendar[2][7];
+    printf(&quot;%d\n&quot;,value);
+    value = *(calendar[2]+7);
+    printf(&quot;%d\n&quot;,value);
+    value = *(*(calendar+2)+7);
+    printf(&quot;%d\n&quot;,value);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接着上面的讨论，当我们执行下面语句的时候，会发生什么：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int *p;
+p = calendar[2]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行上面的代码不会出现任何问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int *p;
+p = calendar;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当我们运行这段代码的时候，编译器会报错，我们来分析一下：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;code&gt;p&lt;/code&gt; 是一个指向一个整型变量的指针。那么 &lt;code&gt;calendar&lt;/code&gt; 表示什么呢？ &lt;code&gt;calendar&lt;/code&gt; 是一个数组的名称。
+它是一个怎样的数组呢？它是一个有着12个数组类型的元素的数组。换句话说：
+&lt;strong&gt;它是一个有着12有着31个整型元素的数组的数组类型元素的数组。&lt;/strong&gt;这句话太拗口了。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;想想这三行代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int a[2];
+int *p;
+p = a;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们在声明指针变量的时候为什么要用int呢？很明显，因为我们声明了一个int类型的数组。&lt;/p&gt;
+
+&lt;p&gt;那我们看看calendar是什么类型数组：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;包含31个整型元素的数组&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;没错，你可以理解，这就是calendar的类型。OK，因此，我们需要声明一个指向这种类型的指针，
+即指向数组的指针，那么下面的代码就顺理成章了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int (*p)[31];
+p=calendar;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到这里为止，我们好好整理一下自己的思绪，想想每一步走下来是不是都是清晰明白的。如果你都明白了，
+那么接着看下面的内容。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&quot;stdio.h&quot;
+int main(int argc,char* argv[])
+{
+    int a[3];
+    int *p;
+    int i;
+    for (p=a;p&amp;lt;&amp;amp;a[3];p++)
+    {
+        *(p)=1;
+    }
+    for(i=0;i&amp;lt;3;i++)
+    {
+        printf(&quot;%d\n&quot;,a[i]);
+    }
+   return 0; 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面这段代码在我么看完point and array in C (1)的时候应该就可以明白了，如果还有些迷糊的话，
+可以点击右上角的download下载下来自己运行一下。&lt;/p&gt;
+
+&lt;p&gt;明白之后，我们再来运行一下这段代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&quot;stdio.h&quot;
+int main(int argc,char* argv[])
+{
+    int calendar[12][31];
+    int (*p)[31];
+    int *q;
+    int i,j;
+    p = calendar;
+    for (i=0;i&amp;lt;12;i++)
+    {
+        for (j=0;j&amp;lt;31;j++)
+        {
+            *(*(p+i)+j)=i*31+j;
+        }
+     }
+    for (p=calendar;p&amp;lt;&amp;amp;calendar[12];p++)
+    {
+        for (q=*p;q&amp;lt;&amp;amp;((*p)[31]);q++)
+        {
+            printf(&quot;%d &quot;,*q);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下载它并且运行一下，看看自己是不是能够完全理解了。&lt;/p&gt;
+
+&lt;p&gt;注：&lt;code&gt;本文所有代码都是在linux下用gcc编译运行的&lt;/code&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>pointer and array in C(1)</title>
+   <link href="http://cloudaice.github.com/point-and-array-in-c-1"/>
+   <updated>2012-02-11T20:08:00+08:00</updated>
+   <id>http://cloudaice.github.com/point-and-array-in-c-1</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h3&gt;最简单的指针描述&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;任何指针都是指向某种类型的变量&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;看一段简单的指针代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int i;
+int *p;
+p = &amp;amp;i;
+*p=1;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看过指针的人都应该很清楚的知道这段代码表达的意思。我们声明了一个指针p，并且让它指向一个整形变量i.
+因此之后，任何对于&lt;code&gt;*p&lt;/code&gt;的赋值就是对变量i的改变。&lt;/p&gt;
+
+&lt;p&gt;用一张简单的图可以表示&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/point1.png&quot; alt=&quot;point1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对于其他类型，指针表达的意思也和这个类似，记住&lt;strong&gt;指针是指向某一个类型的变量&lt;/strong&gt;它有一个确定的指向&lt;strong&gt;类型&lt;/strong&gt;,
+着一点很重要。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3&gt;简单数组表述&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;img src=&quot;/images/point_array.png&quot; alt=&quot;point_array&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在C语言中，只有一维数组，并且数组的大小必须是一个常数，不可一是变量。当然在C99标准中可以让一个数组的大小
+是一个变量，但是在我们正常写程序的时候完全没有必要这样做。
+对于一个数组的元素，可以是任何&lt;strong&gt;一种&lt;/strong&gt;&lt;code&gt;（这从数组的声明中可以看出来，不可能有多种类型的元素在一个数组中）&lt;/code&gt;类型的对象，
+当然可以是数组。因此，我们就很容易模仿出一个二维数组。&lt;/p&gt;
+
+&lt;p&gt;对于一个数组，本质上就是在内存中的一段地址空间。这也和为什么数组大小是常数对应，因为编译器在编译的时候
+会根据数组大小分配一定的内存空间。很多书上会说，一个数组就是内存中的一段连续空间。我不知道是不是对所有
+都是这样。但是若是我们死死的认定数组就是内存中一段连续的内存空间的话，对于我们理解其他复杂类型的数组的
+时候会有很大的阻碍。而且这些都是编译器的事，我们只要知道有这样一段空间留着给我们用就是了。另一方面，
+数组可以也仅仅呈现给我们两个信息：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;数组的大小&lt;/p&gt;
+
+&lt;p&gt;数组下标为0的元素的指针&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;而其它任何有关数组的操作都是基于指针的运算。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h3&gt;数组与指针的关系&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  int a[3];
+  int *p;
+  p = a;
+  *p=1;
+  *(p+1)=2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;这段代码第一行声明了一个包含3个整形元素的数组。数组的名称为a。这也恰恰是一个数组所有的信息。然后我们
+声明了一个指向整形类型的指针，在这里，数组的名称就是指向该数组元素下标为0元素的指针。注意：
+在这里很多人就会烦迷糊了，包括我自己在开始接触的时候，苦了很久。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;疑问:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;既然数组的名称就是指向该数组下标为0元素的该类型的指针，那么它和一个单纯的指针有什么区别呢？也就是
+说和上面那段代码中的p有什么区别？&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这个问题曾困扰我很久，后来才明白，是自己概念没有理清楚。记得我们刚才谈到了一个主要的概念；
+就是数组呈现给我们的两个信息：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;数组的大小&lt;/p&gt;
+
+&lt;p&gt;数组下标为0的元素的指针&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;也就是说还有一个信息：就是数组的大小。而在实际编程中，仅仅&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sizeof(a);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;执行这个函数的时候，才会返回数组的大小。在其他任何时候，数组的名称都表示指向该数组下标为0的元素的指针。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;有了这句话说明，数组和指针的关系就算清了，下面我们说说指针和数组下标表示之间的关系&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;上面代码中，如果p是一个指向数组中一个元素的指针，那么通过将指针加一就可以得到指向数组下一个元素的指针，
+同样我们也可以使用减一得到指向数组前一个元素的指针。在这里我就曾经有这样错误的想法：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;一个数组就是内存中的一段连续的地址，指针又刚好表示一个元素的地址，那么对指针加一，减一不就是在
+那段连续的内存地址中移动吗。刚好与数组元素对应嘛&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这中理解方式，自认为很完美。其实有一个很明显的漏洞，那就是：数组是有类型的，比如int是4个字节，
+char是一个字节，如果仅仅是指针在实际的物理内存地址中加一减一，怎么知道每次加减应该移动多少呢？
+其实这样错误的理解原因就是把指针和实际物理内存地址对应的缘故。&lt;strong&gt;而实际上指针的加减一个整数，
+仅仅表示指向数组中后一个或者前一个该类型的元素。而不是指针二进制值的加减。这两者有本质区别。&lt;/strong&gt;
+这也是我开头为什么说不要认为数组是内存中一段连续的地址的原因。&lt;/p&gt;
+
+&lt;p&gt;在上面代码中我可以知道，&lt;em&gt;p和a[0]表示的内容是一样的,同样&lt;/em&gt;(p+1)和a[1]表示的内容是一样的，即*(p+i)
+是数组a中下标为i元素的引用。实际上数组对元素的表示正是用指针相加减来表示的。只是在很多时候，
+使用下标表示方法比使用指针的运算表示方法要方便明了很多。因此就记为a[i]。在这里我们会发现一个有非常有趣
+的现象&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&quot;stdio.h&quot;
+int main()
+{
+    int a[3];
+    int i;
+    for (i=0;i&amp;lt;3;i++)
+    {
+        i[a]=i;
+    }
+    for(i=0;i&amp;lt;3;i++)
+    {
+        printf(&quot;%d\n&quot;,a[i]);
+    }
+    for(i=0;i&amp;lt;3;i++)
+    {
+        printf(&quot;%d\n&quot;,i[a]);
+    }
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;读者可以在linux环境下，用gcc编译，并且运行它，看看输出结果。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;解释:
+因为我们知道&lt;em&gt;(a+i)表示的就是a[i],而p+i和i+p实际意义是一样的。所以&lt;/em&gt;(p+i)和*(i+p)表示的元素也是一样的。
+而下标表示法仅仅是根据指针进行运算的，所以a[i]和i[a]的效果是一模一样的。
+不过尽量不要使用这种表示方法，这对于写代码没有任何好处。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>python 魂(1)</title>
+   <link href="http://cloudaice.github.com/python-ji-ge-bi-jiao-te-se-de-ying-yong"/>
+   <updated>2012-02-10T19:52:00+08:00</updated>
+   <id>http://cloudaice.github.com/python-ji-ge-bi-jiao-te-se-de-ying-yong</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h4&gt;python列表解析&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;看一段代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ll=[]
+L=[1,2,3,4,5]
+for i in L:
+ll.append(i+5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这段代码表达的意思非常简单，将一个列表中的每一项值都加上5，然后再得到一个列表。
+同时，我们可以有另外一种写法：&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ll=[i+5 for i in L]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这两段程序看上去实现的功能是一样的，表面上，仅仅是第二段程序实现的比较简单。然而在python代码执行的时候，第二段代码执行速度比前一段代码的速度快一倍。因为python的迭代在解释器内部是以C的速度运行的。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4&gt;zip函数使用&lt;/h4&gt;
+
+&lt;p&gt;很多时候，我们有两个列表，其中一个列表的每一个值和另一个列表的值相对应，因此，很自然，我们就希望可以建立一个这样对应的字典。
+zip()函数，可以将两个列表，装成相应的元组对列表。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  key = ['num1','num2','num3']
+  value = [1,3,5]
+  &amp;gt;&amp;gt;&amp;gt;list(zip(key,value))
+  [('num1',1),('num2',3),('num3',5)]
+  &amp;gt;&amp;gt;&amp;gt;dict(zip(key,value))
+  {'num1':1,'num2':3,'num3':5}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;很简单就可以把两个列表转成对应的字典&lt;/p&gt;
+
+&lt;p&gt;其实对于zip函数，不仅仅对于列表有这样的功能，对于字符窜和元组也同样有这样的作用，并且可以对多个列表，
+元组，序列也是同样起作用的，当有多个序列的长度不一样的时候，以最小长度
+为准，使用zip的时候再加上for循环操作往往可以达到很高的效率&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/zip.png&quot; alt=&quot;zip-use&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4&gt;map&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;看一段例子&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/map1.png&quot; alt=&quot;map1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里我们可以看到，使用map可以将我们上面说的不等成序列（包括字符窜）补上None.
+其实map有更加重要的用处。
+刚才我们讲过列表解析，现在又有一种可以实现相似功能的方法，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def func(x):
+    return x+10
+a = [1,2,3]
+ll=list(map(func,a))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面代码的功能就是将列表中的每一个数，执行一下func函数，也就是加上5。
+其实map功能，理解起来非常容易，第一个参数就是一个函数，然后使用后面的可迭代的类型每个元素作为参数，
+进行函数调用，最后返回一个序列，同样后面的参数取决去，函数的参数个数。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4&gt;lambda表达式&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;lanbda表达式也叫做匿名函数，其实和函数在功能上实现是一样的，有函数有两点不用：&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;lambda的主体只是一个表达式，因此和函数相比有一定的限制性&lt;/li&gt;
+&lt;li&gt;lambda没有名字，其本身就是函数的名字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面用代码演示一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;用函数实现&quot;
+def func(x,y,z):
+    return x+y+z
+sum = func(1,2,3)
+
+&quot;用lambda实现&quot;
+f= lambda x,y,z:x+y+z
+sum=f(1,2,3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面两段代码实现的功能都是获得三个数相加的和。从这里可以看出，函数可以实现lambda表达式可以实现的所有功能
+只是lanbda表达式省了几行代码。很多人觉得lambda表达式没什么特别意义，但是我们现在回过去看看刚才说的
+map使用方式。再看看下面用lambda表达式实现的方式，结果自然知晓。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a = [1,2,3]
+ll=list(map(lanbda x:x+5,a))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;显然&lt;strong&gt;lambda表达式&lt;/strong&gt;和&lt;strong&gt;map&lt;/strong&gt;联合起来使用非常漂亮&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4&gt;python对象的概念&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;在这里稍微讲讲我理解的python对象的概念。&lt;/p&gt;
+
+&lt;p&gt;python中的对象概念要和变量的概念区别开来。我们知道在使用一个变量的时候是不用像C语言那样子，先要声明的。
+而是直接拿过来就是可以使用的。其实这里面一句话就可以解决，&lt;strong&gt;python中的类型属于对象，不属于变量&lt;/strong&gt;。
+下面用自己画的一张图表示一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;变量一 = 对象一
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/py_object1.png&quot; alt=&quot;py_object1&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;变量二 = 变量一
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/py_object2.png&quot; alt=&quot;py_object2&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;变量二 = 对象二
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/py_object3.png&quot; alt=&quot;py_object3&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>what will I think in the future</title>
+   <link href="http://cloudaice.github.com/what-will-i-think-in-the-future"/>
+   <updated>2012-02-06T19:47:00+08:00</updated>
+   <id>http://cloudaice.github.com/what-will-i-think-in-the-future</id>
+   <content type="html">&lt;blockquote&gt;&lt;p&gt;我在想，未来的我会怎么样看待现在的自己呢？&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;2012年的元宵节，我坐在实验室里，外面是轰隆隆的鞭炮声。这样的场景也不是第一次了，除夕的时候就是这样。在网上浏览着博客，注意到了livid这个人，一个安静的技术牛人。但是看着他写的博客，可以看出他的生活那么平淡，
+似乎没有快乐。我不知道该怎么说，只是觉得这些文章如谁一般静。而仅仅年长我几岁而已。&lt;code&gt;v2ex&lt;/code&gt;,一个用python
+写的开源&lt;code&gt;sns&lt;/code&gt;。&lt;!--more--&gt;很多&lt;code&gt;安静&lt;/code&gt;的人聚集在那里。他是这个应用的开发者，其中有一段对&lt;code&gt;v2ex&lt;/code&gt;这个名字的探讨。原来是那么悲凉。或许我对这些都还很不懂，但是也可以体会到一点。每一个人都是从年少的时候过来，但是每个人经历的
+都会不一样。很多时候，让我有一种“孤独程序员”的感觉。或许在那个时候，各种各样的技术已经不再是挂在心里的
+一件事情了。更应该说成了生活的一部分。而不是以此为骄傲和力量的来源。更多的会去思考这样的生活。在博客圆
+的一篇文章里看到过一个程序员，用html5做了一个爱情的计时，上面这样写着“这是程序员表达爱的方式”。很多时候
+仿佛觉得我们是不同寻常的一个群体。&lt;strong&gt;安静&lt;/strong&gt;，&lt;strong&gt;忙碌&lt;/strong&gt;，&lt;strong&gt;思考&lt;/strong&gt;。或租我还不是这样的群体中的一员，而我也正在向这个方向走着。&lt;/p&gt;
+
+&lt;p&gt;或许我还是一个走在路上的人，在将来的某一天也会和这个群体汇合。如果到了那个时候我又会怎样回望自己的曾经呢
+？看到一片博客名字叫&lt;code&gt;在26岁写给18岁的自己&lt;/code&gt;。那时的曾经真的可以读懂吗？或租有更多的冥冥之中的选择。&lt;/p&gt;
+
+&lt;p&gt;想想现在的自己，不算大，也不算小。这个寒假每天早上巡回在寝室，实验室和食堂之间。校园里，从放假时的
+行李箱的卡卡声，到除夕前后的寂静。很多时候夜晚一个人行走在校园里。这样的感觉很好。心感觉很平淡很平淡。
+或许对于很多人来说，寒假不回家是一件很不可思议的事情吧。但是自己也觉得没什么。从小到大过惯了一个人的生活
+总是喜欢每一件事情都可以有条有理的自己完成。而现在，寒假已经过去一半了，看着自己写着的寒假计划，似乎也完成了一些，开始时间学习python，每天晚上回去再看一会计算机网络。但是也没有每天都在看，很多时候，尽管寒假
+自己过自己的生活，但是当一个人生活的和大部分人不一样的时候，还是很容易就会被影响到的。尤其是除夕春节
+这样与众不同的时间。后来一个星期左右的时间里，搭建了这个博客。其实这个事情是在我计划的范围之外的。但是最终完成了，尽管花费了太多的时间，但是心里还是很高兴。因为另外一边又要学习C语言。所以有的时候感觉不能很
+投入，最近几天看着Django的文档。觉得还是挺容易的，只是做起来会比较难吧。不过自己也没有很严格的安排每天必须做什么，有的时候感觉时间过的真的很快。一天两顿饭之后，就是晚上了。或许在空中看到话，仅仅是一个身影两次穿梭在食堂和实验室之间。&lt;/p&gt;
+
+&lt;p&gt;昨天和今天学了一下抓取网页，提交表单和分析html。虽然有点小成就，但是感觉自己还是没有原理弄明白。希望
+自己能够利用好剩下的假期时间，最大效率的学习更多东西&lt;/p&gt;
+
+&lt;p&gt;关窗户的时候，发现外面下雪了，蒙蒙的灰色中一片雪白……&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>vim-notes</title>
+   <link href="http://cloudaice.github.com/vim-notes"/>
+   <updated>2012-02-04T00:00:00+08:00</updated>
+   <id>http://cloudaice.github.com/vim-notes</id>
+   <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h4&gt;对vim的爱恨&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;date:2012-02-04 10:09&lt;/p&gt;
+
+&lt;p&gt;也算是接触vim一年多了吧,开始使用的时候，就是感觉它是一个很神奇，很有技术感的东西。让人一看到这嘿嘿的屏幕就觉得是个“高手”,于是也想向着这个方向走，可视刚刚使用的时候
+真的不会觉得它给我的编辑带来了多少好处，反而不如使用正常的记事本。但是“高手”的幌子指引着我坚持使用了一段时间。然而唯一习惯了的就是&lt;code&gt;j&lt;/code&gt;,&lt;code&gt;k&lt;/code&gt;,&lt;code&gt;h&lt;/code&gt;,&lt;code&gt;l&lt;/code&gt;，&lt;!--more--&gt;
+于是在用其它编辑器的时候，也总是想要用这些键来上下滚动。或许到那个时候用&lt;code&gt;vim&lt;/code&gt;不算是阻碍我编辑东西了把。但是这就想是冰山一角，各种各样的插件海了。
+往往人都是不满足于现在所有的，不像刚接触&lt;code&gt;vim&lt;/code&gt;的时候一样，只要能够像使用记事本一样熟练使用它就已经心满意足了。于是就想配置各种插件。这些配置过程就不说了，网上的教程一搜就是一大堆，不过这中间的“磨难”每个人的体会都会是不一样。那些功能各异的插件能够用了，于是也就是这么用着了。可是里面是什么原理呢？一直都没弄明白。每次重装系统后，
+都是无脑的照着教程配置。这样一遍下来每次都会话费我很多时间。尤其是对它们之间的关系不时那么了解，一旦有错误之后就傻了……，每次都很绝望，就像是被人告诉一点，然后就知道一点，接下来就不知道干什么了。有一次在一个邮件列表里面发帖询问各位大神都是怎么学习vim配置的？唯一的回答是你用的不够多。这对于初学者，真的是毫无回答之力啊，
+很多时候，我们在学习一个新的知识的时候，总是会碰到这样的话“你就用好了，不用管那么多”。我不知道这样的话应该怎么理解。反正导线在为止，我都不赞同这种观点，
+尽管很多时候因为这样吃亏，花费很多时间去寻找，但是收获却很小。算了，这个问题以后再说吧……&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4&gt;配置vim&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;今天重新去找到这篇&lt;a href=&quot;http://blog.csdn.net/wooin/article/details/1858917&quot;&gt;教程&lt;/a&gt;一点一点的看着，把自己的vim又重新的配置了一遍。这我有个想法：就是把这些配置文件用git管起来，然后再托管到github上面。然后最好再自己写一个脚本。以后要重新配置，直接运行一个脚本就OK了。想到这里，可能很多时候我们在linux系统下面工作效率很低，可能是因为我们没有好好理解unix的文化。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1 安装gvim，&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;在终端里面，直接apt-get就行，缺少什么的话，系统自动都会提示你的。照着说的额安装就好了。gvim是gnome下的一个gui。看着比较舒服。安装完整以后在终端输入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gvim
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里可能会有一个问题，就是打开的界面菜单栏会是乱码，这是由于&lt;code&gt;utf8&lt;/code&gt;和&lt;code&gt;utf-8&lt;/code&gt;不同而引起的，可以通过一下两条命令解决&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /usr/share/vim/vim72/lang
+$ sudo ln -s menu_zh_cn.utf-8.vim menu_zh_cn.utf8.vim
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2 配置文件简单介绍&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;其实我自己到现在也不知道里面细节到底是怎么回事，但是，至少这样子就是可以用了。
+建立以下文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd
+$ mkdir .vim
+$ cd .vim
+$ mkdir plugin
+$ mkdir doc
+$ mkdir syntax
+$ touch .vimrc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;第一条命令是为了切换到你的用户当前目录，以上几条命令只是为了创建几个文件和目录，以便在安装插件的时候可以用到，如果这些文件和目录都已经有了的话，就不用了。&lt;code&gt;.vimrc&lt;/code&gt;是vim的配置文件。这个配置文件的作用范围就是只对当前用户有效。&lt;code&gt;.vim&lt;/code&gt;这个目录可以理解为存放插件用的，其中&lt;code&gt;doc&lt;/code&gt;文件用于存放插件的帮助文件。&lt;code&gt;plugin&lt;/code&gt;是用来存放插件内容的。一般都是以&lt;code&gt;.vim&lt;/code&gt;结尾。&lt;code&gt;syntax&lt;/code&gt;是存放字体高亮方案的目录.OK,就这些，接下来就是往里面放东西了.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3 设置&lt;code&gt;.vimrc&lt;/code&gt;文件&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;很多时候照着参数写&lt;code&gt;.vimrc&lt;/code&gt;文件是一件很费时间的事情，不小心写错了还要检查，所以以后要是有一个顺手的话，就自己备份一下比较方便，下面我自己的&lt;code&gt;.vimrc&lt;/code&gt;文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;设置TAB键为4个空格
+set tabstop =4 
+&quot;显示行号
+set number 
+&quot;set autoindent &quot;回车自动缩进
+
+&quot;关闭vi兼容模式
+set nocompatible 
+&quot;自动语法高亮
+syntax enable
+syntax on 
+&quot;自动检测文件类型
+filetype on 
+&quot;检测文件类型插件
+filetype plugin on 
+&quot;上下可视行数
+set scrolloff=6 
+&quot;设置删除建可以一次删除4个空格
+set softtabstop=4 
+&quot;搜索的时候忽略大小写
+set ignorecase
+&quot;当有一个字母是大写的时候，大小写敏感 
+set smartcase 
+
+&quot;设置配色方案
+colorscheme desert 
+&quot;显示括号配对情况
+set showmatch
+&quot; 选中状态下 Ctrl+c 复制
+vnoremap &amp;lt;c-c&amp;gt; &quot;+y
+
+&quot;if has(&quot;gui_running&quot;)
+&quot;    set guioptions-=m &quot; 隐藏菜单栏
+&quot;    set guioptions-=T &quot; 隐藏工具栏
+&quot;    set guioptions-=L &quot; 隐藏左侧滚动条
+&quot;    set guioptions-=r &quot; 隐藏右侧滚动条
+&quot;    set guioptions-=b &quot; 隐藏底部滚动条
+&quot;    set showtabline=0 &quot; 隐藏Tab栏
+&quot;endif
+
+&quot;设置启动窗口位置，前一个数字是X轴，后一个数字是Y轴
+winpos 480 64 
+&quot;设置窗口大小，行和列
+set lines=28 columns=108  
+&quot;自动与上一行跟从缩进
+set autoindent  
+
+&quot;用空格键来开关折叠
+set foldenable
+set foldmethod=indent
+nnoremap &amp;lt;space&amp;gt; @=((foldclosed(line('.')) &amp;lt; 0) ? 'zc' : 'zo')&amp;lt;CR&amp;gt;
+
+&quot;set guifont=Courier\ News:h10 &quot;设置字体方案
+&quot;set guifont=News:10 &quot;设置字体方案
+&quot;set guifont=Courier\ 10 &quot;设置字体方案
+&quot;set guifont=Monospace\ 12 &quot;设置字体方案
+&quot;set guifont=Yahei\ Consolas\ Hybrid:h10&quot;设置字体方案
+&quot;set guifont=Bitstream\ Vera\ Sans\ Mono\ 12&quot;设置字体方案
+
+set modeline 
+
+&quot;pydiction 1.2 python auto complete
+&quot;filetype plugin on
+let g:pydiction_location = '~/.vim/plugin/complete-dict'
+&quot;defalut g:pydiction_menu_height == 15
+&quot;let g:pydiction_menu_height = 20
+
+set mouse=a
+filetype plugin indent on
+set completeopt=longest,menu
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+&quot;set the taglist
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+
+&quot;set winmanage
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap wm :WMToggle&amp;lt;cr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;4 复制插件
+将&lt;code&gt;complete-dict  minibufexpl.vim  python_pydiction.vim  taglist.vim  winfileexplorer.vim  winmanager.vim  wintagexplorer.vim&lt;/code&gt;复制到plugin目录下面,其中complete-dict是一个针对python的插件,和python_pydiction.vim是连在一起用的，在.vimrc中有说明部分&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;把python.vim复制到syntax，这是一个针对python的代码高亮插件&lt;/p&gt;
+
+&lt;p&gt;把&lt;code&gt;taglist.txt  winmanager.txt&lt;/code&gt;复制到doc下面。&lt;/p&gt;
+
+&lt;p&gt;还有一个需要安装一下,去&lt;a href=&quot;http://ctags.sourceforge.net&quot;&gt;这里&lt;/a&gt;下载一下&lt;code&gt;ctags-5.x.tar.gz&lt;/code&gt;的压缩包，然后执行下面命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$  tar -xzvf ctags-5.6.tar.gz
+$ cd ctags-5.6
+$ ./configure
+$ make
+$ sudo make install   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;一切OK,基本上一个python的vim环境就可以用了，文中提到的除了ctags要自己下，其他都放在&lt;a href=&quot;https://github.com/cloudaice/vim&quot;&gt;github&lt;/a&gt;上了。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>谈谈搭建这个博客的感想</title>
+   <link href="http://cloudaice.github.com/first-octopress-blog"/>
+   <updated>2012-01-30T08:53:00+08:00</updated>
+   <id>http://cloudaice.github.com/first-octopress-blog</id>
+   <content type="html">&lt;h5&gt;纠结了两天的时间终于搭好了自己的博客&lt;/h5&gt;
+
+&lt;p&gt;原来的&lt;strong&gt;&lt;a href=&quot;httP://www.cloudaice.weebly.com&quot;&gt;用图片说话&lt;/a&gt;&lt;/strong&gt;那个网站我会慢慢的把它全部部署到这里的&lt;/p&gt;
+
+&lt;h4&gt;从买域名到在第三方网站写博客&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;在去年十月的时候我就经不住诱惑买了一个域名，当时自己的想法是要学习网站方面的知识,所以准备自己在电脑上搭建一个网站。于是那一段时间就是各种各样的查资料，因为自己是在实验室的一个局域网，所以没有一个固定的IP，于是就寻找动态IP什么的，
+还有IP路由转发。后来终于通过访问这个网址能够看到在我自己电脑上建立的一个&lt;code&gt;index.html&lt;/code&gt;文件了，但是同时也得出一个结论。&lt;!--more--&gt;
+凭着我目前的网络环境根本是不可能会搭建出一个可以用的网站的。至此，又因为学业比较忙，就只能去寻找了一个免费的建网站的&lt;a href=&quot;http://www.weebly.com&quot;&gt;地方&lt;/a&gt;虽然不怎么样，但是访问速度还是可以的，而且还是免费的，也就没有怎么管了。
+反而自己在&lt;a href=&quot;http://www.cnblogs.com/cloudaice/&quot;&gt;博客园&lt;/a&gt;写了几篇文章，之前还在&lt;a href=&quot;http://blog.csdn.net/cloudaice/&quot;&gt;csdn&lt;/a&gt;写文章，但是后来出现密码泄漏，就移到博客圆了。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h4&gt;原来自己要找的就在眼前&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;总结我从最初开始买域名的目的而言，就是为了学习知识。虽然最终也算是知道了网站搭建的过程，但是域名却没有真正的派上用场。
+就在差不多一星期前，真的是一个巧合.在用&lt;code&gt;github&lt;/code&gt;的时候，有一个问题不会了，于是就在网上搜索。这说起来真要谢谢&lt;code&gt;google&lt;/code&gt;。
+自从上次从一个人那里得到一个&lt;code&gt;hosts&lt;/code&gt;文件以后，用&lt;code&gt;google&lt;/code&gt;一点都不卡，以前经常不时地死掉，所以都用&lt;code&gt;baidu&lt;/code&gt;。
+在&lt;code&gt;google&lt;/code&gt;里面一搜就搜到了&lt;a href=&quot;http://worldhello.net/&quot;&gt;worldhello&lt;/a&gt;这个网站，说实话这个网站一进去，我就被它的简洁吸引。
+心中下意识地想，要是我能够有这样的一个网站，那该有多好啊。这个网站是蒋鑫老师的网站，之前就听说过国人出了一本&lt;code&gt;git&lt;/code&gt;的书。
+而且非常优秀，当时去当当看了下，唉，兜里面没钱啊。于是就把这个网站好好搜刮了一下，这一搜刮，竟然发现&lt;code&gt;github&lt;/code&gt;上面可以搭建个人网站，
+我当时真的是不相信。于是我用工具查了一下同IP的网站，搜出一大堆的网站啊。而且都是这种简介风格的博客。
+&lt;code&gt;github&lt;/code&gt;这个网站从认识到现在也差不多一年了吧，自己之前竟然一点都不知道，不禁叹息啊。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h4&gt;*遇上了，就要行动&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;把自己这几天&lt;strong&gt;“磨难”&lt;/strong&gt;的经历记录一下吧&lt;/p&gt;
+
+&lt;p&gt;自己的系统是64位的ubuntu系统，当时仗着自己有4G的内存，于是就玩64位（后来才发现因为这个吃了不少苦头，当然从另一方面来说，
+也是因为自己的技术水平不够啦）。知道&lt;a href=&quot;http://octopress.org/&quot;&gt;octopress&lt;/a&gt;官方网站，那里的步骤真的是很详细，不过是英文的。正好练习联系英语水平。
+第一步就是安装&lt;code&gt;rvm&lt;/code&gt;。这是ruby的版本控制器。到这里不禁又叹息啊，自己学python学了不少，就是不碰ruby，
+幼稚的理由是因为它是日本人发明的。现在才明白，我们学的是技术本身，根本没有必要把它和其他东西联系起来，
+尤其当着中联系成为阻碍的时候。&lt;code&gt;rvm&lt;/code&gt;也有一个&lt;a href=&quot;http://beginrescueend.com/&quot;&gt;官方网站&lt;/a&gt;，也有很详细的教程。其中安装这个步骤只要运行一个命令就可以了。
+但是我就恰恰卡在这一步上面了。怎么运行就是不能下载，其实对于学习一样新的东西而言，尤其是一个人在学习的时候，
+碰到这种情况是最糟糕的。缺少对于问题本身的理解，不能有效的从根本上去寻找解决问题的办法，只能是猜测，或者是凭着自己以前的经验。
+而对于我而言，很多的学习时间都是花在这个上面，即学找解决问题的方法，而不是学习知识本身。我个人是主张学习只是本身的。
+在这个问题上，我就不断的在&lt;code&gt;google&lt;/code&gt;上搜索。在搜索中发现&lt;a href=&quot;http://stackoverflow.com/&quot;&gt;stackoverflow&lt;/a&gt;是一个非常好的网站，都是一些提出问题和解决问题帖子，
+而且大部分都是很有用。在自己的64位系统上折腾了很久，差不多是一整天吧，还是没有成功。其实整天对于现在寒假的我来说真的是非常宝贵的。
+如果我拿这一整天来学习python的话，都可以学习好几个知识点，并且写一篇博客了。可是这样的寻找答案，
+卡在第一步的一整天真的让我感到很沮丧。但是告诉我自己不会放弃的。于是第二天开始在比较干净的虚拟机里面安装。
+再加上从网上搜索出来的几点比较有效的建议，也算一般顺利的在虚拟机里面完成了博客的搭建。
+于是回头想想，这是多么简单的一个过程啊，而且网上教程也是写的那么详细。而自己却是花了那么长的时间。。。。。。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h4&gt;*记录一下整个配置过程吧，如果有后来人，也算是可以参考参考&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;p&gt;去&lt;a href=&quot;http://beginrescueend.com/&quot;&gt;rvm&lt;/a&gt;官方网站，那里有一个提示，就是一条bash的命令。原本的复制过来就可以了。在自己的机器上运行，这里我就不贴出那条命令的代码
+了，因为时间不同的话，好像那个网站上的命令会变化，大家还是自己去官方网站看好了。
+接下来要运行一下这几条命令。这是在我安装过程中额外总结出来的。要顺利安装，这些软件是不可少的。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install build-essential libssl-dev libreadline5 libreadline5-dev zlib1g zlib1g-dev openssl 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;&lt;p&gt;安装完这些软件之后就可以参照&lt;a href=&quot;http://octopress.org/docs/setup/&quot;&gt;官方教程&lt;/a&gt;的步骤一步一步来，就没错了。&lt;/p&gt;
+
+&lt;p&gt;最后说一下，当你重装系统，或者是在另外电脑上想要写博客的时候，可以参照&lt;a href=&quot;http://huanggang.me/archives/667/&quot;&gt;这里&lt;/a&gt;的方法。这样子，基本上就没有什么问题，至于接下来的优化的问题，每个人都有每个人的聪明才智，就自己在&lt;a href=&quot;http://octopress.org/&quot;&gt;octopress&lt;/a&gt;上琢磨吧。&lt;/p&gt;&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>
