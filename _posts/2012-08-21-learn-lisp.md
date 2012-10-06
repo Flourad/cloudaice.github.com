@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "learn lisp"
-description: ""
-category: 
-tags: []
+category: [ lisp ]
 ---
 {% include JB/setup %}
 

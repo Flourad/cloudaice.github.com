@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "一图抵万言"
+title: "一图胜万言"
 comments: true
 sharing: true
 footer: true

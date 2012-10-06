@@ -1,13 +1,13 @@
 ---
 layout: page
 title: "Linux"
-description: ""
+categories: "linux"
 ---
 {% include JB/setup %}
 
-使用tail -f filename.log, 可以动态显示log的更新
 
-###为ubuntu添加系统快捷方式
+
+为ubuntu添加系统快捷方式
 
 有些时候，我们下载的软件通过在命令行里面执行就可以运行，例如我在安装Sublime_Text2的时候，
 于是需要自己创建系统快捷方式，方法如下：
@@ -24,7 +24,9 @@ description: ""
     Type=Application
     Categories=Application;Development; //系统中的位置
 
+
 ubuntu终端常用快捷键
+
 Bash Shell 快捷键 
 
     l         <CTRL k>：删除从光标到行尾的部分 
@@ -127,3 +129,16 @@ Bash Shell 快捷键
 + 水纹 = 按住 Ctrl+超级键 
 + 雨点 = Shift-F9 
 + 桌面展开＝ Ctrl + Alt + 下箭头，然后按住 Ctrl + Alt 和左/右箭头选择桌面
+
+
+解决出现`Could not open /dev/vmmon:`错误
+
+    sudo su
+    输入密码，切换到root权限
+    /etc/init.d/vmware start
+
+
+编译安装vim73之后设置vim为系统默认编辑器  
+
+    sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 50 --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/local/man/man1/vim.1.gz
+    sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 50 --slave /usr/share/man/man1/vi.1.gz vi.1.gz /usr/local/man/man1/vim.1.gz 

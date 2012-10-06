@@ -1,0 +1,106 @@
+---
+layout: page
+title: 笔记
+---
+
+{% include JB/setup %}
+
++ 个人笔记
+
+  + [linux](/pages/linux/index.html)
+  + [python](/pages/python.html)
+  + [ruby](/pages/ruby.html)
+  + [svn](/pages/svn-command.html)
+
+***
+
++ 博客列表
+
+  - 待阅博客
+
+    + 关于jekyll 
+      + jekyll的github[https://github.com/mojombo/jekyll](https://github.com/mojombo/jekyll)
+      + 讲解搭建jekyll-bootstrap的方法[http://jekyllbootstrap.com/](http://jekyllbootstrap.com/)
+      + 讲解git使用以及ruby语言的方法 [http://www.yangzhiping.com/](http://www.yangzhiping.com/)
+    
+    + 关于python 
+      + [python code test](http://docs.python-guide.org/en/latest/writing/tests/#the-basics)
+      + [django+jquery](http://blog.csdn.net/thinkinside/article/details/7269378)
+      + [运用Django的admin设置django项目的前端](http://blog.chinaunix.net/uid-20306166-id-687533.html)
+      + [介绍cgi原理](http://www.mike.org.cn/articles/what-is-cgi-fastcgi-php-fpm-spawn-fcgi/)
+    
+    + 关于levelDB
+      + [对levelDB于源码的解析](http://blog.xiaoheshang.info/?cat=26)
+      + [levelDB的整体解析](http://www.cnblogs.com/haippy/archive/2011/12/04/2276064.html)
+      + [levelDB资料整理](http://hideto.iteye.com/blog/1328921)
+      + [levelDB代码库](http://code.google.com/p/leveldb/)
+    
+    + 关于算法
+      + [B树，B+树...](http://blog.csdn.net/v_JULY_v/article/details/6530142)
+    
+    + 关于ruby
+      + [devise验证使用的gem包](https://github.com/plataformatec/devise)
+      + [devise包的介绍](http://hlee.iteye.com/blog/673058)
+    
+    + 关于mongodb
+      + [mongodb学习系列](http://www.cnblogs.com/huangxincheng/category/355399.html)
+    
+    + 关于limux
+      + [linux设备文件介绍](http://lamp.linux.gov.cn/Linux/device_files.html)
+      + [linux系统编程](http://blog.csdn.net/woshixingaaa/article/category/719756)
+      + [fdisk详解](http://blog.csdn.net/liumang_D/article/details/3895747)
+      + [debian学习笔记](http://man.chinaunix.net/linux/debian/debian_learning/index.html)
+
+    + 关于vimwiki
+      + [用vimwiki搭建自己的wiki世界](http://wiki.ktmud.com/tips/vim/vimwiki-guide.html)
+      + [vimwiki使用介绍](http://www.berlinix.com/VimWiki.html#toc_1.1)
+      + [vimwiki的github](https://github.com/vim-scripts/vimwiki)
+    
+    + 关于vim
+      + [vim](http://wiki.hotoo.me/Vim.html)
+      + [amix](http://amix.dk/blog/post/19486)
+      + [易水博客](http://easwy.com/blog/archives/advanced-vim-skills-introduce-vimrc/)
+      + [learn vim](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
+
+    + 关于git
+      + [git使用指南](https://sites.google.com/a/kingofat.com/wiki/git-tutorial)
+      + [finding git](http://blog.jayway.com/2012/01/25/finding-with-git/)
+
+  - 已阅博客
+
+    + [levelDB实例编写](http://qiuqiang1985.iteye.com/blog/1255365)
+    + [如何从零开始学习ROR](http://huacnlee.com/blog/how-to-start-learning-ruby-on-rails/)
+    + [什么是nodejs](http://www.infoq.com/cn/articles/what-is-nodejs)
+    + [nodejs&npm安装和配置](http://www.infoq.com/cn/articles/nodejs-npm-install-config)
+    + [深入nodejs模块机制](http://www.infoq.com/cn/articles/nodejs-module-mechanism)
+    + [nodejs事件机制](http://www.infoq.com/cn/articles/tyq-nodejs-event)
+    + [初探nodejs异步IO实现](http://www.infoq.com/cn/articles/nodejs-asynchronous-io)
+    + [深入浅出REST](http://www.infoq.com/cn/articles/rest-introduction)
+
+*** 
+
++ 一些文档
+
+  + [express中文手册](http://www.csser.com/board/4f77e6f996ca600f78000936#manual/creating-a-server)
+  + [javascript参考教程](http://www.jb51.net/shouce/javascript/)
+  + [rails官方文档](http://guides.rubyonrails.org/getting_started.html)
+  + [mongoose文档](http://mongoosejs.com/)
+  + [pymongo官方文档](http://api.mongodb.org/python/2.0.1/tutorial.html#indexing)
+  + [mastering node 介绍nodejs的英文资料](http://visionmedia.github.com/masteringnode/book.html)
+  + [fuse文件系统开发API](http://fuse.sourceforge.net/)
+  + [express官方文档](http://expressjs.com/)
+
+***
+
++ to do list
+
+  + jekyll
+  + ruby on rails
+  + nodejs
+  + bootstrap
+  + mqtt
+  + levelDB
+  + LFS一个自己的linux系统。深入了解linux
+  + slackware发行版挺有挑战
+
+
