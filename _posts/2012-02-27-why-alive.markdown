@@ -4,7 +4,6 @@ title: "why alive"
 date: 2012-02-27 18:43
 comments: true
 category: wind
-tags: []
 ---
 
 我或者要花这样的一段时间来写看起来这么深刻的话题。或许我是可以利用这段时间来看完几百行代码。
