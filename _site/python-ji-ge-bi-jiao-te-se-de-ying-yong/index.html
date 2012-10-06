@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>python 魂(1) &larr; </title>
+   <title>python 列表解析 匿名函数 对象概念 &larr; </title>
    <meta name="author" content="Xiang Chao" />
 
    <link rel="start" href="/" />
@@ -29,7 +29,7 @@
   
   <div id="header">
     <h1>
-    	<a href="/" title="cloudaice wiki">cloudaice wiki</a>
+    	<a href="/" title="cloudaice">cloudaice</a>
     	<span class="byline">&larr; <a href="/">Xiang Chao</a></span>
     </h1>
     <ul class="nav">
@@ -37,7 +37,7 @@
       <li><a  href="/archive.html">Archive</a></li>
       <li><a  href="/pages.html">Pages</a></li>
       <li><a  href="/categories.html">Categories</a></li>
-      <li><a  href="/tags.html">Tags</a></li>
+      <!--<li><a  href="/tags.html">Tags</a></li> -->
       <li><a  href='/picture.html'>Pic</a></li>
     </ul>
   </div>
@@ -45,7 +45,7 @@
   
 <div id="page">
 	
-  <h1 class="emphnext">python 魂(1)</h1>
+  <h1 class="emphnext">python 列表解析 匿名函数 对象概念</h1>
   <ul class="tag_box inline">
   
   
@@ -81,20 +81,20 @@ ll.append(i+5)
 <p>这两段程序看上去实现的功能是一样的，表面上，仅仅是第二段程序实现的比较简单。然而在python代码执行的时候，第二段代码执行速度比前一段代码的速度快一倍。因为python的迭代在解释器内部是以C的速度运行的。</p>
 
 <ul>
-<li><h4>zip函数使用</h4>
+<li><h4>zip函数使用</h4></li>
+</ul>
+
 
 <p>很多时候，我们有两个列表，其中一个列表的每一个值和另一个列表的值相对应，因此，很自然，我们就希望可以建立一个这样对应的字典。
 zip()函数，可以将两个列表，装成相应的元组对列表。</p>
 
-<pre><code>  key = ['num1','num2','num3']
-  value = [1,3,5]
-  &gt;&gt;&gt;list(zip(key,value))
-  [('num1',1),('num2',3),('num3',5)]
-  &gt;&gt;&gt;dict(zip(key,value))
-  {'num1':1,'num2':3,'num3':5}
-</code></pre></li>
-</ul>
-
+<pre><code>    key = ['num1','num2','num3']
+    value = [1,3,5]
+    &gt;&gt;&gt;list(zip(key,value))
+    [('num1',1),('num2',3),('num3',5)]
+    &gt;&gt;&gt;dict(zip(key,value))
+    {'num1':1,'num2':3,'num3':5}
+</code></pre>
 
 <p>很简单就可以把两个列表转成对应的字典</p>
 
@@ -146,7 +146,6 @@ ll=list(map(func,a))
 def func(x,y,z):
     return x+y+z
 sum = func(1,2,3)
-
 "用lambda实现"
 f= lambda x,y,z:x+y+z
 sum=f(1,2,3)

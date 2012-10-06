@@ -3,7 +3,6 @@ layout: post
 title: "importance of reading careful"
 date: 2012-06-30 22:33
 comments: true
-tags: []
 ---
 
 又有好一段时间没有写博客了，总觉得自己在忙，但是细数起来，自己并没有做多少实在的事情。<!--more-->这样想着，不免就有些沮丧了。
