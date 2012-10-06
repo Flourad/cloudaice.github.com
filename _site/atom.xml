@@ -4,7 +4,7 @@
  <title>cloudaice wiki</title>
  <link href="http://cloudaice.github.com/atom.xml" rel="self"/>
  <link href="http://cloudaice.github.com"/>
- <updated>2012-09-30T17:39:17+08:00</updated>
+ <updated>2012-10-06T11:13:51+08:00</updated>
  <id>http://cloudaice.github.com</id>
  <author>
    <name>Xiang Chao</name>
@@ -320,6 +320,30 @@ xdg-user-dirs-gtk-update
 &lt;li&gt;&lt;p&gt;启动观察效果&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; conky -c /home/shua/.conkycolors/conkyrc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;life&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; lover = ['father','mother']
+ conditions = [lambda p:'girl' in p,lambda p:'sincere' in p,lambda p:'kind-hearted' in p,lambda p: 'smart' in p]
+ confidants = [p for p in people if reduce(lambda x,y:x and y,[f(p) for f in conditions])]
+ lover.append(reduce(lambda x,y:x if love_me(x) &amp;gt;= love_me(y) else y,confidants))
+ friends = filter(lambda person:has_like-minded(person),people)
+ dreams = ['To be a physicist']
+ dreams.append('Write a excellent open source software')
+ hopes = (travel(university) for university in world if university is famous or featerd)
+ if time is not busy:
+     hopes.next()
+
+
+
+ var life = function(I){
+     I.wait(&quot;love&quot;,function(lover){
+         efforts_for_the_dreams(lover);
+         travel_around_the_world(lover);
+         });
+     working_hard();
+     achieve_dreams();
+     };
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 

@@ -148,4 +148,3 @@ conky是一个看上去很酷的监控工具，可以让桌面看上去更加hac
 
         conky -c /home/shua/.conkycolors/conkyrc 
 
-
