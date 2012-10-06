@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "arch installation"
-description: ""
 category: 
-tags: []
 ---
 
 {% include JB/setup %}
@@ -204,6 +202,9 @@ _走完这一步之后，下面的路基本上是平步青云了_
 
     startx
 
-下面是一张图片
+
+###下面是一张图片
+
+
 ![arch-gnome](/images/arch-gnome.png)
 

@@ -4,7 +4,7 @@
  <title>cloudaice</title>
  <link href="http://cloudaice.github.com/atom.xml" rel="self"/>
  <link href="http://cloudaice.github.com"/>
- <updated>2012-10-04T14:25:26+08:00</updated>
+ <updated>2012-10-06T16:34:26+08:00</updated>
  <id>http://cloudaice.github.com</id>
  <author>
    <name>Xiang Chao</name>
@@ -320,30 +320,6 @@ xdg-user-dirs-gtk-update
 &lt;li&gt;&lt;p&gt;启动观察效果&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; conky -c /home/shua/.conkycolors/conkyrc 
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;life&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; lover = ['father','mother']
- conditions = [lambda p:'girl' in p,lambda p:'sincere' in p,lambda p:'kind-hearted' in p,lambda p: 'smart' in p]
- confidants = [p for p in people if reduce(lambda x,y:x and y,[f(p) for f in conditions])]
- lover.append(reduce(lambda x,y:x if love_me(x) &amp;gt;= love_me(y) else y,confidants))
- friends = filter(lambda person:has_like-minded(person),people)
- dreams = ['To be a physicist']
- dreams.append('Write a excellent open source software')
- hopes = (travel(university) for university in world if university is famous or featerd)
- if time is not busy:
-     hopes.next()
-
-
-
- var life = function(I){
-     I.wait(&quot;love&quot;,function(lover){
-         efforts_for_the_dreams(lover);
-         travel_around_the_world(lover);
-         });
-     working_hard();
-     achieve_dreams();
-     };
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -803,8 +779,9 @@ pacman =Syy
 &lt;pre&gt;&lt;code&gt;startx
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;下面是一张图片
-&lt;img src=&quot;/images/arch-gnome.png&quot; alt=&quot;arch-gnome&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;下面是一张图片&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/arch-gnome.png&quot; alt=&quot;arch-gnome&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1699,15 +1676,6 @@ mail_sender:填写邮箱名称&lt;/p&gt;&lt;/blockquote&gt;
 &lt;li&gt;随后也是最好的地方，那就是&lt;a href=&quot;http://club.cnodejs.org/&quot;&gt;nodeclub&lt;/a&gt;啦。&lt;/li&gt;
 &lt;/ul&gt;
 
-</content>
- </entry>
- 
- <entry>
-   <title>jeky</title>
-   <link href="http://cloudaice.github.com/hello"/>
-   <updated>2012-02-23T00:00:00+08:00</updated>
-   <id>http://cloudaice.github.com/hello</id>
-   <content type="html">&lt;p&gt;测试博客&lt;/p&gt;
 </content>
  </entry>
  

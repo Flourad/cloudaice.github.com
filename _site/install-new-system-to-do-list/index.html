@@ -222,30 +222,6 @@ xdg-user-dirs-gtk-update
 
 <pre><code> conky -c /home/shua/.conkycolors/conkyrc 
 </code></pre></li>
-<li><p>life</p>
-
-<pre><code> lover = ['father','mother']
- conditions = [lambda p:'girl' in p,lambda p:'sincere' in p,lambda p:'kind-hearted' in p,lambda p: 'smart' in p]
- confidants = [p for p in people if reduce(lambda x,y:x and y,[f(p) for f in conditions])]
- lover.append(reduce(lambda x,y:x if love_me(x) &gt;= love_me(y) else y,confidants))
- friends = filter(lambda person:has_like-minded(person),people)
- dreams = ['To be a physicist']
- dreams.append('Write a excellent open source software')
- hopes = (travel(university) for university in world if university is famous or featerd)
- if time is not busy:
-     hopes.next()
-
-
-
- var life = function(I){
-     I.wait("love",function(lover){
-         efforts_for_the_dreams(lover);
-         travel_around_the_world(lover);
-         });
-     working_hard();
-     achieve_dreams();
-     };
-</code></pre></li>
 </ol>
 
 
