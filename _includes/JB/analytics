@@ -12,4 +12,3 @@
 {% endcase %}
 
 {% endif %}
-{% include JB/analytics-providers/baidu %}
