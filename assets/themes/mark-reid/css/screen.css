@@ -503,7 +503,7 @@ dl.figure dd {
 
 /* @group Equations */
 div.maruku-equation { display: block ;text-align: center; }
-div.maruku-equation img.maruku-png { position: relative; top: -0.75em;}
+div.maruku-equation img.maruku-png {position: relative; top: -0.75em;}
 span.maruku-inline { }
 img.maruku-png { }
 /* @end */
