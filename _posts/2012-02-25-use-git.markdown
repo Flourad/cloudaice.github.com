@@ -199,9 +199,15 @@ localbranch表示本地分支名称,remotebranch表示远程版本库分支名�
 
 **另外：HEAD   关键字指向版本库中的末稍，即为最后一次提交的版本库**
 
+ubuntu下git的可视化工具
+
+    sudo apt-get install gitg
+
 学习git的网站：  
 + [worldhello](http://worldhello.net)
+
 + [白话git](http://rogerdudler.github.com/git-guide/index.zh.html)
+
 + [高校利用git](http://www.yangzhiping.com/tech/github.html)
 
 
