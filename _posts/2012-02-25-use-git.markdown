@@ -211,6 +211,7 @@ ubuntu下git的可视化工具
 
 + [高校利用git](http://www.yangzhiping.com/tech/github.html)
 
++ [git community book](http://gitbook.liuhui998.com/index.html)
 
 
 
