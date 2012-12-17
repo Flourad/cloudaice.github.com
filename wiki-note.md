@@ -61,6 +61,7 @@ title: 笔记
       + [amix](http://amix.dk/blog/post/19486)
       + [易水博客](http://easwy.com/blog/archives/advanced-vim-skills-introduce-vimrc/)
       + [learn vim](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
+      + [用python的vimer](http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide)
 
     + 关于git
       + [git使用指南](https://sites.google.com/a/kingofat.com/wiki/git-tutorial)
@@ -103,4 +104,22 @@ title: 笔记
   + LFS一个自己的linux系统。深入了解linux
   + slackware发行版挺有挑战
 
+***
 
++ 书单
+
+  + 疯狂java讲义(已购)(读过半)
+  + C专家编程(已购)(略看)
+  + Ruby元编程(已购)(略读)
+  + 编程之美(已购)(读过半)
+  + UNIX环境高级编程(已购)(查读)
+  + 上帝掷骰子吗：量子物理史话(已购)(略看)
+  + 天文学概论(已购)(略读)
+  + 几何原本(已购)
+  + 从一到无穷大——科学中的事实和臆测(已购)
+  + C陷阱与缺陷(已购)
+  + C和指针(已购)
+  + 编程语言实现模式(已购)
+  + 深入理解LINUX内核(已购)
+  + PHP和MySQL Web开发(已购)
+  
