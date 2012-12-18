@@ -123,3 +123,15 @@ title: 笔记
   + 深入理解LINUX内核(已购)
   + PHP和MySQL Web开发(已购)
   
+
++ python nodule
+
+  + virtualenv
+  + gevent --> libevent cython python-dev
+  + celery
+  + tornado
+  + cyclone --> 给予tornado和twisted的一个web框架 
+
++ gist
+  + git-completion
+  + easy_install

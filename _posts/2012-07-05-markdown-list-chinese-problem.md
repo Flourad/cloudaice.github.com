@@ -15,4 +15,3 @@ rdiscount。
 
 >编辑`_config.yml`文件，在`pygments:true`上面添加一行`markdown: rdiscount`
 
-
