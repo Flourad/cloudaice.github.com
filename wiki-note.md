@@ -135,3 +135,8 @@ title: 笔记
 + gist
   + git-completion
   + easy_install
+
++ go语言学习
+
+  + [http://qiniutek.com/](http://qiniutek.com/)
+  + [http://mikespook.com](http://mikespook.com)
