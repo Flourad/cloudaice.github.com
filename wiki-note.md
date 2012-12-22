@@ -140,3 +140,5 @@ title: 笔记
 
   + [http://qiniutek.com/](http://qiniutek.com/)
   + [http://mikespook.com](http://mikespook.com)
+  + [学习go语言中文版](http://www.mikespook.com/learning-go/)
+  + [go语言中文翻译项目](http://code.google.com/p/golang-china/wiki/go_tutorial)
