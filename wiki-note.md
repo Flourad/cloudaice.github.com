@@ -130,7 +130,7 @@ title: 笔记
   + gevent --> libevent cython python-dev
   + celery
   + tornado
-  + cyclone --> 给予tornado和twisted的一个web框架 
+  + cyclone --> 介于tornado和twisted的一个web框架 
 
 + gist
   + git-completion
