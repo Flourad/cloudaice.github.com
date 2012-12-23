@@ -8,7 +8,7 @@ tagline: Supporting tagline
 浮生此处，唯留微心
 
 <div>
-<ul class="posts">
+<ul>
   {% for post in site.posts limit:2 %}
     <article class="content">
       <section class='title'>
@@ -27,5 +27,12 @@ tagline: Supporting tagline
     </article>
   {% endfor %}
 </ul>
+<div class='center'>
+  <a href="/archive.html" class='circle-wrapper'>
+  <div class='circle'>&nbsp;</div>
+  <div class='circle'>&nbsp;</div>
+  <div class='circle'>&nbsp;</div>
+  </a>
+</div>
 </div>
 
