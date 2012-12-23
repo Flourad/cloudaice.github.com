@@ -472,7 +472,7 @@ p.delicious-extended:before { content: ' — '; }
 #footer .copyright {
 	position: absolute;
 	left: 0;
-	text-align: left;
+	text-align: center;
 	display: block;
 }
 #footer .engine {
