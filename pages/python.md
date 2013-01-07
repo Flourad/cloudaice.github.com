@@ -120,3 +120,8 @@ pythonbrew:这是python的版本管理工具，非常好用。具体安装方法
             print  "%s %s " %(key,value)
 
 
+####python执行系统命令
+
+    os.system("cmd") 
+    
+**cmd**表示要执行的命令
