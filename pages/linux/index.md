@@ -5,9 +5,11 @@ categories: "linux"
 ---
 {% include JB/setup %}
 
-
+linux 常用笔记
+---------------
 
 为ubuntu添加系统快捷方式
+========================
 
 有些时候，我们下载的软件通过在命令行里面执行就可以运行，例如我在安装Sublime_Text2的时候，
 于是需要自己创建系统快捷方式，方法如下：
@@ -26,6 +28,7 @@ categories: "linux"
 
 
 ubuntu终端常用快捷键
+===================
 
 Bash Shell 快捷键 
 
@@ -97,7 +100,7 @@ Bash Shell 快捷键
     ctrl+shift+n=新终端（terminal和konsole有所不同） 
     ctrl+c=终止 
 
-以下为桌面的快捷键列表 
+桌面的快捷键
 
 + 打开主菜单 = Alt + F1 
 + 运行 = Alt + F2 
@@ -132,13 +135,23 @@ Bash Shell 快捷键
 
 
 解决出现`Could not open /dev/vmmon:`错误
+=======================================
 
     sudo su
     输入密码，切换到root权限
     /etc/init.d/vmware start
 
 
-编译安装vim73之后设置vim为系统默认编辑器  
+编译安装vim73之后设置vim为系统默认编辑器
+========================================
 
     sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 50 --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/local/man/man1/vim.1.gz
     sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 50 --slave /usr/share/man/man1/vi.1.gz vi.1.gz /usr/local/man/man1/vim.1.gz 
+
+linux 相关文章
+=============
+
++ [应该知道的linux技巧](http://cloudbbs.org/forum.php?mod=viewthread&tid=10815)
++ [做个环保主义程序员](http://coolshell.cn/articles/7186.html)
++ [你可能不知道的shell](http://coolshell.cn/articles/8619.html)
++ [28lnux命令行神器](http://coolshell.cn/articles/7829.html)

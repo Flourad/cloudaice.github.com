@@ -125,3 +125,6 @@ pythonbrew:这是python的版本管理工具，非常好用。具体安装方法
     os.system("cmd") 
     
 **cmd**表示要执行的命令
+
++ python matplotlib绘图手册[http://hyry.dip.jp/tech/book/page/scipy/matplotlib.html](http://hyry.dip.jp/tech/book/page/scipy/matplotlib.html)
+
