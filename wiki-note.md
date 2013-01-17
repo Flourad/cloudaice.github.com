@@ -131,6 +131,7 @@ title: 笔记
   + celery
   + tornado
   + cyclone --> 介于tornado和twisted的一个web框架 
+  + fabric -->  用于自动化部署的工具
 
 + gist
   + git-completion
