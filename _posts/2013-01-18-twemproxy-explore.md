@@ -3,7 +3,8 @@ layout: post
 title: "twemproxy explore"
 description: ""
 category: default
-published: true
+published: "true"
+
 ---
 
 {% include JB/setup %}
