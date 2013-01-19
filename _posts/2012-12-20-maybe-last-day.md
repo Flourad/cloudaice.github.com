@@ -2,8 +2,8 @@
 layout: post
 title: "maybe last day"
 description: ""
-category: 
-published: "true"
+category: default
+published: true
 
 ---
 {% include JB/setup %}
