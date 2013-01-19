@@ -3,7 +3,8 @@ layout: post
 title: "maybe last day"
 description: ""
 category: 
-tags: []
+published: "true"
+
 ---
 {% include JB/setup %}
 
