@@ -65,7 +65,7 @@ hr {
 sup { line-height: 1ex; }
 
 #site {
-	max-width: 72em;
+	max-width: 72%;
 	margin: 1.5em auto 2em auto;
 	line-height:1.6em;
         color:#222;
