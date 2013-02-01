@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "服务端和移动端的通信方式"
-category: [ grass ]
+category: grass 
+
 ---
 {% include JB/setup %}
 

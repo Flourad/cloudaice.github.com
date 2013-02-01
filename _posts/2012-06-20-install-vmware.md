@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "安装vmware"
-category: [ vmware ]
+category: vmware 
+
 ---
 {% include JB/setup %}
 
