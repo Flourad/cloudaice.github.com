@@ -12,7 +12,7 @@ published: true
 twemproxy,也叫nutcraker。是twtter开源的一个redis和memcache代理服务器。
 redis作为一个高效的缓存服务器，非常具有应用价值。但是当使用比较多的时候，就希望可以通过某种方式
 进行统一管理。避免每个应用每个客户端管理连接的松散性。同时在一定程度上变得可以控制。
-搜索了不少的开源代理项目，知乎实现的python分片客户端。node的代理中间层，还有各种restfull的开源代理。
+搜索了不少的开源代理项目，知乎用python实现的redis分片客户端。用node实现的代理中间层，还有各种Restful的开源代理。
 
 + RedBrige
   - C + epoll实现的一个小的webserver
