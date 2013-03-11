@@ -5,8 +5,6 @@ tagline: Supporting tagline
 ---
 {% include JB/setup %}
 
-浮生此处，唯留微心
-
 <div>
 <ul>
   {% for post in site.posts limit:2 %}
