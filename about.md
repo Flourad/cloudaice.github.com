@@ -14,7 +14,7 @@ title: about me
     confidants = [p for p in people if reduce(lambda x, y: x and y,
                                               [f(p) for f in conditions])]
     lover.append(reduce(lambda x, y: x if love_me(x) >= love_me(y) else y, confidants))
-    friends = filter(lambda person:has_like-minded(person),people)
+    friends = filter(lambda person: has_like-minded(person), people)
     dreams = ['To be a physicist']
     dreams.append('Write a excellent open source software')
     hopes = (travel(university) for university in world if university is famous or featerd)
