@@ -9,9 +9,11 @@ title: about me
 
 
     lover = ['father','mother']
-    conditions = [lambda p:'girl' in p,lambda p:'sincere' in p,lambda p:'kind-hearted' in p,lambda p: 'smart' in p]
-    confidants = [p for p in people if reduce(lambda x,y:x and y,[f(p) for f in conditions])]
-    lover.append(reduce(lambda x,y:x if love_me(x) >= love_me(y) else y,confidants))
+    conditions = [lambda p: 'girl' in p, lambda p: 'sincere' in p,
+                  lambda p: 'kind-hearted' in p, lambda p: 'smart' in p]
+    confidants = [p for p in people if reduce(lambda x, y: x and y,
+                                              [f(p) for f in conditions])]
+    lover.append(reduce(lambda x, y: x if love_me(x) >= love_me(y) else y, confidants))
     friends = filter(lambda person:has_like-minded(person),people)
     dreams = ['To be a physicist']
     dreams.append('Write a excellent open source software')
