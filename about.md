@@ -17,7 +17,7 @@ title: about me
     friends = filter(lambda person: has_like-minded(person), people)
     dreams = ['To be a physicist']
     dreams.append('Write a excellent open source software')
-    hopes = (travel(university) for university in world if university is famous or featerd)
+    hopes = (travel(university) for university in world if is famous or featerd)
     if time is not busy:
         hopes.next()
 
