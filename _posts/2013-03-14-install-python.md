@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "非root用户安装Python"
+title: "非root用户配置Python环境"
 description: ""
 category: default
 published: true
