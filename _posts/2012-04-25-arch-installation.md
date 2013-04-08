@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "arch installation"
-category: 
+category: arch
+
 ---
 
 {% include JB/setup %}
