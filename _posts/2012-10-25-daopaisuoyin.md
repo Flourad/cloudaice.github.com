@@ -2,10 +2,11 @@
 layout: post
 title: "倒排索引小实验"
 description: ""
-category: 
-tags: []
+category: grass
+
 ---
 {% include JB/setup %}
+
 今天下午因为要完成一个信息检索的结课论文。整整写了一下午的程序。不过还好，都是用python写的。
 
 倒排索引这个东西，在半天之前对于我来说，还是一个很陌生的东西。用一个下午的时间。自己简单的完成了一个小实验。搜索引擎中检索文件的过程大自是这样子，
