@@ -2,8 +2,8 @@
 layout: post
 title: "linux下的进程调度方法小记"
 description: ""
-category: 
-tags: []
+category: linux 
+
 ---
 {% include JB/setup %}
 

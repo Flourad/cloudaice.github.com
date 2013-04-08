@@ -2,8 +2,8 @@
 layout: post
 title: "重新安装系统之后要做的事情"
 description: ""
-category: 
-tags: []
+category: grass
+
 ---
 {% include JB/setup %}
 
