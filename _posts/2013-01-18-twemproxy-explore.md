@@ -2,7 +2,7 @@
 layout: post
 title: "twemproxy explore"
 description: ""
-category: default
+category: redis
 published: true
 
 ---
