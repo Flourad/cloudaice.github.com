@@ -3,7 +3,8 @@ layout: post
 title: "what will I think in the future"
 date: 2012-02-06 19:47
 comments: true
-tags: []
+category: mine
+
 ---
 >我在想，未来的我会怎么样看待现在的自己呢？
 
