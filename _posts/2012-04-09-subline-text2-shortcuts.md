@@ -2,8 +2,8 @@
 layout: post
 title: "subline-text2 的快捷键"
 description: ""
-category: 
-tags: []
+category: grass
+
 ---
 {% include JB/setup %}
 
