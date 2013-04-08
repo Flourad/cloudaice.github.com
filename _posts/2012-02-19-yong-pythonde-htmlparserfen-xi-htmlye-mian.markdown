@@ -3,7 +3,8 @@ layout: post
 title: "用python的HTMLParser分析html页面"
 date: 2012-02-19 13:44
 comments: true
-categories: grass
+categories: python
+
 ---
 
 python里面有很多实用简单的工具，下面记录一下自己学习使用HTMLParser模块分析抓取的网页的例子:
