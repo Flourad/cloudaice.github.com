@@ -2,8 +2,8 @@
 layout: post
 title: "对文件系统设计的反思"
 description: ""
-category: 
-tags: []
+category: mine
+
 ---
 {% include JB/setup %}
 
