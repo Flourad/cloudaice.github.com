@@ -2,8 +2,8 @@
 layout: post
 title: "ubuntu12.04下安装lamp"
 description: ""
-category: 
-tags: []
+category: grass
+
 ---
 {% include JB/setup %}
 
