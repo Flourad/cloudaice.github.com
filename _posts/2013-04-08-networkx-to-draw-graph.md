@@ -2,7 +2,7 @@
 layout: post
 title: "Networkx to Draw graph"
 description: "Python Networkx Drawing"
-category: default
+category: python
 published: true
 
 ---
