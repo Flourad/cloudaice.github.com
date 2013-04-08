@@ -3,8 +3,10 @@ layout: post
 title: "pointer and array in C(1)"
 date: 2012-02-11 20:08
 comments: true
-categories: pure-c
+categories: C
+
 ---
+
 + ###最简单的指针描述
 > **任何指针都是指向某种类型的变量**
 
