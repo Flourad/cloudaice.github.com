@@ -2,8 +2,8 @@
 layout: post
 title: "markdown解释中文列表的问题"
 description: ""
-category: 
-tags: []
+category: markdown
+
 ---
 {% include JB/setup %}
 
