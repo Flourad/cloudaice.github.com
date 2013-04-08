@@ -2,7 +2,7 @@
 layout: post
 title: "非root用户配置Python环境"
 description: ""
-category: default
+category: python
 published: true
 
 ---
