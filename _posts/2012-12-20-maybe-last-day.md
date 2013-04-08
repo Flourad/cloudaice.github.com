@@ -2,7 +2,7 @@
 layout: post
 title: "maybe last day"
 description: ""
-category: default
+category: mine
 published: true
 
 ---
