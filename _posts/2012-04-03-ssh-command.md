@@ -2,8 +2,8 @@
 layout: post
 title: "ssh command"
 description: ""
-category: 
-tags: []
+category: grass
+
 ---
 {% include JB/setup %}
 
