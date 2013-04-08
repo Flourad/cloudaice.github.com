@@ -2,8 +2,8 @@
 layout: post
 title: "日志收集系统chukwa协议分析"
 description: ""
-category: 
-tags: []
+category: grass
+
 ---
 {% include JB/setup %}
 
