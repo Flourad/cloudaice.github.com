@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "mac install ruby"
+title: "Mac系统下安装ruby"
 description: ""
-category: 
-tags: []
+category: ruby
+
 ---
 {% include JB/setup %}
 在小米实习了将近四个月的时间，终于买了一台mac air回来。这或许也算是这几个月以来自己比较开心的事情了吧。或许还可以加上之前去日本免费旅游一周。
