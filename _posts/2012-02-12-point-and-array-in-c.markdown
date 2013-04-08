@@ -3,8 +3,8 @@ layout: post
 title: "pointer and array in C(2)"
 date: 2012-02-12 09:25
 comments: true
-category: pure-c
-tags: []
+category: C
+
 ---
 
 + ###二维数组与指针
