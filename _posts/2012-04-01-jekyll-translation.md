@@ -2,8 +2,8 @@
 layout: post
 title: "Jekyll 简介(译)"
 description: ""
-category: 
-tags: []
+category: grass
+
 ---
 {% include JB/setup %}
 
