@@ -4,7 +4,7 @@ title: "mongodb 使用小记"
 date: 2012-02-13 20:36
 comments: true
 category: grass
-tags: []
+
 ---
 
 昨天安装了nginx，感觉各种配置文件挺复杂的，也没时间去仔细研究。今天下载了mongodb，看着pdf教程使用了一下。
