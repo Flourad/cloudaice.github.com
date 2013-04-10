@@ -129,3 +129,8 @@ pythonbrew:这是python的版本管理工具，非常好用。具体安装方法
 
 + python matplotlib绘图手册[http://hyry.dip.jp/tech/book/page/scipy/matplotlib.html](http://hyry.dip.jp/tech/book/page/scipy/matplotlib.html)
 + [matplotlib绘图入门](http://www.cnblogs.com/wei-li/archive/2012/05/23/2506940.html)
+
+####`__future__`模块作用
+用于低版本python使用比较新的特性，这些新的特性最终会在未来的python版本种包括。
+
+> 至少确保在2.1之前版本的Python可以正常运行一些新的语言特性，需要使用语句 `from __future__ import *`
