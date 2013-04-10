@@ -19,7 +19,8 @@ description: ""
 
 #####使用like语句的时候
 
-    c.execute("select status room from tablename where status = ? and room like ?",[statusname,roomname])
+    c.execute("select status room from tablename where status = ? and room like ?",
+    [statusname,roomname])
 
 ####字符编码
 
