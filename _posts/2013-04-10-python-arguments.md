@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Python参数传递"
-description: ""
-category: default
+description: "关于python的参数传递"
+category: Python
 published: true
 
 ---
