@@ -29,7 +29,9 @@ body {
 
 /* Hack via Joel Spolsky to make image rescaling nicer in IE */
 img { -ms-interpolation-mode:bicubic; }
-img {}
+
+img {
+}
 
 /* IE6 ignores this and uses default size of 16pt */
 html>body { font-size:16px; }
