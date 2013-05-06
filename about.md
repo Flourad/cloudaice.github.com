@@ -1,6 +1,6 @@
 ---
 layout: page
-title: about me
+title: About me
 ---
 
 {% include JB/setup %}
