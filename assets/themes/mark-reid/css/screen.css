@@ -34,7 +34,7 @@ img {
 }
 
 /* IE6 ignores this and uses default size of 16pt */
-html>body { font-size:16px; }
+html>body { font-size:16px; line-height: 180%; }
 p { margin: 0 0 1.5em 0; text-align: justify; }
 
 a { text-decoration: none; color: #339; }
@@ -70,7 +70,7 @@ sup { line-height: 1ex; }
 #site {
 	max-width: 72%;
 	margin: 1.5em auto 2em auto;
-	line-height:1.6em;
+	line-height:1.8em;
         color:#222;
 }
 
@@ -223,7 +223,7 @@ ul.compact li a {
 	top: 0;
 	right: 0;
 	font-size: 100%;
-	line-height: 1.6em;
+	line-height: 180%;
 	display: block;
 	margin: 0;
 	width: 50%;
@@ -241,7 +241,7 @@ ul.compact li a {
 #header .byline {
 	color: silver;
 	font-size: 10pt;
-	line-height: 75%
+	line-height: 180%
 }
 #header:hover .byline a { color: silver; text-shadow: none; }
 #header:hover .byline a:hover { color: black; text-shadow: #aaa 1px 1px 2px;}
