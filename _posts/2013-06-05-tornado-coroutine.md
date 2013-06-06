@@ -100,7 +100,7 @@ Tornado中有这么一个方法：
 
     tornado.ioloop.IOLoop.instance().add_timeout()
     
-该方法是`time.sleep`的非阻塞版本，它接受一个时间长度和一个函数这两个参数。表示多少时间之后调用该函数。在这里它是基于`ioloop`的，因此是非阻塞的。该方法在于客户端长连接以及回调函数编程中使用的比较多。但是用它来跑一些定时任务是我自己想出来的。通常跑定时任务也没必要使用到它。但是我在使用`heroku`的时候，发现没有注册信用卡的话仅仅能够使用一个简答`Web Application`的托管。不能添加定时任务来跑。于是就想出这么一个方法。在这里，我主要使用它隔一段时间通过`Github API`接口去抓取数据。大自使用方法如下：
+该方法是`time.sleep`的非阻塞版本，它接受一个时间长度和一个函数这两个参数。表示多少时间之后调用该函数。在这里它是基于`ioloop`的，因此是非阻塞的。该方法在客户端长连接以及回调函数编程中使用的比较多。但是用它来跑一些定时任务却是无奈之举。通常跑定时任务也没必要使用到它。但是我在使用`heroku`的时候，发现没有注册信用卡的话仅仅能够使用一个简单`Web Application`的托管。不能添加定时任务来跑。于是就想出这么一个方法。在这里，我主要使用它隔一段时间通过`Github API`接口去抓取数据。大自使用方法如下：
 
 + 装饰器
 
@@ -143,11 +143,11 @@ Tornado中有这么一个方法：
         app.listen(options.port)
         tornado.ioloop.IOLoop.instance().start()
         
-这样做之后，当`Web Application`启动之后，定时任务就会随着跑起来，而且因为它是基于事件的，并且异步执行的，所以并不会影响`Web`服务的正常运行，当然任务不能是阻塞的和计算密集型的。我这里主要是抓取数据，而且用的是`Tornado`自带的异步抓取方法。
+这样做之后，当`Web Application`启动之后，定时任务就会随着跑起来，而且因为它是基于事件的，并且异步执行的，所以并不会影响`Web`服务的正常运行，当然任务不能是阻塞的或计算密集型的。我这里主要是抓取数据，而且用的是`Tornado`自带的异步抓取方法。
 
 在`sync_loop_call`装饰器中，我在`wrap_func`函数上加了`@gen.coroutine`装饰器，这样就保证只有`yeild`的函数执行完之后，才会执行`add_timeout`操作。如果没有`@gen.coroutine`装饰器。那么不等到`yeild`返回，就会执行`add_timeout`了。
 
-完整地例子可以参见我的[Github](https://github.com/cloudaice/simple-data)
+完整地例子可以参见我的[Github](https://github.com/cloudaice/simple-data)，这个项目搭建在heroku上。用于展示Github用户活跃度排名和用户区域分布情况。可以访问[Github-Data](http://data.cloudaice.com)查看。由于国内heroku被墙，需要翻墙才能访问。
 
 
 总结
