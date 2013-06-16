@@ -3,7 +3,7 @@ layout: post
 title: "mongodb 使用小记"
 date: 2012-02-13 20:36
 comments: true
-category: grass
+category: MongoDB
 
 ---
 
