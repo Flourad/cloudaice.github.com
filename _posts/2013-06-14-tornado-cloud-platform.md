@@ -8,7 +8,7 @@ published: true
 ---
 {% include JB/setup %}
 
-目前的PaaS平台很火，在用的很爽的时候总遇到不少的限制。因为自己写了一个基于Tornado框架的[应用](http://data.cloudaice.com)，想要用它原生的ioloop。下面分别从heroku，appfog，openshift这三个PaaS平台来谈谈。
+目前的PaaS平台很火，在用的很爽的时候也遇到不少的限制。因为自己写了一个基于Tornado框架的[应用](http://data.cloudaice.com)，想要用它原生的ioloop。下面分别从heroku，appfog，openshift这三个PaaS平台来谈谈。
 
 heroku
 ======
