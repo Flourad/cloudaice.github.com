@@ -54,8 +54,9 @@ h1 { margin-bottom: 1em; }
 h2 {
 	font-size: 100%;
 	line-height: 1.5em;
-	margin:1.5em 0 1.5em 0;
-	font-weight:bold;
+	margin: 1.5em 0 1.5em 0;
+	font-weight: bold;
+	text-align: center;
 }
 
 hr { 
@@ -112,6 +113,10 @@ sup { line-height: 1ex; }
 .emphnext + p:first-line, p.emphfirst:first-line {
 	font-variant: small-caps;
 	font-size: larger;
+}
+
+.emphnext {
+    text-align: center;
 }
 /* @end */
 
@@ -570,4 +575,9 @@ img.maruku-png { }
 }
 .center {
         text-align: center;
+}
+
+.meta {
+    text-align: right;
+    line-height: 3.2em;
 }
