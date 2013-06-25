@@ -3,7 +3,7 @@ layout: post
 title: "write before leave"
 description: ""
 category: mine
-published: true
+published: false
 
 ---
 {% include JB/setup %}
