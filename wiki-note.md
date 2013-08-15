@@ -147,3 +147,12 @@ title: 笔记
   + [http://mikespook.com](http://mikespook.com)
   + [学习go语言中文版](http://www.mikespook.com/learning-go/)
   + [go语言中文翻译项目](http://code.google.com/p/golang-china/wiki/go_tutorial)
+
++ 我所佩服的人
+    
+
+    我相信这个世界上所有的人都是凡人,但是偏偏有一些人，他们年纪轻轻就已经是那样的不平凡
+
+  + 郭家宝[here](https://www.byvoid.com/)，2010级清华本科生，NOIP，已在世界级计算机公司实习过。出过nodejs相关的书。
+  + 顾森[here](http://www.matrix67.com/blog/), 北大中文系本科，NOIP, 博客写的特别好。
+  + Alex MacCaw [here](http://data.cloudaice.com/)，<<编程，旅行，写作>>的作者，
