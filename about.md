@@ -4,15 +4,23 @@ title: About me
 ---
 
 {% include JB/setup %}
-<link rel="stylesheet" href="/assets/themes/mark-reid/css/bootstrap.min.css" type="text/css" />
-<div class="row">
-<div class="col-md-4">
-<img src="/images/me.jpg"/>
-</div>
-<div class="col-md-8">
-姓项名超，生于90末，长在浙江，求学于哈工大，少时沉醉数学，后钟于物理，难料终落代码之境。初识C++，渐迷算法，敬于C的博大精深，后遇java，偏爱python，略懂Node，未来路很长。大学三年，自学无数，凡事愿深究，然所得甚少，多用github，问在stackoverflow，憾在未做TC。憧憬于酷的互联网应用，喜于做富有挑战性的项目。
-</div>
-</div>
+
+<img src=/images/me.jpg align="right">
+
+姓项名超，生于90末，长在浙江，求学于哈工大。
+
+少时沉醉数学，后钟于物理，难料终落代码之境。
+
+初识C++，渐迷算法，敬于C的博大精深。
+
+后遇java，偏爱python，略懂Node，未来路很长。
+
+大学三年，自学无数，凡事愿深究，然所得甚少。
+
+多用github，问在stackoverflow，憾在未做TC。
+
+憧憬于酷的互联网应用，喜于做富有挑战性的项目。
+
 
     lover = ['father','mother']
     conditions = [lambda p: 'girl' in p, lambda p: 'sincere' in p,
