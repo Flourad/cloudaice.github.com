@@ -64,8 +64,8 @@ Tornado异步编程
     def post(self):
         client = AsyncHTTPClient()
         resp = yield client.fetch("https://api.github.com/users")
-        if resp == 200:
-            body = escape.json_decode(resy.body)
+        if resp.code == 200:
+            body = escape.json_decode(resp.body)
         else:
             body = {"message": "client fetch error"}
             logger.error("client fetch error %d, %s" % (resp.code, resp.message))
