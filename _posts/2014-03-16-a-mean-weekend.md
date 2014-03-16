@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "a mean weekend"
+title: "一个有意义的周末"
 description: ""
 category: weekend
 published: true
