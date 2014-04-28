@@ -37,24 +37,16 @@ http包种的server.go文件是请求的入口，同时也是整个http包的核
 
     // A Server defines parameters for running an HTTP server.
     type Server struct {
-	    Addr           string        // TCP address to listen on, ":http" if empty
-	    Handler        Handler       // handler to invoke, http.DefaultServeMux if nil
-	    ReadTimeout    time.Duration // maximum duration before timing out read of the request
-	    WriteTimeout   time.Duration // maximum duration before timing out write of the response
-	    MaxHeaderBytes int           // maximum size of request headers, DefaultMaxHeaderBytes if 0
-	    TLSConfig      *tls.Config   // optional TLS config, used by ListenAndServeTLS
-
-	    // TLSNextProto optionally specifies a function to take over
-	    // ownership of the provided TLS connection when an NPN
-	    // protocol upgrade has occurred.  The map key is the protocol
-	    // name negotiated. The Handler argument should be used to
-	    // handle HTTP requests and will initialize the Request's TLS
-	    // and RemoteAddr if not already set.  The connection is
-	    // automatically closed when the function returns.
+	    Addr           string        
+	    Handler        Handler       
+	    ReadTimeout    time.Duration 
+	    WriteTimeout   time.Duration 
+	    MaxHeaderBytes int           
+	    TLSConfig      *tls.Config   
 	    TLSNextProto map[string]func(*Server, *tls.Conn, Handler)
     }
 
-除去`TLS`之外，一共有5个公有变量：
+除去`TLS`相关的之外，一共有5个可以公共访问的变量：
 
 + Addr  
   >服务监听地址
