@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "一致性哈希算法和Go语言实现"
-description: ""
+description: "一致性哈希 Golang"
 category: default
 published: true
 
