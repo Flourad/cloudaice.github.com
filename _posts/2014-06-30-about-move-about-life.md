@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "about move about life"
+title: "about movie about life"
 description: ""
 category: default
 published: true
