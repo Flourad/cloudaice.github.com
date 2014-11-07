@@ -66,6 +66,7 @@ title: 笔记
     + 关于git
       + [git使用指南](https://sites.google.com/a/kingofat.com/wiki/git-tutorial)
       + [finding git](http://blog.jayway.com/2012/01/25/finding-with-git/)
+      + [git 开发分支管理](http://www.juvenxu.com/2010/11/28/a-successful-git-branching-model/)
 
   - 已阅博客
 
