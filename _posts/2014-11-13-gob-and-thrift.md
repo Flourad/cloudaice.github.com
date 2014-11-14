@@ -40,10 +40,10 @@ Gob传输格式：
         Message      string
     }
 
-单条日志内容：
 
-`42.62.41.64 - - [26/Jan/2014:06:59:59 +0800] "GET /mshopapi/index.php/v1/authorize/sso?client_id=280140331013&callback=http%3A%2F%2Fm.example.com%2Findex.html%23ac%3Daccount%26op%3Dindex HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166" "10.111.2.11/127.0.0.1:9999" "0.001/0.001/302/88888888"`
+日志内容：
 
+日志为一条400B大小的Nginx标准日志。
 
 ### 测试
 针对Gob和Thrift分别编写客户端和服务端代码
@@ -215,5 +215,5 @@ Thrift服务端代码：
 
 最后还测试了使用Golang的zlib库压缩过滤之后的Gob传输性能，压缩效率真的很高，从上百兆直接压缩到几兆，可能我传输的都是同一个字符串的原因，但是对CPU的使用率也是翻了3倍左右。实际上对于日志收集系统而言，CPU比带宽更敏感，应用服务器的网卡都是千兆网卡，一般都是跑不满，但是CPU资源在业业务繁忙的时候可能会跑的比较满，作为底层的日志收集系统就不要占用过多的CPU资源了。
 
-* 完整的测试代码地址：[github](https://github.com/cloudaice/thriftAndGob)
+* 完整的测试代码地址：[thriftAndGob](https://github.com/cloudaice/thriftAndGob)
 * 查看网络流量大小：`dstat -n -N lo`
