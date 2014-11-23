@@ -193,7 +193,12 @@ Thrift服务端代码：
 	    }
 
 	    processor := translate.NewProxyTransProcessor(&proxyTrans{})
-	    server := thrift.NewTSimpleServer4(processor, serverTransport, transportFactory, protocolFactory)
+	    server := thrift.NewTSimpleServer4(
+	        processor, 
+	        serverTransport,
+	        transportFactory,
+	        protocolFactory,
+	   )
 	    log.Println(server.Serve())
     }
 
