@@ -38,7 +38,7 @@ Tornado的异步库中最常用的就是自带的AsyncHTTPClient，以及在其�
 在3.0版本之后，`gen.coroutine`模块显得比较突出。`coroutine`装饰器可以让本来靠回调的异步编程看起来像同步编程。其中便是利用了`Python`中生成器的`Send`函数。在生成器中，`yield`关键字往往会与正常函数中的`return`相比。它可以被当成迭代器，从而使用`next()`返回`yield`的结果。但是生成器还有另外一个用法，就是使用`send`方法。在生成器内部可以将`yield`的结果赋值给一个变量，而这个值是通过外部的生成器`client`来`send`的。举一个例子:
 
     def test_yield():
-        pirnt "test yeild"
+        print "test yeild"
         says = (yield)
         print says
         
